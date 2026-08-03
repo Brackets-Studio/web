@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "title": "Brackets Studio | Software, app e automazione su misura",
+    "description": "Creiamo software su misura, app per cellulare e automazioni con l'intelligenza artificiale, così il tuo lavoro va più veloce."
+  },
+  "nav": {
+    "services": "Servizi",
+    "caseStudies": "Case Study",
+    "contact": "Contatti",
+    "cta": "Parliamone",
+    "language": "Lingua",
+    "locales": {
+      "it": "Italiano",
+      "en": "English"
+    }
+  },
+  "hero": {
+    "eyebrow": "Design, Sviluppo, SEO e altro",
+    "headline": "Creiamo il tuo software, dall'idea al prodotto finito",
+    "subline": "Progettiamo siti, app e automazioni intelligenti su misura per la tua azienda, dal primo disegno fino a quando sono online e funzionano.",
+    "ctaPrimary": "Inizia un progetto",
+    "ctaSecondary": "Guarda i nostri lavori"
+  },
+  "services": {
+    "eyebrow": "Cosa facciamo",
+    "title": "Come possiamo aiutarti",
+    "subtitle": "Siamo il tuo unico punto di riferimento per un software che funziona davvero: dalla prima idea, al programma che usi ogni giorno, fino all'assistenza quando ti serve.",
+    "cta": "Parliamo del tuo progetto",
+    "items": {
+      "web": {
+        "title": "Siti e software su misura",
+        "description": "Programmi e pannelli di controllo pensati apposta per te.",
+        "tags": ["Next.js", "TypeScript", "PostgreSQL"],
+        "detail": {
+          "summary": "Costruiamo il software su misura per la tua azienda: dai pannelli di controllo interni ai prodotti che vendi ai tuoi stessi clienti. Lo progettiamo per durare nel tempo e funzionare bene anche quando aumentano gli utenti.",
+          "highlights": [
+            "Pannelli di controllo fatti su misura per te",
+            "Un sistema solido dietro le quinte, facile da collegare con altri programmi",
+            "Pronto a gestire tanti clienti diversi, se ti serve"
+          ]
+        }
+      },
+      "mobile": {
+        "title": "App per cellulare",
+        "description": "App per iPhone e Android, sia dedicate che multipiattaforma.",
+        "tags": ["React Native", "Expo", "Swift"],
+        "detail": {
+          "summary": "Creiamo app per cellulare, dalla prima idea fino alla pubblicazione sugli store, con attenzione a farle sentire veloci e a collegarle bene con gli strumenti che usi già in azienda.",
+          "highlights": [
+            "App multipiattaforma per essere online più in fretta",
+            "App dedicate a iPhone o Android quando serve il massimo delle prestazioni",
+            "Pubblicazione e gestione su App Store e Play Store"
+          ]
+        }
+      },
+      "ai": {
+        "title": "Intelligenza artificiale e automazione",
+        "description": "Automatizziamo il lavoro ripetitivo: lettura documenti e assistenti intelligenti.",
+        "tags": ["OCR", "LLM", "Agenti"],
+        "detail": {
+          "summary": "Automatizziamo i lavori ripetitivi, come leggere e archiviare documenti, usando l'intelligenza artificiale. Colleghiamo assistenti intelligenti direttamente al modo in cui lavori già, per farti risparmiare tempo e ridurre gli errori.",
+          "highlights": [
+            "Lettura automatica di documenti e moduli",
+            "Assistenti intelligenti inseriti nel tuo lavoro di ogni giorno",
+            "Automazioni pensate per te, non soluzioni standard"
+          ]
+        }
+      },
+      "cloud": {
+        "title": "Infrastruttura e collegamenti",
+        "description": "Server affidabili e collegamenti con WhatsApp e altri servizi di telefonia.",
+        "tags": ["WhatsApp API", "Telnyx", "AWS"],
+        "detail": {
+          "summary": "Costruiamo un'infrastruttura online solida e la colleghiamo a servizi come WhatsApp Business per automatizzare messaggi e notifiche. Ci occupiamo noi di tutto, dalla messa online al controllo costante.",
+          "highlights": [
+            "Messaggi automatici su WhatsApp Business",
+            "Server affidabili, controllati e pronti a crescere",
+            "Notifiche automatiche verso i tuoi clienti"
+          ]
+        }
+      }
+    }
+  },
+  "caseStudies": {
+    "title": "Case Study",
+    "subtitle": "Problemi veri, affrontati insieme ai nostri clienti, con soluzioni concrete che si vedono nei numeri e nel tempo risparmiato ogni giorno.",
+    "problem": "Problema",
+    "solution": "Soluzione",
+    "result": "Risultato",
+    "items": {
+      "smartables": {
+        "name": "Smartables",
+        "problem": "Il lavoro di ogni giorno era gestito a mano, con i dati sparsi tra fogli Excel e canali diversi.",
+        "solution": "Un programma su misura che automatizza la gestione dei documenti e mette tutto in un unico posto.",
+        "result": "Meno lavoro manuale e un solo posto da controllare per seguire tutto.",
+        "tags": ["Next.js", "OCR", "Cloud"],
+        "detail": {
+          "summary": "Smartables gestiva il lavoro di ogni giorno tra fogli Excel, email e strumenti scollegati tra loro, perdendo tempo e rischiando errori. Abbiamo costruito un programma centrale che mette insieme dati e processi, automatizzando le parti più ripetitive del lavoro con i documenti.",
+          "highlights": [
+            "Programma su misura costruito da zero",
+            "Lettura automatica dei documenti",
+            "Infrastruttura pronta a crescere insieme all'azienda"
+          ]
+        }
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Come lavoriamo",
+    "headline": "Ci occupiamo noi della parte difficile, così il tuo prodotto funziona e basta.",
+    "body": "Ogni collegamento, ogni messa online, ogni imprevisto — seguiti dallo stesso team dal primo giorno, finché non hai più bisogno di noi."
+  },
+  "process": {
+    "eyebrow": "Il nostro percorso",
+    "title": "Come lavoriamo, passo dopo passo",
+    "subtitle": "Un unico percorso, senza intoppi, con tutti gli strumenti già inclusi: dalla prima chiacchierata conoscitiva fino all'assistenza dopo il lancio.",
+    "steps": {
+      "discovery": {
+        "title": "Prima chiacchierata e analisi",
+        "description": "Capiamo come lavori oggi, cosa vuoi ottenere e quali sono i vincoli, e disegniamo la soluzione giusta prima di scrivere anche solo una riga di codice."
+      },
+      "build": {
+        "title": "Progettazione e sviluppo",
+        "description": "Lavoriamo a piccoli passi e ti mostriamo spesso a che punto siamo, così vedi il prodotto crescere e puoi dirci se qualcosa va cambiato."
+      },
+      "launch": {
+        "title": "Lancio e assistenza",
+        "description": "Ti seguiamo quando il prodotto va online e restiamo al tuo fianco per controlli, manutenzione e nuove funzioni."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonianze",
+    "title": "Non fidarti solo delle nostre parole",
+    "subtitle": "Contenuto di esempio, in attesa delle recensioni vere dei nostri clienti: qui racconteremo la loro esperienza diretta di lavoro con noi.",
+    "items": [
+      {
+        "quote": "Il team ha capito subito il problema e ci ha dato un programma che usiamo ogni giorno senza pensarci più.",
+        "name": "Nome Cliente",
+        "role": "Ruolo, Azienda"
+      },
+      {
+        "quote": "Comunicazione chiara e nessuna sorpresa alla consegna. Esattamente quello che serve quando affidi il tuo prodotto a qualcun altro.",
+        "name": "Nome Cliente",
+        "role": "Ruolo, Azienda"
+      },
+      {
+        "quote": "Hanno automatizzato un lavoro che ci portava via ore ogni settimana. Il risultato si è visto già dal primo mese.",
+        "name": "Nome Cliente",
+        "role": "Ruolo, Azienda"
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "FAQ",
+    "title": "Tutto quello che devi sapere",
+    "subtitle": "Le risposte alle domande che ci vengono fatte più spesso, per aiutarti a capire subito come lavoriamo e cosa aspettarti da un progetto insieme.",
+    "items": [
+      {
+        "question": "Quanto costa un progetto?",
+        "answer": "Dipende da quanto è grande e complesso il progetto: un primo prodotto semplice parte da poche migliaia di euro, mentre un prodotto più grande, con intelligenza artificiale e server dedicati, richiede un investimento maggiore. Dopo una prima chiacchierata ti diamo un prezzo chiaro, senza sorprese durante il lavoro."
+      },
+      {
+        "question": "Quanto tempo serve per lanciare un progetto?",
+        "answer": "Un primo prodotto semplice è pronto in genere in 4-8 settimane. I progetti più complessi, con più collegamenti o pensati per tanti clienti diversi, richiedono più tempo — te lo diciamo chiaramente già dal primo incontro."
+      },
+      {
+        "question": "Che tecnologie usate?",
+        "answer": "Usiamo strumenti moderni e affidabili: Next.js e TypeScript per i siti, React Native/Expo o Swift per le app, PostgreSQL per i dati e AWS per i server. Scegliamo gli strumenti giusti in base al progetto, non il contrario."
+      },
+      {
+        "question": "Offrite assistenza dopo il lancio?",
+        "answer": "Sì. Restiamo al tuo fianco per controlli, manutenzione e nuove funzioni: lo stesso team che ha costruito il prodotto continua a seguirlo anche dopo che è online."
+      },
+      {
+        "question": "Il codice resta di mia proprietà?",
+        "answer": "Sempre. Il codice, i server e tutto quello che costruiamo per te sono tuoi al 100%, senza vincoli o dipendenze da noi."
+      },
+      {
+        "question": "Come si inizia?",
+        "answer": "Con una chiacchierata gratuita, senza impegno, per capire cosa ti serve. Da lì ti proponiamo cosa fare e quanto costa, e possiamo iniziare a lavorarci."
+      }
+    ],
+    "cta": {
+      "title": "Hai ancora domande?",
+      "text": "Prenota una chiamata gratuita, senza impegno: ti spieghiamo scope, tempi e budget.",
+      "button": "Contattaci",
+      "response": "Rispondiamo di solito entro 24 ore."
+    }
+  },
+  "footer": {
+    "tagline": "Creiamo software, app e automazioni su misura.",
+    "rights": "Tutti i diritti riservati."
+  },
+  "modal": {
+    "close": "Chiudi"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "title": "Brackets Studio — Software, mobile, AI & cloud development",
+    "description": "Software development studio specialized in custom SaaS, mobile apps, AI automation and cloud infrastructure."
+  },
+  "nav": {
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "contact": "Contact",
+    "cta": "Let's talk",
+    "language": "Language",
+    "locales": {
+      "it": "Italiano",
+      "en": "English"
+    }
+  },
+  "hero": {
+    "eyebrow": "Design, Development, SEO and more",
+    "headline": "Software, automation and cloud infrastructure, engineered end-to-end",
+    "subline": "We design and ship custom SaaS platforms, mobile apps and AI-driven integrations on production-grade cloud infrastructure — from prototype to scale.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See case studies"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Powered by the right tools. Run by real people",
+    "subtitle": "We're your one-stop team for software that actually works — from the first technical decision to the infrastructure that keeps your product running in production.",
+    "cta": "Let's talk about your project",
+    "items": {
+      "web": {
+        "title": "Web / Custom SaaS",
+        "description": "Tailored SaaS products, dashboards and scalable backends.",
+        "tags": ["Next.js", "TypeScript", "PostgreSQL"],
+        "detail": {
+          "summary": "We design and build custom SaaS products, from internal dashboards to multi-tenant platforms for your own customers. Architected to scale, with ongoing attention to performance and long-term maintainability.",
+          "highlights": [
+            "Custom dashboards and control panels",
+            "Scalable backend with clean, documented APIs",
+            "Multi-tenant architecture when it's needed"
+          ]
+        }
+      },
+      "mobile": {
+        "title": "Mobile",
+        "description": "Native and cross-platform apps for iOS and Android.",
+        "tags": ["React Native", "Expo", "Swift"],
+        "detail": {
+          "summary": "We build native and cross-platform mobile apps, from prototype to store release, with close attention to perceived performance and integration with your existing systems.",
+          "highlights": [
+            "Cross-platform with React Native/Expo for fast time-to-market",
+            "Native Swift development where performance demands it",
+            "App Store and Play Store publishing and management"
+          ]
+        }
+      },
+      "ai": {
+        "title": "AI / Automation",
+        "description": "Document automation, OCR and AI agents wired into your workflows.",
+        "tags": ["OCR", "LLM", "Agents"],
+        "detail": {
+          "summary": "We automate repetitive document processes with OCR and LLMs, embedding AI agents directly into your existing workflows to cut manual work and errors.",
+          "highlights": [
+            "Automatic data extraction from documents and forms",
+            "AI agents embedded in operational processes",
+            "Tailored automation, not generic off-the-shelf tools"
+          ]
+        }
+      },
+      "cloud": {
+        "title": "Cloud / Integrations",
+        "description": "Custom cloud infrastructure and telecom integrations.",
+        "tags": ["WhatsApp API", "Telnyx", "AWS"],
+        "detail": {
+          "summary": "We design reliable cloud infrastructure and telecom integrations (WhatsApp Business, Telnyx) to automate communications and notifications, with deployment and monitoring handled end-to-end.",
+          "highlights": [
+            "WhatsApp Business API and Telnyx integration",
+            "Cloud infrastructure on AWS, monitored and scalable",
+            "Automated telecom notifications and communications"
+          ]
+        }
+      }
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Real problems, tackled alongside our clients, with measurable outcomes you can see in the numbers and in the hours saved every week.",
+    "problem": "Problem",
+    "solution": "Solution",
+    "result": "Result",
+    "items": {
+      "smartables": {
+        "name": "Smartables",
+        "problem": "Operational processes handled manually, with data scattered across spreadsheets and channels.",
+        "solution": "Custom SaaS platform with automated document workflows and tailored API integrations.",
+        "result": "Less manual work and a single system for operational monitoring.",
+        "tags": ["Next.js", "OCR", "Cloud"],
+        "detail": {
+          "summary": "Smartables ran its day-to-day operations across spreadsheets, email and disconnected tools, with a growing cost in time and error margin. We built a central platform that unifies data and processes, automating the most repetitive parts of the document workflow.",
+          "highlights": [
+            "Custom SaaS platform built from scratch",
+            "Document automation with integrated OCR",
+            "Scalable cloud infrastructure for future growth"
+          ]
+        }
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "How we work",
+    "headline": "We build the boring parts so your product just works.",
+    "body": "Every integration, every deploy, every edge case — handled by the same team from day one to the day you stop needing us."
+  },
+  "process": {
+    "eyebrow": "Our process",
+    "title": "How we work, step by step",
+    "subtitle": "One streamlined process with every tool built in — from the first discovery call through design, development, launch and ongoing post-launch support.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery & Analysis",
+        "description": "We analyze your current process, define goals and technical constraints, and design the right architecture before writing a single line of code."
+      },
+      "build": {
+        "title": "Design & Development",
+        "description": "We build in short iterations with frequent demos, so you see the product grow and can course-correct along the way."
+      },
+      "launch": {
+        "title": "Launch & Support",
+        "description": "We guide the production deploy and stay by your side for monitoring, maintenance and new features."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Don't just take our word for it",
+    "subtitle": "Placeholder content for now — soon to be replaced with real feedback from the clients we've worked with, in their own words.",
+    "items": [
+      {
+        "quote": "The team understood the problem right away and delivered a platform we now use every day without thinking twice.",
+        "name": "Client Name",
+        "role": "Role, Company"
+      },
+      {
+        "quote": "Direct communication and no surprises at delivery. Exactly what you need when you hand your product to someone else.",
+        "name": "Client Name",
+        "role": "Role, Company"
+      },
+      {
+        "quote": "They automated a process that was costing us hours every week. The return showed up within the first month.",
+        "name": "Client Name",
+        "role": "Role, Company"
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "FAQ",
+    "title": "Everything you need to know",
+    "subtitle": "The answers to what we get asked most, so you know exactly how we work and what to expect before a project even starts.",
+    "items": [
+      {
+        "question": "How much does a project cost?",
+        "answer": "It depends on scope and complexity: a lean MVP starts at a few thousand euros, a multi-tenant product with AI and cloud integrations requires more investment. After a first call we give you a clear estimate, with no surprises along the way."
+      },
+      {
+        "question": "How long does it take to launch a project?",
+        "answer": "An MVP is typically ready in 4-8 weeks. More complex projects, with multiple integrations or multi-tenant architectures, take longer — we give you a realistic timeline from the discovery phase."
+      },
+      {
+        "question": "What technologies do you use?",
+        "answer": "Next.js and TypeScript for the web, React Native/Expo or native Swift for mobile, PostgreSQL for data, AWS for cloud infrastructure. We pick the stack based on the project, not the other way around."
+      },
+      {
+        "question": "Do you offer support after launch?",
+        "answer": "Yes. We stay by your side for monitoring, maintenance and new features: the same team that built the product keeps supporting it after go-live."
+      },
+      {
+        "question": "Do I own the code?",
+        "answer": "Always. The source code, infrastructure and every project asset are 100% yours, with no lock-in or dependency on us."
+      },
+      {
+        "question": "How do we get started?",
+        "answer": "With a no-commitment intro call to understand the project's goals and constraints. From there we propose a scope and estimate, and can kick off the discovery phase."
+      }
+    ],
+    "cta": {
+      "title": "Still have questions?",
+      "text": "Book a free, no-commitment call and we'll walk you through scope, timeline and budget.",
+      "button": "Contact us",
+      "response": "We usually reply within 24 hours."
+    }
+  },
+  "footer": {
+    "tagline": "Software, mobile, AI and cloud development.",
+    "rights": "All rights reserved."
+  },
+  "modal": {
+    "close": "Close"
+  }
+}

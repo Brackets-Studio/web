@@ -29,11 +29,29 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteConfig.url),
-    title: t("title"),
+    title: {
+      default: t("title"),
+      template: `%s — ${siteConfig.name}`,
+    },
     description: t("description"),
+    applicationName: siteConfig.name,
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    creator: siteConfig.name,
+    publisher: siteConfig.name,
     alternates: {
       canonical: `/${locale}`,
       languages: { ...languages, "x-default": `/${routing.defaultLocale}` },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     openGraph: {
       type: "website",
@@ -42,11 +60,20 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       locale: OG_LOCALE[locale] ?? locale,
+      images: [
+        {
+          url: "/og_image.png",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: ["/og_image.png"],
     },
   };
 }
@@ -57,8 +84,19 @@ function organizationJsonLd(locale: string) {
     "@type": "Organization",
     name: siteConfig.name,
     url: `${siteConfig.url}/${locale}`,
+    logo: `${siteConfig.url}/favicon-dark.png`,
     email: siteConfig.email,
     sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  };
+}
+
+function websiteJsonLd(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: `${siteConfig.url}/${locale}`,
+    inLanguage: locale,
   };
 }
 
@@ -82,6 +120,10 @@ export default async function LocaleLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(locale)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd(locale)) }}
       />
       <ThemeProvider>
         <HtmlLangSync locale={locale} />

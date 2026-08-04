@@ -10,7 +10,7 @@ import { ThemeToggle } from "../theme/theme-toggle";
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/Brackets-Studio" },
   { label: "LinkedIn", href: "https://linkedin.com/company/brackets-studio" },
-  { label: "Email", href: "mailto:hello@bracketstudio.it" },
+  { label: "Email", href: "mailto:info@bracketstudio.it" },
 ];
 
 export function Footer() {

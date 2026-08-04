@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Brackets Studio — Software, mobile, AI & cloud development",
+    "title": "Bracket Studio — Software, mobile, AI & cloud development",
     "description": "Software development studio specialized in custom SaaS, mobile apps, AI automation and cloud infrastructure."
   },
   "nav": {
@@ -185,7 +185,7 @@
       "title": "Still have questions?",
       "text": "Book a free, no-commitment call and we'll walk you through scope, timeline and budget.",
       "button": "Contact us",
-      "response": "We usually reply within 24 hours."
+      "response": "Reply within 24 hours."
     }
   },
   "footer": {

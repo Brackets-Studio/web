@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 import LocaleSwitcher from "../utils/LocaleSwitcher";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
+import { Magnetic } from "@/components/ui/magnetic";
 
 
 const NAV_ITEMS = [
@@ -76,7 +77,7 @@ export function Navbar() {
         <div className="mx-auto grid h-16 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6">
           <Link
             href="/"
-            aria-label="Brackets Studio"
+            aria-label="Bracket Studio"
             className="flex items-center gap-2"
           >
             <span
@@ -88,7 +89,7 @@ export function Navbar() {
                 className="inline-block overflow-hidden whitespace-nowrap"
               >
                 <span ref={bracketRef} className="inline-block">
-                  brackets
+                  bracket
                 </span>
               </motion.span>
               <span>{"}"}</span>
@@ -119,14 +120,16 @@ export function Navbar() {
 
           <div className="col-start-3 hidden items-center gap-3 justify-self-end md:flex">
             
-            <motion.a
-              href="#contatti"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
-            >
-              {t("cta")}
-            </motion.a>
+            <Magnetic strength={0.25}>
+              <motion.a
+                href="#contatti"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
+              >
+                {t("cta")}
+              </motion.a>
+            </Magnetic>
           </div>
 
           <div className="col-start-3 flex items-center gap-2 justify-self-end md:hidden">

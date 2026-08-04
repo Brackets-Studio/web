@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
@@ -10,9 +11,30 @@ import { Footer } from "@/components/layout/footer";
 import { DetailProvider } from "@/components/detail/detail-context";
 import { DetailModal } from "@/components/detail/detail-modal";
 
-export default function Home() {
+async function faqJsonLd() {
+  const t = await getTranslations("faqs");
+  const items = t.raw("items") as { question: string; answer: string }[];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
+export default async function Home() {
+  const faqData = await faqJsonLd();
+
   return (
     <DetailProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
       <Navbar />
       <Hero />
       <Services />

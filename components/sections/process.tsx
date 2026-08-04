@@ -52,12 +52,12 @@ export function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.35, delay: index * 0.08, ease: EASE_OUT }}
-                className="rounded-lg border border-border bg-background-elevated p-6 shadow-sm"
+                className="rounded-lg relative border border-border bg-background-elevated p-6 shadow-sm"
               >
                 <div className="flex size-10 items-center justify-center rounded-md border border-border bg-muted/50 font-mono text-xs text-brand">
                   <Icon className="size-4.5" strokeWidth={1.75} />
                 </div>
-                <span className="mt-4 block font-mono text-xs text-foreground-muted">
+                <span className="absolute top-4 right-4 block font-mono text-4xl text-foreground-muted">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-2 text-lg font-semibold tracking-[-0.01em] text-foreground">

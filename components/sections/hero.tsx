@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
+import { Magnetic } from "@/components/ui/magnetic";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -45,14 +46,16 @@ export function Hero() {
           transition={{ duration: 0.4, delay: 0.15, ease: EASE_OUT }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <motion.a
-            href="#contatti"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground"
-          >
-            {t("ctaPrimary")}
-          </motion.a>
+          <Magnetic>
+            <motion.a
+              href="#contatti"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground"
+            >
+              {t("ctaPrimary")}
+            </motion.a>
+          </Magnetic>
           <motion.a
             href="#case-study"
             whileTap={{ scale: 0.98 }}

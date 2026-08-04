@@ -1,19 +1,30 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
+import Image from "next/image";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export function Approach() {
   const t = useTranslations("approach");
+  const imageFrameRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: imageFrameRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const gridY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   return (
     <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-neutral-200/20 dark:bg-neutral-900">
-      <div
+      <motion.div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
+          y: gridY,
           backgroundImage:
             "linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)",
           backgroundSize: "64px 64px",
@@ -22,7 +33,7 @@ export function Approach() {
         }}
       />
 
-      <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 py-24 sm:py-28 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-24 sm:py-28 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -56,6 +67,37 @@ export function Approach() {
           </motion.p>
         </div>
 
+        <motion.div
+          ref={imageFrameRef}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: EASE_OUT }}
+          className="relative aspect-4/5 w-full overflow-hidden rounded-2xl border border-border shadow-md"
+        >
+          {/* Placeholder — swap for an <Image src="..." fill /> when the asset lands.
+              Keep this motion.div wrapping it so the parallax carries over. */}
+          <motion.div
+            style={{ y: imageY }}
+            className="absolute inset-[-10%] flex items-center justify-center bg-linear-to-br from-neutral-300/60 via-neutral-200/40 to-brand/10 dark:from-neutral-800 dark:via-neutral-900 dark:to-brand/10"
+          >
+            <div
+              className="absolute inset-0 opacity-[0.05]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
+            />
+            <Image
+              src="/approach-image.png"
+              alt="Approach"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </StackedSection>
   );

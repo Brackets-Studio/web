@@ -1,5 +1,5 @@
 {
-  "name": "brackets-studio",
+  "name": "bracket-studio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "@sanity/image-url": "^2.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.28.0",
     "motion": "^12.43.0",
     "next": "16.2.12",
     "next-intl": "^4.13.4",
+    "next-sanity": "^13.2.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "shadcn": "^4.16.0",

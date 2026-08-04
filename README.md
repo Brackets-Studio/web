@@ -1,6 +1,6 @@
 # CONTESTO DEL PROGETTO
 
-Sto costruendo il sito di "Brackets Studio", uno studio di sviluppo software 
+Sto costruendo il sito di "Bracket Studio", uno studio di sviluppo software 
 (attualmente one-person, con piano di espansione futura) specializzato in 
 SaaS custom, integrazioni API (WhatsApp Business, Telnyx, automazione 
 telecom), automazione documentale/OCR e infrastruttura cloud.
@@ -12,7 +12,7 @@ sempre la struttura di cartelle e componenti esistenti nel repo.
 
 # OBIETTIVO
 
-Costruire l'identità UI e i componenti core del sito di Brackets Studio, 
+Costruire l'identità UI e i componenti core del sito di Bracket Studio, 
 ispirandoci esplicitamente al design system Geist di Vercel, ma con 
 un'identità brand distintiva e non un clone generico.
 

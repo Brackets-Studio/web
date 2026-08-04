@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useDetail, type DetailItem } from "@/components/detail/detail-context";
 import { Monogram } from "./monogram";
+import { ArrowRight } from "lucide-react";
 
 export function CaseStudyCard({
   item,
@@ -27,7 +28,7 @@ export function CaseStudyCard({
       transition={{ duration: 0.35, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
       className="group flex w-full flex-col overflow-hidden rounded-lg border border-border bg-background-elevated text-left shadow-sm outline-none transition-colors hover:border-brand focus-visible:ring-2 focus-visible:ring-brand"
     >
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
+      <div className="relative aspect-16/10 w-full overflow-hidden">
         {item.image ? (
           <Image
             src={item.image}
@@ -72,7 +73,7 @@ export function CaseStudyCard({
             aria-hidden
             className="transition-transform duration-200 ease-out group-hover:translate-x-1"
           >
-            →
+            <ArrowRight size={16} />
           </span>
         </div>
       </div>

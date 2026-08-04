@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Clock } from "lucide-react";
 import {
   Accordion,
   AccordionItem,
@@ -10,7 +9,6 @@ import {
   AccordionPanel,
 } from "@/components/ui/accordion";
 import { StackedSection } from "@/components/layout/stacked-section";
-import { Monogram } from "@/components/ui/monogram";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
@@ -78,17 +76,18 @@ export function Faqs() {
               <p className="mt-2 flex-1 text-sm text-foreground-muted">
                 {t("cta.text")}
               </p>
-              <Button
-                render={<a href="#contatti" />}
-                nativeButton={false}
-                className="mt-6 w-fit"
-              >
-                {t("cta.button")}
-              </Button>
-              <p className="mt-4 flex items-center gap-1.5 text-xs text-foreground-muted">
-                <Clock className="size-3.5" strokeWidth={1.75} />
-                {t("cta.response")}
-              </p>
+              <div className='flex items-center gap-4 mt-6'>
+                <Button
+                  render={<a href="#contatti" />}
+                  nativeButton={false}
+                  className="w-fit"
+                >
+                  {t("cta.button")}
+                </Button>
+                <p className="flex items-center gap-1.5 text-xs text-foreground-muted">
+                  {t("cta.response")}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

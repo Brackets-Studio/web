@@ -7,7 +7,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * Design tokens — Brackets Studio
+ * Design tokens —  Studio
  * Palette dark-first ispirata a Geist/Vercel, un solo colore accento (brand).
  * Il tema è controllato da una classe .dark/.light su <html> (persistita in
  * localStorage), con prefers-color-scheme come fallback per il primo
@@ -137,6 +137,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   transition: background-color 250ms var(--ease-out-custom), color 250ms var(--ease-out-custom);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 96px;
+}
+
+@media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

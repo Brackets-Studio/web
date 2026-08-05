@@ -104,6 +104,22 @@ const portableTextComponents: PortableTextComponents = {
       <p className="mt-4 text-base leading-relaxed text-foreground-muted">{children}</p>
     ),
   },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mt-4 list-inside list-disc space-y-4 text-foreground-muted">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="mt-4 list-inside list-decimal space-y-2 text-foreground-muted">{children}</ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="text-foreground-muted mt-1">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="text-foreground-muted mt-1">{children}</li>
+    ),
+  },
   marks: {
     link: ({ value, children }) => (
       <a
@@ -156,7 +172,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd(locale, slug, post)) }}
       />
       <Navbar />
-      <StackedSection>
+      <StackedSection className="rounded-t-none!">
         <div className="relative aspect-21/9 w-full overflow-hidden">
           {imageUrl ? (
             <Image
@@ -170,10 +186,11 @@ export default async function BlogPostPage({
           ) : (
             <Monogram title={post.title} />
           )}
-          <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent" />
         </div>
 
-        <div className="mx-auto max-w-2xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 py-16">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 font-mono text-sm text-foreground-muted transition-colors hover:text-brand"

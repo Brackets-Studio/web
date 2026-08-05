@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { StackedSection } from "@/components/layout/stacked-section";
+import { Link } from "@/i18n/navigation";
 
 const SERVICE_KEYS = ["web", "mobile", "ai", "cloud"] as const;
 
@@ -42,12 +43,12 @@ export function Services() {
               {t("title")}
             </h2>
             <p className="mt-3 max-w-md text-foreground-muted">{t("subtitle")}</p>
-            <a
-              href="#contatti"
+            <Link
+              href="/#contatti"
               className="mt-8 inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {t("cta")}
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div

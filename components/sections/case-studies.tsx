@@ -4,7 +4,6 @@ import { CASE_STUDIES_QUERY } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
 import type { CaseStudyListItem } from "@/sanity/types";
 import { CaseStudyCard } from "@/components/ui/case-study-card";
-import type { DetailItem } from "@/components/detail/detail-context";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -31,28 +30,23 @@ export async function CaseStudies() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {caseStudies.map((caseStudy, index) => {
-            const item: DetailItem = {
-              id: `case-${caseStudy.id}`,
-              kind: "case-study",
-              title: caseStudy.name,
-              tags: caseStudy.tags ?? [],
-              detail: {
-                summary: caseStudy.detailSummary,
-                highlights: caseStudy.highlights.map((h) => h.text),
-              },
-              image: caseStudy.mainImage?.asset
-                ? urlFor(caseStudy.mainImage).width(800).height(500).fit("crop").url()
-                : undefined,
-              problem: caseStudy.problem,
-              solution: caseStudy.solution,
-              result: caseStudy.result,
-              problemLabel: t("problem"),
-              solutionLabel: t("solution"),
-              resultLabel: t("result"),
-            };
-            return <CaseStudyCard key={caseStudy.id} item={item} index={index} />;
-          })}
+          {caseStudies.map((caseStudy, index) => (
+            <CaseStudyCard
+              key={caseStudy.id}
+              slug={caseStudy.slug}
+              title={caseStudy.name}
+              tags={caseStudy.tags ?? []}
+              result={caseStudy.result}
+              resultLabel={t("result")}
+              viewLabel={t("viewCaseStudy")}
+              image={
+                caseStudy.mainImage?.asset
+                  ? urlFor(caseStudy.mainImage).width(800).height(500).fit("crop").url()
+                  : undefined
+              }
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </StackedSection>

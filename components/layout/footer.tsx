@@ -4,8 +4,9 @@ import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { BracketMark } from "@/components/ui/bracket-mark";
 import LocaleSwitcher from "../utils/LocaleSwitcher";
-import { usePathname } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { ThemeToggle } from "../theme/theme-toggle";
+import { NewsletterForm } from "./newsletter-form";
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/Brackets-Studio" },
@@ -16,11 +17,12 @@ const SOCIAL_LINKS = [
 export function Footer() {
   const pathname = usePathname();
   const t = useTranslations("footer");
+  const newsletterT = useTranslations("newsletter");
   const year = new Date().getFullYear();
 
   return (
-    <StackedSection id="contatti" as="footer" last>
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 sm:flex-row sm:items-start sm:justify-between">
+    <StackedSection as="footer" last>
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-start gap-2">
           <BracketMark className="mt-0.5 text-lg leading-none text-foreground" />
           <div className="flex flex-col gap-2">
@@ -32,6 +34,14 @@ export function Footer() {
               <ThemeToggle />
               <LocaleSwitcher pathname={pathname} />
             </div>
+          </div>
+        </div>
+
+        <div className="w-full max-w-xs sm:max-w-60">
+          <p className="text-sm font-medium text-foreground">{newsletterT("title")}</p>
+          <p className="mt-1 text-xs text-foreground-muted">{newsletterT("subtitle")}</p>
+          <div className="mt-3">
+            <NewsletterForm />
           </div>
         </div>
 
@@ -52,9 +62,17 @@ export function Footer() {
 
 
       <div className="border-t border-border px-6 py-6">
-        <p className="mx-auto max-w-6xl text-xs text-foreground-muted">
-          © {year} Bracket Studio. {t("rights")}
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col-reverse items-start justify-between gap-4 text-xs text-foreground-muted sm:flex-row sm:items-center">
+          <p>© {year} Bracket Studio. {t("rights")}</p>
+          <nav className="flex items-center gap-4 font-mono">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
+              {t("legal.privacy")}
+            </Link>
+            <Link href="/cookie-policy" className="transition-colors hover:text-foreground">
+              {t("legal.cookiePolicy")}
+            </Link>
+          </nav>
+        </div>
       </div>
     </StackedSection>
   );

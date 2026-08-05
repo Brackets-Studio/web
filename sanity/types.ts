@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@portabletext/types";
+
 export type SanityImage = {
   asset: {
     _id: string;
@@ -35,6 +37,18 @@ export type CaseStudyListItem = {
   updatedAt: string;
 };
 
+export type CaseStudySEO = {
+  title: string | null;
+  description: string | null;
+  image: SanityImage | null;
+  noIndex: boolean;
+};
+
+export type CaseStudyDetail = CaseStudyListItem & {
+  publishedAt: string | null;
+  seo: CaseStudySEO;
+};
+
 export type Testimonial = {
   id: string;
   quote: string;
@@ -42,4 +56,21 @@ export type Testimonial = {
   authorRole: string;
   avatar: SanityImage | null;
   relatedCaseStudySlug: string | null;
+};
+
+export type PostListItem = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  coverImage: SanityImage | null;
+  tags: string[];
+  publishedAt: string;
+};
+
+export type PostDetail = Omit<PostListItem, "publishedAt"> & {
+  body: PortableTextBlock[];
+  publishedAt: string;
+  updatedAt: string;
+  seo: CaseStudySEO;
 };

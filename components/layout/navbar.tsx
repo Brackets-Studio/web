@@ -17,12 +17,14 @@ import { Magnetic } from "@/components/ui/magnetic";
 
 
 const NAV_ITEMS = [
-  { href: "#servizi", key: "services" as const },
-  { href: "#case-study", key: "caseStudies" as const },
-  { href: "#contatti", key: "contact" as const },
+  { href: "/#servizi", key: "services" as const },
+  { href: "/#case-study", key: "caseStudies" as const },
+  { href: "/pricing", key: "pricing" as const },
+  { href: "/blog", key: "blog" as const },
 ];
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+const MotionLink = motion.create(Link);
 const EASE_OUT_CSS = "cubic-bezier(0.16, 1, 0.3, 1)";
 const SCROLL_THRESHOLD = 16;
 const BRACKET_COLLAPSE_RANGE = [0, 72];
@@ -104,7 +106,7 @@ export function Navbar() {
 
           <nav className="col-start-2 hidden items-center gap-8 justify-self-center md:flex">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.key}
                 href={item.href}
                 className="group relative text-sm text-foreground-muted transition-colors hover:text-foreground"
@@ -114,21 +116,21 @@ export function Navbar() {
                   aria-hidden
                   className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-200 ease-out group-hover:scale-x-100"
                 />
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="col-start-3 hidden items-center gap-3 justify-self-end md:flex">
-            
+
             <Magnetic strength={0.25}>
-              <motion.a
-                href="#contatti"
+              <MotionLink
+                href="/#contatti"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
               >
                 {t("cta")}
-              </motion.a>
+              </MotionLink>
             </Magnetic>
           </div>
 
@@ -172,23 +174,23 @@ export function Navbar() {
             >
               <nav className="flex flex-col gap-1 px-6 py-4">
                 {NAV_ITEMS.map((item) => (
-                  <a
+                  <Link
                     key={item.key}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
                     className="py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
                   >
                     {t(item.key)}
-                  </a>
+                  </Link>
                 ))}
-                <motion.a
-                  href="#contatti"
+                <MotionLink
+                  href="/#contatti"
                   onClick={() => setMenuOpen(false)}
                   whileTap={{ scale: 0.98 }}
                   className="mt-2 inline-flex items-center justify-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
                 >
                   {t("cta")}
-                </motion.a>
+                </MotionLink>
                 <div className="mt-4">
                   <LocaleSwitcher pathname={pathname} />
                 </div>

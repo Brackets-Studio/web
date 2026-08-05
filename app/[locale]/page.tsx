@@ -1,15 +1,15 @@
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
+import { TechStack } from "@/components/sections/tech-stack";
 import { Services } from "@/components/sections/services";
 import { Process } from "@/components/sections/process";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Approach } from "@/components/sections/approach";
 import { Faqs } from "@/components/sections/faqs";
+import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/layout/footer";
-import { DetailProvider } from "@/components/detail/detail-context";
-import { DetailModal } from "@/components/detail/detail-modal";
 
 async function faqJsonLd() {
   const t = await getTranslations("faqs");
@@ -30,21 +30,22 @@ export default async function Home() {
   const faqData = await faqJsonLd();
 
   return (
-    <DetailProvider>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
       />
       <Navbar />
       <Hero />
+      <TechStack />
       <Services />
       <Process />
       <CaseStudies />
       <Testimonials />
       <Approach />
       <Faqs />
+      <Contact />
       <Footer />
-      <DetailModal />
-    </DetailProvider>
+    </>
   );
 }

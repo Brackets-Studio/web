@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { FaviconSwitcher } from "@/components/theme/favicon-switcher";
 import { HtmlLangSync } from "@/components/theme/html-lang-sync";
 import { Cursor } from "@/components/ui/cursor";
+import { CookieBanner } from "@/components/layout/cookie-banner";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -130,6 +131,7 @@ export default async function LocaleLayout({
         <FaviconSwitcher />
         <Cursor />
         {children}
+        <CookieBanner />
       </ThemeProvider>
     </NextIntlClientProvider>
   );

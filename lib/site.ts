@@ -6,4 +6,5 @@ export const siteConfig = {
     github: "https://github.com/Brackets-Studio",
     linkedin: "https://linkedin.com/company/brackets-studio",
   },
+  booking: "https://cal.com/bracketstudio",
 } as const;

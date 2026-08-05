@@ -6,6 +6,8 @@
   "nav": {
     "services": "Services",
     "caseStudies": "Case Studies",
+    "pricing": "Pricing",
+    "blog": "Blog",
     "contact": "Contact",
     "cta": "Let's talk",
     "language": "Language",
@@ -20,6 +22,9 @@
     "subline": "We design and ship custom SaaS platforms, mobile apps and AI-driven integrations on production-grade cloud infrastructure — from prototype to scale.",
     "ctaPrimary": "Start a project",
     "ctaSecondary": "See case studies"
+  },
+  "techStack": {
+    "title": "The tools we reach for every day"
   },
   "services": {
     "eyebrow": "Services",
@@ -87,6 +92,18 @@
     "problem": "Problem",
     "solution": "Solution",
     "result": "Result",
+    "viewCaseStudy": "View case study",
+    "backToWork": "All projects",
+    "visitSite": "Visit site",
+    "overview": "Overview",
+    "highlights": "Highlights",
+    "details": "Project details",
+    "published": "Published",
+    "cta": {
+      "title": "Want a similar result?",
+      "text": "Tell us about your project — let's figure out how to get there together.",
+      "button": "Let's talk"
+    },
     "items": {
       "smartables": {
         "name": "Smartables",
@@ -188,11 +205,187 @@
       "response": "Reply within 24 hours."
     }
   },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Tell us what you need — we reply within one business day with next steps.",
+    "response": "We reply within 24 hours, no commitment.",
+    "bookCall": "Book a free call",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Please enter your name (at least 2 characters)."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "name@company.com",
+        "error": "Please enter a valid email address."
+      },
+      "projectType": {
+        "label": "Project type",
+        "placeholder": "Pick the closest match",
+        "options": {
+          "web": "Web / custom software",
+          "mobile": "Mobile app",
+          "ai": "AI and automation",
+          "other": "Other / not sure yet"
+        }
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us a bit about the project, the goals and the timeline you have in mind.",
+        "error": "Please add a bit more detail (at least 10 characters)."
+      }
+    },
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "privacyNote": "By submitting you agree to our <link>privacy policy</link>.",
+    "success": {
+      "title": "Message sent",
+      "body": "Thanks! We've received your request and will get back to you within 24 hours."
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Notes from the field",
+    "subtitle": "Stack decisions, project retrospectives and practical notes from what we build every day.",
+    "backToBlog": "All posts",
+    "readMore": "Read the post",
+    "empty": {
+      "title": "We're writing the first posts",
+      "body": "The blog just launched: the first technical posts are coming soon. In the meantime, take a look at our case studies."
+    }
+  },
+  "pricing": {
+    "eyebrow": "Investment",
+    "title": "What a project costs",
+    "subtitle": "Every project is different, but here's a sense of the ranges our typical work falls into. After a first call we give you a precise quote, with no surprises.",
+    "tiers": [
+      {
+        "name": "First product",
+        "range": "Starting at a few thousand euros",
+        "timeline": "4-8 weeks",
+        "description": "For getting started from scratch: a website, a simple piece of software, or an MVP with one core feature done well.",
+        "features": [
+          "Initial discovery and solution design",
+          "Development with frequent demos",
+          "Launch and initial support"
+        ]
+      },
+      {
+        "name": "Custom product",
+        "range": "Quoted, based on scope",
+        "timeline": "8+ weeks",
+        "description": "More complex platforms, with multiple integrations, dedicated dashboards or cross-platform apps.",
+        "features": [
+          "Everything in the first product tier",
+          "Integrations with your existing tools",
+          "Architecture designed to scale over time",
+          "Ongoing support after launch"
+        ]
+      },
+      {
+        "name": "AI & dedicated infrastructure",
+        "range": "Larger investment, quoted",
+        "timeline": "Varies with scope",
+        "description": "AI-driven automation, dedicated cloud infrastructure, and telecom/WhatsApp integrations.",
+        "features": [
+          "Everything in the custom product tier",
+          "Automation with OCR, LLMs and AI agents",
+          "Dedicated, monitored cloud infrastructure",
+          "WhatsApp Business and telecom integrations"
+        ]
+      }
+    ],
+    "note": "Pricing varies a lot with complexity: these ranges are indicative, not a price list. The final quote always follows a first free call.",
+    "cta": {
+      "title": "Not sure which tier fits your project?",
+      "text": "Tell us about it — on a free call we'll help you figure out scope, timeline and budget.",
+      "button": "Book a call",
+      "buttonSecondary": "Write to us"
+    }
+  },
   "footer": {
     "tagline": "Software, mobile, AI and cloud development.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legal": {
+      "privacy": "Privacy",
+      "cookiePolicy": "Cookies"
+    }
+  },
+  "newsletter": {
+    "title": "Updates from the studio",
+    "subtitle": "Every now and then, no spam.",
+    "placeholder": "Your email",
+    "success": "Subscribed! Talk soon.",
+    "error": "Something went wrong, please try again."
   },
   "modal": {
     "close": "Close"
+  },
+  "cookieBanner": {
+    "text": "We only use strictly necessary technical cookies (language and theme). No tracking, no profiling cookies.",
+    "link": "Learn more",
+    "accept": "Got it"
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "updated": "Last updated: August 4, 2026",
+      "intro": "This policy explains how Bracket Studio collects and uses the personal data of people who visit this site or submit the contact form, under Regulation (EU) 2016/679 (\"GDPR\").",
+      "sections": [
+        {
+          "heading": "Data controller",
+          "body": "Bracket Studio, reachable at info@bracketstudio.it, is the controller for the data collected through this site."
+        },
+        {
+          "heading": "Data collected through the contact form",
+          "body": "When you submit the contact form we collect your name, email address, project type (optional) and the content of your message. This data is used solely to respond to your request and evaluate a possible collaboration, and is kept for as long as needed to handle the request and any resulting engagement."
+        },
+        {
+          "heading": "Legal basis",
+          "body": "Processing is based on your consent, given by submitting the form, and on pre-contractual steps requested by you ahead of a possible collaboration."
+        },
+        {
+          "heading": "Data recipients",
+          "body": "Messages sent through the contact form are delivered to our inbox via Brevo (Sendinblue SA), acting as data processor for email delivery. We do not sell or share your data with third parties for marketing purposes."
+        },
+        {
+          "heading": "Data collected automatically",
+          "body": "This site does not use profiling cookies or third-party analytics. The only information stored in your browser is your chosen language and theme (light/dark), to remember your preferences — see our cookie policy for details."
+        },
+        {
+          "heading": "Your rights",
+          "body": "You can request access, correction, deletion or restriction of your data at any time by writing to info@bracketstudio.it. You also have the right to lodge a complaint with your local data protection authority."
+        }
+      ]
+    },
+    "cookiePolicy": {
+      "title": "Cookie policy",
+      "updated": "Last updated: August 4, 2026",
+      "intro": "This site uses a minimal number of cookies and similar technologies, all strictly necessary for the site to work. There are no profiling or third-party advertising cookies.",
+      "tableHeaders": {
+        "name": "Name",
+        "type": "Type",
+        "purpose": "Purpose",
+        "duration": "Duration"
+      },
+      "items": [
+        {
+          "name": "NEXT_LOCALE",
+          "type": "Technical",
+          "purpose": "Remembers your chosen language (Italian/English) between visits.",
+          "duration": "1 year"
+        },
+        {
+          "name": "bracket-theme",
+          "type": "Technical (localStorage, not a cookie)",
+          "purpose": "Remembers your light/dark theme preference on this device.",
+          "duration": "Persistent, until manually cleared"
+        }
+      ],
+      "outro": "Since these cookies are strictly necessary for the site to function, no prior consent is required. You can still clear them at any time from your browser settings."
+    }
   }
 }

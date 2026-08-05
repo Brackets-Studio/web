@@ -4,8 +4,10 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Magnetic } from "@/components/ui/magnetic";
+import { Link } from "@/i18n/navigation";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+const MotionLink = motion.create(Link);
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -47,22 +49,22 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Magnetic>
-            <motion.a
-              href="#contatti"
+            <MotionLink
+              href="/#contatti"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground"
             >
               {t("ctaPrimary")}
-            </motion.a>
+            </MotionLink>
           </Magnetic>
-          <motion.a
-            href="#case-study"
+          <MotionLink
+            href="/#case-study"
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center rounded-[100px] border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-brand"
           >
             {t("ctaSecondary")}
-          </motion.a>
+          </MotionLink>
         </motion.div>
       </div>
     </StackedSection>

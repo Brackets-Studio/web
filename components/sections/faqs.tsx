@@ -11,6 +11,7 @@ import {
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -78,7 +79,7 @@ export function Faqs() {
               </p>
               <div className='flex items-center gap-4 mt-6'>
                 <Button
-                  render={<a href="#contatti" />}
+                  render={<Link href="/#contatti" />}
                   nativeButton={false}
                   className="w-fit"
                 >

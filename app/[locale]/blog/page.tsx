@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
 import { Monogram } from "@/components/ui/monogram";
@@ -42,7 +40,6 @@ export default async function BlogPage() {
 
   return (
     <>
-      <Navbar />
       <StackedSection>
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -60,10 +57,10 @@ export default async function BlogPage() {
               <p className="text-base font-semibold text-foreground">{t("empty.title")}</p>
               <p className="mt-2 text-sm text-foreground-muted">{t("empty.body")}</p>
               <Link
-                href="/#case-study"
+                href="/work"
                 className="mt-6 inline-flex items-center rounded-[100px] border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-brand"
               >
-                {t("backToBlog")}
+                {t("empty.cta")}
               </Link>
             </Reveal>
           ) : (
@@ -112,7 +109,6 @@ export default async function BlogPage() {
           )}
         </div>
       </StackedSection>
-      <Footer />
     </>
   );
 }

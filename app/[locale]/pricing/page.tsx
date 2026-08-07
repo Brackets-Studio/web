@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { CalendarClock, Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
 import { Link } from "@/i18n/navigation";
@@ -40,7 +38,6 @@ export default async function PricingPage() {
 
   return (
     <>
-      <Navbar />
       <StackedSection>
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -103,7 +100,6 @@ export default async function PricingPage() {
           </Reveal>
         </div>
       </StackedSection>
-      <Footer />
     </>
   );
 }

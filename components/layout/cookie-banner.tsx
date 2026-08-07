@@ -41,7 +41,7 @@ export function CookieBanner() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 24 }}
           transition={{ duration: 0.3, ease: EASE_OUT }}
-          className="fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-xl flex-col gap-3 rounded-2xl border border-border bg-background-elevated p-4 shadow-md sm:flex-row sm:items-center sm:justify-between"
+          className="fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-xl flex-col gap-3 rounded-3xl border border-border bg-background-elevated p-4 pl-5.5 shadow-md sm:flex-row sm:items-center sm:justify-between"
         >
           <p className="text-xs text-foreground-muted">
             {t("text")}{" "}

@@ -4,8 +4,6 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { getTranslations } from "next-intl/server";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Monogram } from "@/components/ui/monogram";
 import { Link } from "@/i18n/navigation";
@@ -171,23 +169,24 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd(locale, slug, post)) }}
       />
-      <Navbar />
       <StackedSection className="rounded-t-none!">
-        <div className="relative aspect-21/9 w-full overflow-hidden">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={post.coverImage?.alt ?? post.title}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          ) : (
-            <Monogram title={post.title} />
-          )}
-          <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent" />
+        <div className="mx-auto w-full max-w-6xl sm:px-6 sm:pt-8">
+          <div className="relative aspect-21/9 w-full overflow-hidden sm:aspect-16/6 sm:rounded-2xl sm:border sm:border-border">
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={post.coverImage?.alt ?? post.title}
+                fill
+                priority
+                sizes="(min-width: 640px) 72rem, 100vw"
+                className="object-cover object-top"
+              />
+            ) : (
+              <Monogram title={post.title} />
+            )}
+            <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent sm:hidden" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent sm:hidden" />
+          </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16">
@@ -217,7 +216,6 @@ export default async function BlogPostPage({
           </div>
         </div>
       </StackedSection>
-      <Footer />
     </>
   );
 }

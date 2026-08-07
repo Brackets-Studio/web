@@ -18,7 +18,8 @@ import { Magnetic } from "@/components/ui/magnetic";
 
 const NAV_ITEMS = [
   { href: "/#servizi", key: "services" as const },
-  { href: "/#case-study", key: "caseStudies" as const },
+  { href: "/work", key: "caseStudies" as const },
+  { href: "/team", key: "about" as const },
   { href: "/pricing", key: "pricing" as const },
   { href: "/blog", key: "blog" as const },
 ];
@@ -76,7 +77,7 @@ export function Navbar() {
           }`}
           style={{ transitionTimingFunction: EASE_OUT_CSS }}
         >
-        <div className="mx-auto grid h-16 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6">
+        <div className="mx-auto grid h-16 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 pr-4">
           <Link
             href="/"
             aria-label="Bracket Studio"
@@ -104,7 +105,7 @@ export function Navbar() {
             </motion.p>
           </Link>
 
-          <nav className="col-start-2 hidden items-center gap-8 justify-self-center md:flex">
+          <nav className="col-start-2 hidden items-center gap-4 justify-self-center md:flex">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.key}
@@ -121,6 +122,22 @@ export function Navbar() {
           </nav>
 
           <div className="col-start-3 hidden items-center gap-3 justify-self-end md:flex">
+            {/* Theme + lingua compaiono solo nella navbar espansa (non scrollata):
+                quando la barra collassa a max-w-2xl non c'è spazio, quindi svaniscono. */}
+            <AnimatePresence initial={false}>
+              {!scrolled && (
+                <motion.div
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "auto" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ duration: 0.3, ease: EASE_OUT }}
+                  className="flex items-center gap-2 overflow-hidden"
+                >
+                  <LocaleSwitcher pathname={pathname} />
+                  <ThemeToggle />
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <Magnetic strength={0.25}>
               <MotionLink

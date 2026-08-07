@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Monogram } from "@/components/ui/monogram";
 import { Badge } from "@/components/ui/badge";
@@ -112,28 +110,29 @@ export default async function CaseStudyPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd(locale, slug, caseStudy)) }}
       />
-      <Navbar />
       <StackedSection className="rounded-t-none!">
-        <div className="relative aspect-21/9 w-full overflow-hidden">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={caseStudy.mainImage?.alt ?? caseStudy.name}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          ) : (
-            <Monogram title={caseStudy.name} />
-          )}
-          <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent" />
+        <div className="mx-auto w-full max-w-6xl sm:px-6 sm:pt-8">
+          <div className="relative aspect-21/9 w-full overflow-hidden sm:aspect-16/6 sm:rounded-2xl sm:border sm:border-border">
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={caseStudy.mainImage?.alt ?? caseStudy.name}
+                fill
+                priority
+                sizes="(min-width: 640px) 72rem, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              <Monogram title={caseStudy.name} />
+            )}
+            <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent sm:hidden" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent sm:hidden" />
+          </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Link
-            href="/#case-study"
+            href="/work"
             className="inline-flex items-center gap-2 font-mono text-sm text-foreground-muted transition-colors hover:text-brand"
           >
             <ArrowLeft size={16} />
@@ -285,7 +284,6 @@ export default async function CaseStudyPage({
           </div>
         </div>
       </StackedSection>
-      <Footer />
     </>
   );
 }

@@ -34,7 +34,7 @@ export function CaseStudyCard({
     >
       <Link
         href={`/work/${slug}`}
-        className="group flex w-full flex-col overflow-hidden rounded-lg border border-border bg-background-elevated text-left shadow-sm outline-none transition-colors hover:border-brand focus-visible:ring-2 focus-visible:ring-brand"
+        className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border bg-background/60 text-left shadow-sm outline-none transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand"
       >
         <div className="relative aspect-16/10 w-full overflow-hidden">
           {image ? (
@@ -49,11 +49,14 @@ export function CaseStudyCard({
             <Monogram title={title} />
           )}
 
+          {/* Scrim in alto per rendere leggibili i tag su qualsiasi immagine */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-linear-to-b from-background/70 to-transparent" />
+
           <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-sm border border-border bg-background/70 px-2 py-1 font-mono text-xs text-foreground-muted backdrop-blur-sm"
+                className="rounded-sm border border-border bg-background/70 px-2 py-1 font-mono text-xs text-foreground backdrop-blur-sm"
               >
                 {tag}
               </span>
@@ -62,15 +65,17 @@ export function CaseStudyCard({
         </div>
 
         <div className="flex flex-1 flex-col p-6">
-          <h3 className="text-xl font-semibold tracking-[-0.01em] text-foreground">{title}</h3>
+          <h3 className="text-xl font-semibold tracking-[-0.01em] text-foreground transition-colors group-hover:text-brand">
+            {title}
+          </h3>
 
           <div className="mt-3">
             <p className="font-mono text-xs uppercase tracking-wide text-brand">{resultLabel}</p>
             <p className="mt-2 line-clamp-2 text-sm text-foreground-muted">{result}</p>
           </div>
 
-          <div className="mt-6 flex items-center gap-2 font-mono text-sm text-brand">
-            <span className="transition-[gap] duration-200">{viewLabel}</span>
+          <div className="mt-6 flex items-center gap-2 border-t border-border pt-4 font-mono text-sm text-brand">
+            <span>{viewLabel}</span>
             <span
               aria-hidden
               className="transition-transform duration-200 ease-out group-hover:translate-x-1"

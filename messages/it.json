@@ -6,6 +6,7 @@
   "nav": {
     "services": "Servizi",
     "caseStudies": "Case Study",
+    "about": "Chi siamo",
     "pricing": "Prezzi",
     "blog": "Blog",
     "contact": "Contatti",
@@ -17,9 +18,9 @@
     }
   },
   "hero": {
-    "eyebrow": "Design, Sviluppo, SEO e altro",
-    "headline": "Creiamo il tuo software, dall'idea al prodotto finito",
-    "subline": "Progettiamo siti, app e automazioni intelligenti su misura per la tua azienda, dal primo disegno fino a quando sono online e funzionano.",
+    "eyebrow": "Software · App · AI su misura",
+    "headline": "Dall'idea al software che usi ogni giorno",
+    "subline": "Progettiamo e sviluppiamo siti, app e automazioni intelligenti su misura per la tua azienda — e li portiamo online, facendoli funzionare davvero.",
     "ctaPrimary": "Inizia un progetto",
     "ctaSecondary": "Guarda i nostri lavori"
   },
@@ -87,6 +88,7 @@
     }
   },
   "caseStudies": {
+    "eyebrow": "I nostri lavori",
     "title": "Case Study",
     "subtitle": "Problemi veri, affrontati insieme ai nostri clienti, con soluzioni concrete che si vedono nei numeri e nel tempo risparmiato ogni giorno.",
     "problem": "Problema",
@@ -94,6 +96,10 @@
     "result": "Risultato",
     "viewCaseStudy": "Vedi il case study",
     "backToWork": "Tutti i progetti",
+    "empty": {
+      "title": "I primi case study sono in arrivo",
+      "body": "Stiamo preparando i primi progetti da raccontare. Nel frattempo scrivici: saremo felici di parlare del tuo."
+    },
     "visitSite": "Visita il sito",
     "overview": "Panoramica",
     "highlights": "Punti chiave",
@@ -123,9 +129,48 @@
     }
   },
   "approach": {
-    "eyebrow": "Come lavoriamo",
+    "eyebrow": "Perché Bracket Studio",
     "headline": "Ci occupiamo noi della parte difficile, così il tuo prodotto funziona e basta.",
-    "body": "Ogni collegamento, ogni messa online, ogni imprevisto — seguiti dallo stesso team dal primo giorno, finché non hai più bisogno di noi."
+    "body": "Un solo referente dall'inizio alla fine: ogni collegamento, ogni messa online, ogni imprevisto lo gestiamo noi. Tu pensi al tuo lavoro, del resto ci occupiamo noi."
+  },
+  "about": {
+    "eyebrow": "Chi c'è dietro",
+    "greeting": "Ciao, sono Tobia",
+    "role": "Full-stack developer e founder di Bracket Studio",
+    "location": "Pesaro, Italia",
+    "body": [
+      "Sviluppo prodotti web e mobile che risolvono problemi veri, con cura del dettaglio e soluzioni efficienti pensate per crescere nel tempo.",
+      "Quando scegli Bracket Studio parli direttamente con chi costruisce il tuo prodotto: nessun intermediario, nessun rimpallo. Dalla prima idea al lancio segui sempre la stessa persona."
+    ],
+    "linksLabel": "Dove trovarmi",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "website": "Sito personale"
+    },
+    "metaTitle": "Chi c'è dietro Bracket Studio",
+    "metaDescription": "Bracket Studio è lo studio di Tobia Bartolomei, full-stack developer di Pesaro: web, mobile e automazioni con l'AI, dall'idea al lancio.",
+    "principlesTitle": "I miei principi",
+    "principlesSubtitle": "Tre cose su cui non scendo a compromessi, in ogni progetto.",
+    "principles": [
+      {
+        "title": "Cura del dettaglio",
+        "description": "Ogni dettaglio conta: dall'architettura del codice alla singola interazione che l'utente tocca con mano."
+      },
+      {
+        "title": "Costruito per durare",
+        "description": "Soluzioni efficienti e scalabili, pensate per reggere il carico e crescere insieme alla tua azienda."
+      },
+      {
+        "title": "Un solo referente",
+        "description": "Parli sempre con chi costruisce il tuo prodotto: nessun intermediario, nessun rimpallo, dalla prima idea al lancio."
+      }
+    ],
+    "cta": {
+      "title": "Lavoriamo insieme?",
+      "text": "Raccontami il tuo progetto: ti rispondo entro 24 ore, senza impegno.",
+      "button": "Parliamone"
+    }
   },
   "process": {
     "eyebrow": "Il nostro percorso",
@@ -149,7 +194,7 @@
   "testimonials": {
     "eyebrow": "Testimonianze",
     "title": "Non fidarti solo delle nostre parole",
-    "subtitle": "Contenuto di esempio, in attesa delle recensioni vere dei nostri clienti: qui racconteremo la loro esperienza diretta di lavoro con noi.",
+    "subtitle": "Le parole di chi ha lavorato con noi: esperienze dirette delle aziende che hanno scelto Bracket Studio.",
     "items": [
       {
         "quote": "Il team ha capito subito il problema e ci ha dato un programma che usiamo ogni giorno senza pensarci più.",
@@ -208,7 +253,7 @@
   "contact": {
     "eyebrow": "Contatti",
     "title": "Parliamo del tuo progetto",
-    "subtitle": "Raccontaci cosa ti serve: rispondiamo entro un giorno lavorativo con i prossimi passi.",
+    "subtitle": "Raccontaci cosa ti serve: rispondiamo entro 24 ore con i prossimi passi.",
     "response": "Rispondiamo entro 24 ore, senza impegno.",
     "bookCall": "Prenota una chiamata gratuita",
     "fields": {
@@ -254,7 +299,8 @@
     "readMore": "Leggi l'articolo",
     "empty": {
       "title": "Stiamo scrivendo i primi articoli",
-      "body": "Il blog è appena nato: i primi articoli tecnici arrivano a breve. Nel frattempo dai un'occhiata ai nostri case study."
+      "body": "Il blog è appena nato: i primi articoli tecnici arrivano a breve. Nel frattempo dai un'occhiata ai nostri case study.",
+      "cta": "Vedi i nostri progetti"
     }
   },
   "pricing": {
@@ -316,7 +362,8 @@
   },
   "newsletter": {
     "title": "Novità dallo studio",
-    "subtitle": "Un'email ogni tanto, niente spam.",
+    "headline": "Resta aggiornato sul nostro lavoro",
+    "subtitle": "Un'email ogni tanto con progetti, esperimenti e novità. Niente spam.",
     "placeholder": "La tua email",
     "success": "Iscritto! A presto.",
     "error": "Qualcosa è andato storto, riprova."

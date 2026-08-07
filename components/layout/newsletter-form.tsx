@@ -15,7 +15,7 @@ function SubmitButton() {
       type="submit"
       disabled={pending}
       aria-label="Iscriviti"
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand text-brand-foreground transition-transform hover:scale-[1.05] active:scale-[0.95] disabled:pointer-events-none disabled:opacity-60"
+      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand-foreground text-brand transition-transform hover:scale-[1.05] active:scale-[0.95] disabled:pointer-events-none disabled:opacity-60"
     >
       {pending ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <ArrowRight className="size-4" aria-hidden />}
     </button>
@@ -28,8 +28,8 @@ export function NewsletterForm() {
 
   if (state.status === "success") {
     return (
-      <p className="flex items-center gap-2 text-sm text-foreground">
-        <Check className="size-4 text-brand" aria-hidden />
+      <p className="flex items-center gap-2 text-sm text-brand-foreground">
+        <Check className="size-4" aria-hidden />
         {t("success")}
       </p>
     );
@@ -37,7 +37,7 @@ export function NewsletterForm() {
 
   return (
     <form action={formAction} className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 rounded-md border border-border bg-background px-3 pr-1.5 py-1.5 focus-within:border-brand">
+      <div className="flex items-center gap-2 rounded-md border border-brand-foreground/20 bg-background px-3 pr-1.5 py-1.5 focus-within:border-brand-foreground">
         <input
           type="email"
           name="email"

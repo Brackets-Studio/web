@@ -6,6 +6,8 @@ import type { CaseStudyListItem } from "@/sanity/types";
 import { CaseStudyCard } from "@/components/ui/case-study-card";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
+import { Link } from "@/i18n/navigation";
+import { ArrowUpRight } from "lucide-react";
 
 export async function CaseStudies() {
   const locale = await getLocale();
@@ -23,7 +25,10 @@ export async function CaseStudies() {
     <StackedSection id="case-study" className="bg-neutral-200/20 dark:bg-neutral-900">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-[-0.02em] text-foreground">
+          <p className="mb-6 w-fit tracking-wider uppercase font-mono text-sm bg-muted/50 shadow-xl shadow-border/70 px-3 py-1 rounded-full border border-border">
+            {t("eyebrow")}
+          </p>
+          <h2 className="text-4xl font-bold tracking-[-0.02em] text-foreground">
             {t("title")}
           </h2>
           <p className="mt-3 max-w-md text-foreground-muted">{t("subtitle")}</p>
@@ -48,6 +53,19 @@ export async function CaseStudies() {
             />
           ))}
         </div>
+
+        <Reveal className="mt-12 flex justify-center">
+          <Link
+            href="/work"
+            className="group inline-flex items-center gap-2 rounded-[100px] border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-brand"
+          >
+            {t("backToWork")}
+            <ArrowUpRight
+              size={16}
+              className="text-brand transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
+        </Reveal>
       </div>
     </StackedSection>
   );

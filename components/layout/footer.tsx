@@ -2,11 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
-import { BracketMark } from "@/components/ui/bracket-mark";
 import LocaleSwitcher from "../utils/LocaleSwitcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import { ThemeToggle } from "../theme/theme-toggle";
-import { NewsletterForm } from "./newsletter-form";
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/Brackets-Studio" },
@@ -17,51 +15,62 @@ const SOCIAL_LINKS = [
 export function Footer() {
   const pathname = usePathname();
   const t = useTranslations("footer");
-  const newsletterT = useTranslations("newsletter");
   const year = new Date().getFullYear();
 
   return (
-    <StackedSection as="footer" last>
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex items-start gap-2">
-          <BracketMark className="mt-0.5 text-lg leading-none text-foreground" />
-          <div className="flex flex-col gap-2">
-            <div>
-              <p className="font-mono text-sm font-medium">Bracket Studio</p>
-              <p className="mt-1 text-sm text-foreground-muted">{t("tagline")}</p>
-            </div>
-            <div className="mt-2 flex items-center gap-2">
+    <StackedSection as="footer" last className='mt-20'>
+      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pt-16">
+        {/* Top row: tagline + controls / social links */}
+        <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-4">
+            <p className="max-w-xs text-sm text-foreground-muted">{t("tagline")}</p>
+            <div className="flex items-center gap-2">
               <ThemeToggle />
               <LocaleSwitcher pathname={pathname} />
             </div>
           </div>
+
+          <nav className="flex flex-col gap-2 font-mono text-sm sm:items-end">
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-foreground-muted transition-colors hover:text-brand"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
         </div>
 
-        <div className="w-full max-w-xs sm:max-w-60">
-          <p className="text-sm font-medium text-foreground">{newsletterT("title")}</p>
-          <p className="mt-1 text-xs text-foreground-muted">{newsletterT("subtitle")}</p>
-          <div className="mt-3">
-            <NewsletterForm />
-          </div>
-        </div>
-
-        <nav className="flex flex-col gap-2 font-mono text-sm sm:items-end">
-          {SOCIAL_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="text-foreground-muted transition-colors hover:text-brand"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Big logo — SVG auto-fits the wordmark to the full container width,
+            so it's always as large as max-w-6xl allows and scales fluidly. */}
+        <svg
+          viewBox="0 0 680 84"
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label="Bracket Studio"
+          className="block w-full text-foreground select-none"
+        >
+          <text
+            x="340"
+            y="68"
+            textAnchor="middle"
+            textLength="680"
+            lengthAdjust="spacingAndGlyphs"
+            fontSize="92"
+            fill="currentColor"
+            style={{ fontFamily: "var(--font-bricolage)", fontWeight: 700 }}
+          >
+            Bracket Studio
+          </text>
+        </svg>
       </div>
 
-
-      <div className="border-t border-border px-6 py-6">
+      {/* Bottom bar */}
+      <div className="mt-8 border-t border-border px-6 py-6">
         <div className="mx-auto flex max-w-6xl flex-col-reverse items-start justify-between gap-4 text-xs text-foreground-muted sm:flex-row sm:items-center">
           <p>© {year} Bracket Studio. {t("rights")}</p>
           <nav className="flex items-center gap-4 font-mono">

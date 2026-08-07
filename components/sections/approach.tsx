@@ -40,7 +40,7 @@ export function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.3, ease: EASE_OUT }}
-            className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-sm text-brand backdrop-blur-sm"
+            className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 font-mono text-sm text-brand backdrop-blur-sm"
           >
             <span className="size-1.5 rounded-full bg-brand" />
             {t("eyebrow")}
@@ -61,7 +61,7 @@ export function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.4, delay: 0.1, ease: EASE_OUT }}
-            className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground"
+            className="mt-6 max-w-md text-lg leading-relaxed text-foreground-muted"
           >
             {t("body")}
           </motion.p>
@@ -90,7 +90,7 @@ export function Approach() {
               }}
             />
             <Image
-              src="/approach-image.png"
+              src="/assets/approach-image.png"
               alt="Approach"
               fill
               className="object-cover"

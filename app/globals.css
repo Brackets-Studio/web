@@ -165,3 +165,23 @@ footer[id] {
     scroll-behavior: auto !important;
   }
 }
+
+/* Marquee loghi (tech-stack) — anima solo transform, gestito dal compositor
+   (costo GPU trascurabile). Le due tracce identiche rendono il loop continuo;
+   -50% = larghezza di una traccia. Si ferma all'hover e con reduced-motion. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}

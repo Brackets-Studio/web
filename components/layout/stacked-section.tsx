@@ -1,9 +1,7 @@
-import type { ReactNode, Ref } from "react";
+import type { ComponentPropsWithoutRef, ReactNode, Ref } from "react";
 import { cn } from "@/lib/utils";
 
-type StackedSectionProps = {
-  id?: string;
-  className?: string;
+type StackedSectionProps = ComponentPropsWithoutRef<"section"> & {
   children: ReactNode;
   /** Renders as a <footer> for the last, semantically-footer block. */
   as?: "section" | "footer";
@@ -13,22 +11,22 @@ type StackedSectionProps = {
 };
 
 export function StackedSection({
-  id,
   className,
   children,
   as: Tag = "section",
   last = false,
   ref,
+  ...rest
 }: StackedSectionProps) {
   return (
     <Tag
-      id={id}
       ref={ref}
       className={cn(
         "relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem]",
         !last && "mb-3 sm:mb-4",
         className,
       )}
+      {...rest}
     >
       {children}
     </Tag>

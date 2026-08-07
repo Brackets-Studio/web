@@ -2,15 +2,15 @@
 
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Search, Layers, Rocket } from "lucide-react";
+import Image from "next/image";
 import { StackedSection } from "@/components/layout/stacked-section";
 
 const STEP_KEYS = ["discovery", "build", "launch"] as const;
 
-const STEP_ICONS = {
-  discovery: Search,
-  build: Layers,
-  launch: Rocket,
+const STEP_IMAGES = {
+  discovery: "/processes/chatting.png",
+  build: "/processes/building.png",
+  launch: "/processes/launching.png",
 } as const;
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -44,7 +44,6 @@ export function Process() {
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {STEP_KEYS.map((key, index) => {
             const raw = t.raw(`steps.${key}`) as StepRaw;
-            const Icon = STEP_ICONS[key];
             return (
               <motion.div
                 key={key}
@@ -52,18 +51,38 @@ export function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.35, delay: index * 0.08, ease: EASE_OUT }}
-                className="rounded-lg relative border border-border bg-background-elevated p-6 shadow-sm"
+                className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-background-elevated shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md"
               >
-                <div className="flex size-10 items-center justify-center rounded-md border border-border bg-muted/50 font-mono text-xs text-brand">
-                  <Icon className="size-4.5" strokeWidth={1.75} />
+                {/* Banner immagine full-bleed in cima */}
+                <div className="relative flex h-44 items-center justify-center overflow-hidden bg-linear-to-br from-muted/50 to-transparent">
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.05]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)",
+                      backgroundSize: "32px 32px",
+                    }}
+                  />
+                  <span className="absolute left-4 top-4 flex items-center gap-2 rounded-xl border border-border bg-background/70 px-2.5 py-1 font-mono text-sm text-brand backdrop-blur-sm">
+                    <span className="size-1.5 rounded-full bg-brand" />
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <Image
+                    src={STEP_IMAGES[key]}
+                    alt=""
+                    width={220}
+                    height={220}
+                    sizes="(min-width: 640px) 20vw, 60vw"
+                    className="h-32 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
                 </div>
-                <span className="absolute top-4 right-4 block font-mono text-4xl text-foreground-muted">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-2 text-lg font-semibold tracking-[-0.01em] text-foreground">
-                  {raw.title}
-                </h3>
-                <p className="mt-2 text-sm text-foreground-muted">{raw.description}</p>
+
+                <div className="px-6 py-4 border-t border-border">
+                  <h3 className="text-lg font-semibold tracking-[-0.01em] text-foreground">
+                    {raw.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-foreground-muted">{raw.description}</p>
+                </div>
               </motion.div>
             );
           })}

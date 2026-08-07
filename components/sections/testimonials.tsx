@@ -1,10 +1,23 @@
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Quote } from "lucide-react";
 import { sanityFetch } from "@/sanity/client";
 import { TESTIMONIALS_QUERY } from "@/sanity/queries";
+import { urlFor } from "@/sanity/image";
 import type { Testimonial } from "@/sanity/types";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
+
+// Iniziali come fallback finché una testimonianza non ha ancora l'avatar,
+// così la card resta pulita e non mostra mai un'immagine rotta.
+function initials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
 export async function Testimonials() {
   const locale = await getLocale();
@@ -43,9 +56,27 @@ export async function Testimonials() {
                 <blockquote className="mt-4 flex-1 text-sm text-foreground">
                   {item.quote}
                 </blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4">
-                  <p className="text-sm font-medium text-foreground">{item.authorName}</p>
-                  <p className="text-xs text-foreground-muted">{item.authorRole}</p>
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
+                  {item.avatar?.asset ? (
+                    <Image
+                      src={urlFor(item.avatar).width(96).height(96).fit("crop").url()}
+                      alt={item.avatar.alt ?? item.authorName}
+                      width={40}
+                      height={40}
+                      className="size-10 shrink-0 rounded-full object-cover ring-1 ring-border"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden
+                      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-medium text-foreground-muted ring-1 ring-border"
+                    >
+                      {initials(item.authorName)}
+                    </span>
+                  )}
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{item.authorName}</p>
+                    <p className="text-xs text-foreground-muted">{item.authorRole}</p>
+                  </div>
                 </figcaption>
               </figure>
             </Reveal>

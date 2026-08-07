@@ -33,6 +33,7 @@ export function Cursor() {
   );
   const [hovering, setHovering] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [inverted, setInverted] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -52,6 +53,7 @@ export function Cursor() {
     const handleOver = (e: PointerEvent) => {
       const target = e.target as HTMLElement | null;
       setHovering(Boolean(target?.closest(HOVER_SELECTOR)));
+      setInverted(Boolean(target?.closest("[data-cursor-invert]")));
     };
     const handleLeaveWindow = () => setVisible(false);
 
@@ -69,6 +71,8 @@ export function Cursor() {
 
   if (!enabled) return null;
 
+  const cursorColor = inverted ? "var(--brand-foreground)" : "var(--brand)";
+
   return (
     <motion.div
       aria-hidden
@@ -79,25 +83,25 @@ export function Cursor() {
     >
       <motion.span
         className="absolute top-1/2 left-1/2 block size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{ backgroundColor: "var(--brand)" }}
+        style={{ backgroundColor: cursorColor }}
         animate={{ opacity: hovering ? 0 : 1, scale: hovering ? 0 : 1 }}
         transition={{ duration: 0.2, ease: RING_EASE }}
       />
       <motion.div
         className="relative flex items-center justify-center rounded-full border-2"
-        style={{ borderColor: "var(--brand)" }}
+        style={{ borderColor: cursorColor }}
         animate={{ width: hovering ? 44 : 26, height: hovering ? 44 : 26 }}
         transition={{ duration: 0.25, ease: RING_EASE }}
       >
         <motion.span
           className="absolute inset-0 rounded-full"
-          style={{ backgroundColor: "var(--brand)" }}
+          style={{ backgroundColor: cursorColor }}
           animate={{ opacity: hovering ? 0.12 : 0 }}
           transition={{ duration: 0.25, ease: RING_EASE }}
         />
         <motion.span
           className="relative font-mono text-[11px] font-bold tracking-tight"
-          style={{ color: "var(--brand)" }}
+          style={{ color: cursorColor }}
           animate={{ opacity: hovering ? 1 : 0, scale: hovering ? 1 : 0.5 }}
           transition={{ duration: 0.2, ease: RING_EASE }}
         >

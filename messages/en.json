@@ -6,6 +6,7 @@
   "nav": {
     "services": "Services",
     "caseStudies": "Case Studies",
+    "about": "About",
     "pricing": "Pricing",
     "blog": "Blog",
     "contact": "Contact",
@@ -17,7 +18,7 @@
     }
   },
   "hero": {
-    "eyebrow": "Design, Development, SEO and more",
+    "eyebrow": "Custom software · Apps · AI",
     "headline": "Software, automation and cloud infrastructure, engineered end-to-end",
     "subline": "We design and ship custom SaaS platforms, mobile apps and AI-driven integrations on production-grade cloud infrastructure — from prototype to scale.",
     "ctaPrimary": "Start a project",
@@ -87,6 +88,7 @@
     }
   },
   "caseStudies": {
+    "eyebrow": "Our projects",
     "title": "Case Studies",
     "subtitle": "Real problems, tackled alongside our clients, with measurable outcomes you can see in the numbers and in the hours saved every week.",
     "problem": "Problem",
@@ -94,6 +96,10 @@
     "result": "Result",
     "viewCaseStudy": "View case study",
     "backToWork": "All projects",
+    "empty": {
+      "title": "First case studies coming soon",
+      "body": "We're putting together the first projects to share. In the meantime, get in touch — we'd love to hear about yours."
+    },
     "visitSite": "Visit site",
     "overview": "Overview",
     "highlights": "Highlights",
@@ -123,9 +129,48 @@
     }
   },
   "approach": {
-    "eyebrow": "How we work",
+    "eyebrow": "Why Bracket Studio",
     "headline": "We build the boring parts so your product just works.",
-    "body": "Every integration, every deploy, every edge case — handled by the same team from day one to the day you stop needing us."
+    "body": "One point of contact from start to finish: every integration, every deploy, every edge case is on us. You focus on your work — we handle the rest."
+  },
+  "about": {
+    "eyebrow": "Behind the studio",
+    "greeting": "Hi, I'm Tobia",
+    "role": "Full-stack developer and founder of Bracket Studio",
+    "location": "Pesaro, Italy",
+    "body": [
+      "I build web and mobile products that solve real problems, with attention to detail and efficient solutions designed to scale over time.",
+      "With Bracket Studio you talk directly to the person building your product — no middlemen, no hand-offs. From first idea to launch, you always deal with the same person."
+    ],
+    "linksLabel": "Find me",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "website": "Personal site"
+    },
+    "metaTitle": "The person behind Bracket Studio",
+    "metaDescription": "Bracket Studio is the studio of Tobia Bartolomei, a full-stack developer based in Pesaro, Italy: web, mobile and AI automation, from idea to launch.",
+    "principlesTitle": "What I stand for",
+    "principlesSubtitle": "Three things I never compromise on, in every project.",
+    "principles": [
+      {
+        "title": "Attention to detail",
+        "description": "Every detail matters — from code architecture to the single interaction the user actually touches."
+      },
+      {
+        "title": "Built to last",
+        "description": "Efficient, scalable solutions designed to handle the load and grow with your business."
+      },
+      {
+        "title": "One point of contact",
+        "description": "You always talk to the person building your product: no middlemen, no hand-offs, from first idea to launch."
+      }
+    ],
+    "cta": {
+      "title": "Let's work together?",
+      "text": "Tell me about your project — I'll get back to you within 24 hours, no commitment.",
+      "button": "Let's talk"
+    }
   },
   "process": {
     "eyebrow": "Our process",
@@ -149,7 +194,7 @@
   "testimonials": {
     "eyebrow": "Testimonials",
     "title": "Don't just take our word for it",
-    "subtitle": "Placeholder content for now — soon to be replaced with real feedback from the clients we've worked with, in their own words.",
+    "subtitle": "In the words of the people we've worked with — direct experiences from the companies that chose Bracket Studio.",
     "items": [
       {
         "quote": "The team understood the problem right away and delivered a platform we now use every day without thinking twice.",
@@ -208,7 +253,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your project",
-    "subtitle": "Tell us what you need — we reply within one business day with next steps.",
+    "subtitle": "Tell us what you need — we reply within 24 hours with next steps.",
     "response": "We reply within 24 hours, no commitment.",
     "bookCall": "Book a free call",
     "fields": {
@@ -254,7 +299,8 @@
     "readMore": "Read the post",
     "empty": {
       "title": "We're writing the first posts",
-      "body": "The blog just launched: the first technical posts are coming soon. In the meantime, take a look at our case studies."
+      "body": "The blog just launched: the first technical posts are coming soon. In the meantime, take a look at our case studies.",
+      "cta": "See our work"
     }
   },
   "pricing": {
@@ -316,7 +362,8 @@
   },
   "newsletter": {
     "title": "Updates from the studio",
-    "subtitle": "Every now and then, no spam.",
+    "headline": "Stay in the loop with our work",
+    "subtitle": "An email every now and then with projects, experiments and news. No spam.",
     "placeholder": "Your email",
     "success": "Subscribed! Talk soon.",
     "error": "Something went wrong, please try again."

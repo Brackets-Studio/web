@@ -48,6 +48,6 @@ export const testimonial = defineType({
     }),
   ],
   preview: {
-    select: { title: "authorName", subtitle: "quote.en" },
+    select: { title: "authorName", subtitle: "quote.en", media: 'avatar' },
   },
 });

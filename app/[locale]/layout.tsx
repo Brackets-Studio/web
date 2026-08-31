@@ -5,12 +5,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { FaviconSwitcher } from "@/components/theme/favicon-switcher";
 import { HtmlLangSync } from "@/components/theme/html-lang-sync";
-import { Cursor } from "@/components/ui/cursor";
 import { CookieBanner } from "@/components/layout/cookie-banner";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -87,7 +83,7 @@ function organizationJsonLd(locale: string) {
     "@type": "Organization",
     name: siteConfig.name,
     url: `${siteConfig.url}/${locale}`,
-    logo: `${siteConfig.url}/favicon-dark.png`,
+    logo: `${siteConfig.url}/android-chrome-512x512.png`,
     email: siteConfig.email,
     sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
   };
@@ -130,11 +126,10 @@ export default async function LocaleLayout({
       />
       <ThemeProvider>
         <HtmlLangSync locale={locale} />
-        <FaviconSwitcher />
-        <Cursor />
-        <Navbar />
+        {/* Navbar e Footer stanno in `(site)/layout.tsx`: le landing verticali
+            devono restare anonime. Il banner cookie invece resta qui — è un
+            obbligo legale e vale su ogni pagina, verticali comprese. */}
         {children}
-        <Footer />
         <CookieBanner />
       </ThemeProvider>
     </NextIntlClientProvider>

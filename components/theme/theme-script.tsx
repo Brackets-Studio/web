@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 const THEME_INIT_SCRIPT = `
 (function () {
   try {
@@ -8,19 +6,19 @@ const THEME_INIT_SCRIPT = `
       ? stored
       : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     document.documentElement.classList.add(theme);
-    var favicon = document.getElementById("theme-favicon");
-    if (favicon) {
-      favicon.setAttribute("href", theme === "dark" ? "/favicon-white.png" : "/favicon-dark.png");
-    }
   } catch (e) {}
 })();
 `;
 
+// next/script's beforeInteractive strategy relies on a render-collected queue
+// that the App Router's not-found boundary doesn't populate, leaving the
+// hydration mismatch that trips React's "script tag" warning on 404s. A plain
+// inline <script> is rendered directly in the tree on every path (including
+// not-found), so it stays in sync with the SSR markup and hydrates cleanly.
 export function ThemeScript() {
   return (
-    <Script
+    <script
       id="theme-init"
-      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
     />
   );

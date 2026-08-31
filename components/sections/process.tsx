@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { StackedSection } from "@/components/layout/stacked-section";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const STEP_KEYS = ["discovery", "build", "launch"] as const;
 
@@ -24,22 +25,13 @@ export function Process() {
   const t = useTranslations("process");
 
   return (
-    <StackedSection id="processo">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.35, ease: EASE_OUT }}
-        >
-          <p className="mb-6 w-fit uppercase font-mono text-sm bg-muted/50 shadow-xl shadow-border/70 px-3 py-1 rounded-full border border-border">
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-4xl font-bold tracking-[-0.02em] text-foreground">
-            {t("title")}
-          </h2>
-          <p className="mt-3 max-w-md text-foreground-muted">{t("subtitle")}</p>
-        </motion.div>
+    <StackedSection id="processo" className="bg-[#eeece6] dark:bg-neutral-900">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeader
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+        />
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {STEP_KEYS.map((key, index) => {
@@ -51,7 +43,7 @@ export function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.35, delay: index * 0.08, ease: EASE_OUT }}
-                className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-background-elevated shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md"
+                className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-background-elevated shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md"
               >
                 {/* Banner immagine full-bleed in cima */}
                 <div className="relative flex h-44 items-center justify-center overflow-hidden bg-linear-to-br from-muted/50 to-transparent">

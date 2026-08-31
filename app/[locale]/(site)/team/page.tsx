@@ -103,16 +103,16 @@ export default async function TeamPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               {LINKS.map(({ key, href, Icon }) => (
-                <a
+                <Link
                   key={key}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-[100px] border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-brand"
+                  className="inline-flex bg-background-elevated items-center gap-2 rounded-[100px] border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-brand"
                 >
                   <Icon className="size-4 text-brand" />
                   {t(`links.${key}`)}
-                </a>
+                </Link>
               ))}
             </div>
           </Reveal>

@@ -110,26 +110,25 @@ export default async function CaseStudyPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd(locale, slug, caseStudy)) }}
       />
-      <StackedSection className="rounded-t-none!">
-        <div className="mx-auto w-full max-w-6xl sm:px-6 sm:pt-8">
-          <div className="relative aspect-21/9 w-full overflow-hidden sm:aspect-16/6 sm:rounded-2xl sm:border sm:border-border">
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={caseStudy.mainImage?.alt ?? caseStudy.name}
-                fill
-                priority
-                sizes="(min-width: 640px) 72rem, 100vw"
-                className="object-cover"
-              />
-            ) : (
-              <Monogram title={caseStudy.name} />
-            )}
-            <div className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background via-background/20 to-transparent sm:hidden" />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background via-background/20 to-transparent sm:hidden" />
+      <div className="mx-auto max-w-6xl w-full pt-8">
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={caseStudy.mainImage?.alt ?? caseStudy.name}
+            width={1600}
+            height={1000}
+            priority
+            sizes="(min-width: 1280px) 72rem, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 3rem)"
+            className="h-auto w-full"
+          />
+        ) : (
+          <div className="relative h-[40vh] w-full overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem]">
+            <Monogram title={caseStudy.name} />
           </div>
-        </div>
+        )}
+      </div>
 
+      <StackedSection className="rounded-t-none!">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Link
             href="/work"
@@ -139,14 +138,9 @@ export default async function CaseStudyPage({
             {t("backToWork")}
           </Link>
 
-          <div className="mt-6 flex flex-col gap-8 border-b border-border pb-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-8 border-b border-border pb-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <div className="flex flex-wrap items-center gap-3">
-                {caseStudy.tags.map((tag) => (
-                  <Badge key={tag}>{tag}</Badge>
-                ))}
-              </div>
-              <h1 className="mt-5 text-4xl font-bold tracking-[-0.02em] text-foreground sm:text-5xl">
+              <h1 className="text-4xl font-bold tracking-[-0.02em] text-foreground sm:text-5xl">
                 {caseStudy.name}
               </h1>
               <p className="mt-4 text-lg text-foreground-muted">{caseStudy.excerpt}</p>
@@ -169,7 +163,17 @@ export default async function CaseStudyPage({
           </div>
 
           {caseStudy.metrics.length > 0 && (
-            <dl className="mt-10 grid grid-cols-2 divide-y divide-border overflow-hidden rounded-lg border border-border bg-background-elevated sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+            <dl
+              className={`mt-10 grid grid-cols-1 divide-y divide-border overflow-hidden rounded-lg border border-border bg-background-elevated sm:divide-x sm:divide-y-0 ${
+                caseStudy.metrics.length === 1
+                  ? ""
+                  : caseStudy.metrics.length === 2
+                    ? "sm:grid-cols-2"
+                    : caseStudy.metrics.length === 3
+                      ? "sm:grid-cols-3"
+                      : "sm:grid-cols-4"
+              }`}
+            >
               {caseStudy.metrics.map((metric) => (
                 <div key={`${metric.label}-${metric.value}`} className="p-6">
                   <dt className="font-mono text-3xl font-bold text-brand">{metric.value}</dt>

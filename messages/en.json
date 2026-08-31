@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "Bracket Studio — Software, mobile, AI & cloud development",
-    "description": "Software development studio specialized in custom SaaS, mobile apps, AI automation and cloud infrastructure."
+    "title": "Bracket Studio | Websites, internal tools and apps for small businesses",
+    "description": "A software studio in Pesaro, Italy. We build custom websites, internal tools and apps for small and mid-sized businesses, put them online and keep looking after them."
   },
   "nav": {
     "services": "Services",
-    "caseStudies": "Case Studies",
+    "caseStudies": "Work",
     "about": "About",
     "pricing": "Pricing",
     "blog": "Blog",
@@ -15,132 +15,120 @@
     "locales": {
       "it": "Italiano",
       "en": "English"
-    }
+    },
+    "analyze": "Free site check",
+    "resources": "Resources",
+    "whatWeDo": "What we do",
+    "howWeWork": "How we work",
+    "servicesIndex": "All services"
   },
   "hero": {
-    "eyebrow": "Custom software · Apps · AI",
-    "headline": "Software, automation and cloud infrastructure, engineered end-to-end",
-    "subline": "We design and ship custom SaaS platforms, mobile apps and AI-driven integrations on production-grade cloud infrastructure — from prototype to scale.",
-    "ctaPrimary": "Start a project",
-    "ctaSecondary": "See case studies"
+    "eyebrow": "Software studio · Pesaro, Italy",
+    "headline": "The software your business runs on, done properly.",
+    "subline": "Websites, internal tools and apps built for small and mid-sized businesses. We design them, put them online and keep looking after them — and you always talk to the person building them.",
+    "ctaPrimary": "Tell us what you need",
+    "ctaSecondary": "See the work",
+    "proof": [
+      "We reply within 24 hours",
+      "The code stays yours",
+      "One point of contact, start to finish"
+    ]
   },
   "techStack": {
-    "title": "The tools we reach for every day"
+    "title": "What we build it with",
+    "subtitle": "Standard, widely used technology — not a closed system. If you ever switch supplier, anyone can pick up where we left off."
   },
   "services": {
-    "eyebrow": "Services",
-    "title": "Powered by the right tools. Run by real people",
-    "subtitle": "We're your one-stop team for software that actually works — from the first technical decision to the infrastructure that keeps your product running in production.",
-    "cta": "Let's talk about your project",
-    "items": {
-      "web": {
-        "title": "Web / Custom SaaS",
-        "description": "Tailored SaaS products, dashboards and scalable backends.",
-        "tags": ["Next.js", "TypeScript", "PostgreSQL"],
-        "detail": {
-          "summary": "We design and build custom SaaS products, from internal dashboards to multi-tenant platforms for your own customers. Architected to scale, with ongoing attention to performance and long-term maintainability.",
-          "highlights": [
-            "Custom dashboards and control panels",
-            "Scalable backend with clean, documented APIs",
-            "Multi-tenant architecture when it's needed"
-          ]
-        }
-      },
-      "mobile": {
-        "title": "Mobile",
-        "description": "Native and cross-platform apps for iOS and Android.",
-        "tags": ["React Native", "Expo", "Swift"],
-        "detail": {
-          "summary": "We build native and cross-platform mobile apps, from prototype to store release, with close attention to perceived performance and integration with your existing systems.",
-          "highlights": [
-            "Cross-platform with React Native/Expo for fast time-to-market",
-            "Native Swift development where performance demands it",
-            "App Store and Play Store publishing and management"
-          ]
-        }
-      },
-      "ai": {
-        "title": "AI / Automation",
-        "description": "Document automation, OCR and AI agents wired into your workflows.",
-        "tags": ["OCR", "LLM", "Agents"],
-        "detail": {
-          "summary": "We automate repetitive document processes with OCR and LLMs, embedding AI agents directly into your existing workflows to cut manual work and errors.",
-          "highlights": [
-            "Automatic data extraction from documents and forms",
-            "AI agents embedded in operational processes",
-            "Tailored automation, not generic off-the-shelf tools"
-          ]
-        }
-      },
-      "cloud": {
-        "title": "Cloud / Integrations",
-        "description": "Custom cloud infrastructure and telecom integrations.",
-        "tags": ["WhatsApp API", "Telnyx", "AWS"],
-        "detail": {
-          "summary": "We design reliable cloud infrastructure and telecom integrations (WhatsApp Business, Telnyx) to automate communications and notifications, with deployment and monitoring handled end-to-end.",
-          "highlights": [
-            "WhatsApp Business API and Telnyx integration",
-            "Cloud infrastructure on AWS, monitored and scalable",
-            "Automated telecom notifications and communications"
-          ]
-        }
+    "eyebrow": "What we do",
+    "title": "What we can build for you",
+    "subtitle": "One point of contact for all of it: from the first idea to the tool you use every day, and the support you need afterwards.",
+    "cta": "Let's talk about your project"
+  },
+  "servizi": {
+    "index": {
+      "eyebrow": "Services",
+      "title": "What we can build for you",
+      "subtitle": "One point of contact for all of it: from the first idea to the tool you use every day, and the support you need afterwards."
+    },
+    "detail": {
+      "highlightsTitle": "What's included",
+      "priceFrom": "Starting from",
+      "timelineLabel": "usually",
+      "weeks": "{count, plural, one {# week} other {# weeks}}",
+      "ctaQuote": "Get a quote",
+      "ctaContact": "Talk to us",
+      "back": "All services"
+    }
+  },
+  "quote": {
+    "eyebrow": "Get a quote",
+    "title": "How much would your project cost?",
+    "subtitle": "Answer a few questions — we'll show you a realistic range and how long it usually takes.",
+    "stepOf": "Step {current} of {total}",
+    "back": "Back",
+    "next": "Next",
+    "chooseService": "What do you need?",
+    "restart": "Start over",
+    "result": {
+      "priceLabel": "Estimated price",
+      "timelineLabel": "Estimated timeline",
+      "weeks": "{count, plural, one {~# week} other {~# weeks}}",
+      "disclaimerFallback": "This is an estimate, not a fixed quote — we confirm the exact price on a free call."
+    },
+    "form": {
+      "title": "Get this as a real quote",
+      "text": "Leave your name and a contact — we'll get back to you with a fixed price.",
+      "name": "Your name",
+      "contact": "Email or phone",
+      "contactPlaceholder": "you@email.com or your number",
+      "message": "Anything else? (optional)",
+      "messagePlaceholder": "Tell us more about your project…",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "genericError": "Check the highlighted fields and try again.",
+      "success": {
+        "title": "Got it.",
+        "text": "We'll get back to you within 24 hours with a fixed price."
       }
     }
   },
   "caseStudies": {
-    "eyebrow": "Our projects",
-    "title": "Case Studies",
-    "subtitle": "Real problems, tackled alongside our clients, with measurable outcomes you can see in the numbers and in the hours saved every week.",
-    "problem": "Problem",
-    "solution": "Solution",
-    "result": "Result",
-    "viewCaseStudy": "View case study",
-    "backToWork": "All projects",
+    "eyebrow": "Selected work",
+    "title": "Real projects, real clients",
+    "subtitle": "Every project starts from a concrete problem a business had. Here's what wasn't working, what we built, and what changed afterwards.",
+    "problem": "The problem",
+    "solution": "What we built",
+    "result": "How it went",
+    "viewCaseStudy": "View the project",
+    "backToWork": "All work",
     "empty": {
-      "title": "First case studies coming soon",
+      "title": "First projects coming soon",
       "body": "We're putting together the first projects to share. In the meantime, get in touch — we'd love to hear about yours."
     },
     "visitSite": "Visit site",
-    "overview": "Overview",
+    "overview": "In short",
     "highlights": "Highlights",
     "details": "Project details",
     "published": "Published",
     "cta": {
-      "title": "Want a similar result?",
-      "text": "Tell us about your project — let's figure out how to get there together.",
+      "title": "Need something similar?",
+      "text": "Tell us about your case — let's see whether we can help.",
       "button": "Let's talk"
-    },
-    "items": {
-      "smartables": {
-        "name": "Smartables",
-        "problem": "Operational processes handled manually, with data scattered across spreadsheets and channels.",
-        "solution": "Custom SaaS platform with automated document workflows and tailored API integrations.",
-        "result": "Less manual work and a single system for operational monitoring.",
-        "tags": ["Next.js", "OCR", "Cloud"],
-        "detail": {
-          "summary": "Smartables ran its day-to-day operations across spreadsheets, email and disconnected tools, with a growing cost in time and error margin. We built a central platform that unifies data and processes, automating the most repetitive parts of the document workflow.",
-          "highlights": [
-            "Custom SaaS platform built from scratch",
-            "Document automation with integrated OCR",
-            "Scalable cloud infrastructure for future growth"
-          ]
-        }
-      }
     }
   },
   "approach": {
-    "eyebrow": "Why Bracket Studio",
-    "headline": "We build the boring parts so your product just works.",
-    "body": "One point of contact from start to finish: every integration, every deploy, every edge case is on us. You focus on your work — we handle the rest."
+    "eyebrow": "Why us",
+    "headline": "We handle the hard part. You just get the thing that works.",
+    "body": "Integrations, going live, the Saturday-night surprise: those are our problems, not yours. And from start to finish you always talk to the person building your product — not to a middleman who then passes the question on to someone else."
   },
   "about": {
     "eyebrow": "Behind the studio",
     "greeting": "Hi, I'm Tobia",
-    "role": "Full-stack developer and founder of Bracket Studio",
+    "role": "Developer and founder of Bracket Studio",
     "location": "Pesaro, Italy",
     "body": [
-      "I build web and mobile products that solve real problems, with attention to detail and efficient solutions designed to scale over time.",
-      "With Bracket Studio you talk directly to the person building your product — no middlemen, no hand-offs. From first idea to launch, you always deal with the same person."
+      "I build websites, internal tools and apps for businesses with a concrete problem to solve — not showcase projects.",
+      "When you write to Bracket Studio, the person who answers is the person who actually builds your product: no salesperson in between, no questions passed on to someone else. From the first call to launch, you always know who you're talking to."
     ],
     "linksLabel": "Find me",
     "links": {
@@ -148,112 +136,91 @@
       "linkedin": "LinkedIn",
       "website": "Personal site"
     },
-    "metaTitle": "The person behind Bracket Studio",
-    "metaDescription": "Bracket Studio is the studio of Tobia Bartolomei, a full-stack developer based in Pesaro, Italy: web, mobile and AI automation, from idea to launch.",
-    "principlesTitle": "What I stand for",
-    "principlesSubtitle": "Three things I never compromise on, in every project.",
+    "metaTitle": "The people behind Bracket Studio",
+    "metaDescription": "Bracket Studio is the studio of Tobia Bartolomei, a developer based in Pesaro, Italy: custom websites, internal tools and apps for small and mid-sized businesses.",
+    "principlesTitle": "How we work",
+    "principlesSubtitle": "Three things we don't compromise on, in every project.",
     "principles": [
       {
-        "title": "Attention to detail",
-        "description": "Every detail matters — from code architecture to the single interaction the user actually touches."
+        "title": "We speak plainly",
+        "description": "No jargon to look clever. We tell you what it costs, how long it takes and what we can't do — even when that isn't the answer you were hoping for."
       },
       {
         "title": "Built to last",
-        "description": "Efficient, scalable solutions designed to handle the load and grow with your business."
+        "description": "Not the fastest thing to ship, but the thing that still works in two years and that someone else could pick up if they had to."
       },
       {
         "title": "One point of contact",
-        "description": "You always talk to the person building your product: no middlemen, no hand-offs, from first idea to launch."
+        "description": "You always talk to the person building your product: no middlemen, no bounced questions, from the first call to launch."
       }
     ],
     "cta": {
-      "title": "Let's work together?",
-      "text": "Tell me about your project — I'll get back to you within 24 hours, no commitment.",
+      "title": "Shall we work together?",
+      "text": "Tell us about your project — we'll get back to you within 24 hours, no commitment.",
       "button": "Let's talk"
     }
   },
   "process": {
-    "eyebrow": "Our process",
-    "title": "How we work, step by step",
-    "subtitle": "One streamlined process with every tool built in — from the first discovery call through design, development, launch and ongoing post-launch support.",
+    "eyebrow": "How we work",
+    "title": "Three steps, no surprises",
+    "subtitle": "You always know where we are and what's left. From the first conversation through to support after launch.",
     "steps": {
       "discovery": {
-        "title": "Discovery & Analysis",
-        "description": "We analyze your current process, define goals and technical constraints, and design the right architecture before writing a single line of code."
+        "title": "We talk",
+        "description": "You tell us how you work today and what isn't working. We tell you straight away whether we can help, what it costs and how long it takes — before writing a line of code."
       },
       "build": {
-        "title": "Design & Development",
-        "description": "We build in short iterations with frequent demos, so you see the product grow and can course-correct along the way."
+        "title": "We build it",
+        "description": "We work in small steps and show you often. If something feels wrong you say so right away, not at delivery."
       },
       "launch": {
-        "title": "Launch & Support",
-        "description": "We guide the production deploy and stay by your side for monitoring, maintenance and new features."
+        "title": "It goes live, and stays looked after",
+        "description": "We put it online and keep looking after it: monitoring, maintenance, and the changes you'll need along the way."
       }
     }
   },
   "testimonials": {
     "eyebrow": "Testimonials",
-    "title": "Don't just take our word for it",
-    "subtitle": "In the words of the people we've worked with — direct experiences from the companies that chose Bracket Studio.",
-    "items": [
-      {
-        "quote": "The team understood the problem right away and delivered a platform we now use every day without thinking twice.",
-        "name": "Client Name",
-        "role": "Role, Company"
-      },
-      {
-        "quote": "Direct communication and no surprises at delivery. Exactly what you need when you hand your product to someone else.",
-        "name": "Client Name",
-        "role": "Role, Company"
-      },
-      {
-        "quote": "They automated a process that was costing us hours every week. The return showed up within the first month.",
-        "name": "Client Name",
-        "role": "Role, Company"
-      }
-    ]
+    "title": "People who've already worked with us",
+    "subtitle": "Their words, not ours."
   },
   "faqs": {
-    "eyebrow": "FAQ",
-    "title": "Everything you need to know",
-    "subtitle": "The answers to what we get asked most, so you know exactly how we work and what to expect before a project even starts.",
+    "eyebrow": "Questions",
+    "title": "What people always ask",
+    "subtitle": "Answers to the questions that come up most, so you know what to expect before you even get in touch.",
     "items": [
       {
-        "question": "How much does a project cost?",
-        "answer": "It depends on scope and complexity: a lean MVP starts at a few thousand euros, a multi-tenant product with AI and cloud integrations requires more investment. After a first call we give you a clear estimate, with no surprises along the way."
+        "question": "Who actually does the work?",
+        "answer": "The person building your product is the person you talk to. No salesperson who sells you something and then disappears, no questions passed on to someone else: you ask, and the person with their hands on it answers."
       },
       {
-        "question": "How long does it take to launch a project?",
-        "answer": "An MVP is typically ready in 4-8 weeks. More complex projects, with multiple integrations or multi-tenant architectures, take longer — we give you a realistic timeline from the discovery phase."
+        "question": "Do I need to understand the technology?",
+        "answer": "No. Our job is to ask you the right questions and turn the answers into something that works. If we explain something and it isn't clear, that's on us, not you."
       },
       {
-        "question": "What technologies do you use?",
-        "answer": "Next.js and TypeScript for the web, React Native/Expo or native Swift for mobile, PostgreSQL for data, AWS for cloud infrastructure. We pick the stack based on the project, not the other way around."
+        "question": "Will I be locked in to you?",
+        "answer": "No. The code, the domain and the servers are 100% in your name, from day one. If you ever want to move on, you take everything with you and anyone can carry on the work."
       },
       {
-        "question": "Do you offer support after launch?",
-        "answer": "Yes. We stay by your side for monitoring, maintenance and new features: the same team that built the product keeps supporting it after go-live."
+        "question": "And afterwards? If something breaks?",
+        "answer": "We stay on it. Monitoring, maintenance and changes: whoever built it keeps looking after it once it's live."
       },
       {
-        "question": "Do I own the code?",
-        "answer": "Always. The source code, infrastructure and every project asset are 100% yours, with no lock-in or dependency on us."
-      },
-      {
-        "question": "How do we get started?",
-        "answer": "With a no-commitment intro call to understand the project's goals and constraints. From there we propose a scope and estimate, and can kick off the discovery phase."
+        "question": "How do we start?",
+        "answer": "With a free call, no commitment. You tell us what you need, we tell you whether we can help and what it costs. If it isn't a fit, we say so."
       }
     ],
     "cta": {
-      "title": "Still have questions?",
-      "text": "Book a free, no-commitment call and we'll walk you through scope, timeline and budget.",
-      "button": "Contact us",
-      "response": "Reply within 24 hours."
+      "title": "Got another question?",
+      "text": "Call or write: half an hour is usually enough to work out whether it makes sense to work together.",
+      "button": "Get in touch",
+      "response": "We reply within 24 hours."
     }
   },
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your project",
-    "subtitle": "Tell us what you need — we reply within 24 hours with next steps.",
+    "subtitle": "Write us a couple of lines about what you need. We reply within 24 hours, no commitment and no salesperson calling you back.",
     "response": "We reply within 24 hours, no commitment.",
     "bookCall": "Book a free call",
     "fields": {
@@ -268,18 +235,18 @@
         "error": "Please enter a valid email address."
       },
       "projectType": {
-        "label": "Project type",
+        "label": "What you need",
         "placeholder": "Pick the closest match",
         "options": {
-          "web": "Web / custom software",
-          "mobile": "Mobile app",
-          "ai": "AI and automation",
-          "other": "Other / not sure yet"
+          "web": "A website or an internal tool",
+          "mobile": "A mobile app",
+          "ai": "Automating a repetitive job",
+          "other": "Something else / not sure yet"
         }
       },
       "message": {
         "label": "Message",
-        "placeholder": "Tell us a bit about the project, the goals and the timeline you have in mind.",
+        "placeholder": "A couple of lines on what you need and when. It doesn't have to be precise — we'll work it out together.",
         "error": "Please add a bit more detail (at least 10 characters)."
       }
     },
@@ -288,72 +255,298 @@
     "privacyNote": "By submitting you agree to our <link>privacy policy</link>.",
     "success": {
       "title": "Message sent",
-      "body": "Thanks! We've received your request and will get back to you within 24 hours."
+      "body": "Thanks! We've got your message and we'll reply within 24 hours."
     }
   },
   "blog": {
     "eyebrow": "Blog",
-    "title": "Notes from the field",
-    "subtitle": "Stack decisions, project retrospectives and practical notes from what we build every day.",
-    "backToBlog": "All posts",
-    "readMore": "Read the post",
+    "title": "Things we learn along the way",
+    "subtitle": "Notes on projects, technical choices and mistakes we've made — written so they make sense even if you're not in the trade.",
+    "backToBlog": "All articles",
+    "readMore": "Read the article",
     "empty": {
-      "title": "We're writing the first posts",
-      "body": "The blog just launched: the first technical posts are coming soon. In the meantime, take a look at our case studies.",
-      "cta": "See our work"
+      "title": "First articles on the way",
+      "body": "The blog is brand new. In the meantime, have a look at the work we've done.",
+      "cta": "See the work"
     }
   },
   "pricing": {
-    "eyebrow": "Investment",
-    "title": "What a project costs",
-    "subtitle": "Every project is different, but here's a sense of the ranges our typical work falls into. After a first call we give you a precise quote, with no surprises.",
-    "tiers": [
-      {
-        "name": "First product",
-        "range": "Starting at a few thousand euros",
-        "timeline": "4-8 weeks",
-        "description": "For getting started from scratch: a website, a simple piece of software, or an MVP with one core feature done well.",
-        "features": [
-          "Initial discovery and solution design",
-          "Development with frequent demos",
-          "Launch and initial support"
-        ]
-      },
-      {
-        "name": "Custom product",
-        "range": "Quoted, based on scope",
-        "timeline": "8+ weeks",
-        "description": "More complex platforms, with multiple integrations, dedicated dashboards or cross-platform apps.",
-        "features": [
-          "Everything in the first product tier",
-          "Integrations with your existing tools",
-          "Architecture designed to scale over time",
-          "Ongoing support after launch"
-        ]
-      },
-      {
-        "name": "AI & dedicated infrastructure",
-        "range": "Larger investment, quoted",
-        "timeline": "Varies with scope",
-        "description": "AI-driven automation, dedicated cloud infrastructure, and telecom/WhatsApp integrations.",
-        "features": [
-          "Everything in the custom product tier",
-          "Automation with OCR, LLMs and AI agents",
-          "Dedicated, monitored cloud infrastructure",
-          "WhatsApp Business and telecom integrations"
-        ]
-      }
-    ],
-    "note": "Pricing varies a lot with complexity: these ranges are indicative, not a price list. The final quote always follows a first free call.",
+    "eyebrow": "Pricing",
+    "title": "What it costs",
+    "subtitle": "Every project is different, but we don't like an \"it depends\" with no numbers. Here are the real ranges our work falls into. After a half-hour call we give you a written, fixed price.",
+    "note": "These are indicative ranges, not a price list: the final price always comes after a free call, and it's written down and fixed.",
     "cta": {
-      "title": "Not sure which tier fits your project?",
-      "text": "Tell us about it — on a free call we'll help you figure out scope, timeline and budget.",
+      "title": "Not sure which range you're in?",
+      "text": "Tell us about it: half an hour is enough to work out what you need and what it costs.",
       "button": "Book a call",
-      "buttonSecondary": "Write to us"
+      "buttonSecondary": "Get in touch"
+    }
+  },
+  "analyze": {
+    "meta": {
+      "title": "Free website check",
+      "description": "Paste your website address: in about a minute we'll tell you how fast it is, whether it works on a phone, and what's holding it back on Google. Free, no signup."
+    },
+    "hero": {
+      "eyebrow": "Free tool",
+      "title": "Is your website turning customers away?",
+      "subtitle": "Paste your address below. In about a minute we'll show you what someone arriving from their phone actually sees, and what's worth fixing first. No signup, no email required."
+    },
+    "home": {
+      "eyebrow": "Free tool",
+      "title": "And your site — how does it hold up?",
+      "subtitle": "Type your address: in about a minute we'll tell you how long it takes to open on a phone, how Google sees it, and what's worth fixing first.",
+      "cta": "Check it",
+      "hint": "Free, no signup, no email required."
+    },
+    "form": {
+      "label": "Your website address",
+      "placeholder": "yoursite.com",
+      "submit": "Check my site",
+      "submitting": "Checking…",
+      "hint": "It takes about a minute: we actually open your site and measure it."
+    },
+    "loading": {
+      "title": "Running the check — stay on this page",
+      "steps": [
+        "Opening your site the way a customer would, on a phone…",
+        "Timing how long it takes to show up…",
+        "Checking how Google sees you…",
+        "Making sure it reads well and works well…",
+        "Putting the report together, a few more seconds…"
+      ]
+    },
+    "errors": {
+      "invalidUrl": "We don't recognise that address. Try writing it like this: yoursite.com",
+      "privateUrl": "That address only exists on your own computer or network: we can't reach it from outside.",
+      "unreachable": "We couldn't open that site. It may be down, password-protected, or blocking automated checks. Double-check the address and try again.",
+      "rateLimited": "That's a lot of checks in a row. Give it a few minutes and try again.",
+      "notConfigured": "The tool is temporarily out of service. Write to us and we'll run the check by hand for you.",
+      "generic": "Something went wrong during the check. Please try again in a moment."
+    },
+    "result": {
+      "overallLabel": "Overall score",
+      "verdict": {
+        "good": {
+          "title": "Your site is in good shape.",
+          "body": "We found no serious problems. Below are the few things that could still be polished, in order of importance."
+        },
+        "average": {
+          "title": "It works, but it's losing people along the way.",
+          "body": "Your site does its job, but a few things are costing you visits and enquiries. They're few and concrete — here they are, without the jargon."
+        },
+        "poor": {
+          "title": "Your site is losing customers along the way.",
+          "body": "People opening it on a phone wait too long, or don't find what they came for. The fixes are few and concrete: here they are, ordered by what they're costing you."
+        }
+      },
+      "dataSource": {
+        "field": "Measured from real visitors to your site over the last 28 days.",
+        "lab": "Measured just now, simulating a mid-range phone on a 4G connection."
+      },
+      "screenshotAlt": "How {host} looks on a phone screen",
+      "screenshotCaption": "Your site, as a phone sees it",
+      "metricsTitle": "What your visitors actually experience",
+      "metricsSubtitle": "Three numbers no visitor ever reads — and all three of which they feel.",
+      "categoriesTitle": "The four scores",
+      "categoriesSubtitle": "From 0 to 100, using Google's own thresholds: above 90 is good, below 50 needs work.",
+      "findingsTitle": "What to fix first",
+      "findingsSubtitle": "Ordered by what it's costing you. We stop at the five things that genuinely matter: underneath there are dozens of technical details you don't need.",
+      "noFindings": "We found none of the problems we check for. That's rare — whoever built this did good work.",
+      "winsTitle": "What already works",
+      "footnote": "Based on Google PageSpeed Insights, the same tool Google uses to assess websites. It's a snapshot of your home page taken right now: a good starting point, not a full audit of the whole site."
+    },
+    "grades": {
+      "good": "Good",
+      "average": "Could be better",
+      "poor": "Needs fixing"
+    },
+    "metrics": {
+      "loadTime": {
+        "label": "How long before anything appears",
+        "good": "Excellent: visitors see your content straight away, with no time to get impatient.",
+        "average": "A little slow. On a phone connection away from home, this is the moment people hit back.",
+        "poor": "Too slow. A good share of the people arriving from Google leave before they see anything at all."
+      },
+      "stability": {
+        "label": "How much the page jumps while loading",
+        "good": "Steady: nothing shifts under your finger while the page finishes loading.",
+        "average": "Things move around while it loads. That's why people occasionally tap the wrong button.",
+        "poor": "The page rearranges itself a lot while loading: anyone tapping early often ends up somewhere they didn't mean to."
+      },
+      "responsiveness": {
+        "label": "How long it ignores your taps",
+        "good": "Responsive: tap something and it reacts immediately.",
+        "average": "It sometimes doesn't react to taps right away. People describe this as a site that “freezes”.",
+        "poor": "For a long stretch the site doesn't respond to taps at all: it feels broken even when it isn't."
+      }
+    },
+    "categories": {
+      "speed": {
+        "label": "Speed",
+        "what": "How long a customer waits before they can actually use the site on a phone."
+      },
+      "google": {
+        "label": "Google visibility",
+        "what": "Whether the site gives Google what it needs to understand you and show you in results."
+      },
+      "everyone": {
+        "label": "Usable by everyone",
+        "what": "Whether it still works for people with poor eyesight, unsteady hands, or a phone in bright sun."
+      },
+      "care": {
+        "label": "Technical care",
+        "what": "Security, hidden errors, and whether things were done properly under the hood."
+      }
+    },
+    "findings": {
+      "https": {
+        "title": "The site isn't secure",
+        "impact": "Browsers show “Not secure” next to your address, and Google ranks sites without the padlock lower. It's the first thing to fix, and it usually takes hours."
+      },
+      "viewport": {
+        "title": "It isn't built for phones",
+        "impact": "People opening it on a phone get the desktop version shrunk down and have to pinch-zoom to read. Most leave without trying."
+      },
+      "blockedFromGoogle": {
+        "title": "You're telling Google not to show you",
+        "impact": "There's an instruction in the site asking search engines to ignore it. While it's there you will never appear on Google, whatever else you do."
+      },
+      "httpStatus": {
+        "title": "The site responds with an error",
+        "impact": "The server doesn't return the page the way it should. Google reads that as a broken site and stops offering it in results."
+      },
+      "title": {
+        "title": "The title Google shows is missing",
+        "impact": "It's the clickable line in search results. Without one, Google invents it from your content — usually badly."
+      },
+      "description": {
+        "title": "The description under your Google result is missing",
+        "impact": "Those two lines are what convince someone to click you instead of the competitor above or below you. Writing them takes ten minutes."
+      },
+      "linkText": {
+        "title": "Some links just say “click here”",
+        "impact": "Neither people nor Google can tell where they lead. Saying what's on the other side helps both, and earns you positions."
+      },
+      "crawlableLinks": {
+        "title": "Google can't follow some of your links",
+        "impact": "They're built in a way search engines don't read: the pages behind them risk never appearing in results at all."
+      },
+      "slowServer": {
+        "title": "Your server takes too long to answer",
+        "impact": "Before showing anything, the site spends a long time simply waiting. It's often the hosting: changing it is the quickest way to win back seconds."
+      },
+      "heavyPage": {
+        "title": "The page is too heavy",
+        "impact": "Anyone opening it on mobile data downloads a large file before seeing anything — and on a slow connection the wait doubles."
+      },
+      "heavyImages": {
+        "title": "Your images weigh more than they need to",
+        "impact": "This is almost always the number one cause of slowness. The very same photos, saved in the right format, can weigh a fifth with no visible loss of quality."
+      },
+      "blockingResources": {
+        "title": "The site waits for non-urgent things before showing itself",
+        "impact": "Some parts block your content from appearing even though they aren't needed straight away. Moving them is a quick job you feel on the first load."
+      },
+      "unusedCode": {
+        "title": "The site loads code it never uses",
+        "impact": "This almost always comes from themes and plugins: visitors download features their page doesn't need, and wait for nothing."
+      },
+      "invisibleText": {
+        "title": "Text stays invisible while loading",
+        "impact": "For a moment the page looks empty, then the words appear. Anyone arriving at that moment assumes the site is broken."
+      },
+      "contrast": {
+        "title": "Some text is hard to read",
+        "impact": "Text and background are too close in colour: on a phone screen in daylight they become unreadable. You lose everyone unwilling to squint."
+      },
+      "smallTargets": {
+        "title": "Some buttons are too small to tap",
+        "impact": "On a phone, people miss. If it happens on your “book” or “call” button, that's exactly where you lost the customer."
+      },
+      "imageAlt": {
+        "title": "Your images have no description",
+        "impact": "Google can't see photos: it reads the description attached to them. Without one you lose Google Images traffic, and anyone using a screen reader has no idea what they're looking at."
+      },
+      "formLabels": {
+        "title": "Some form fields have no label",
+        "impact": "People aren't always sure what to type, and anyone using a screen reader simply can't. Forms are where your enquiries come from: they're worth getting right."
+      },
+      "namelessControls": {
+        "title": "Some buttons and links have no name",
+        "impact": "To a blind visitor's phone they're just “button, button, button”. Google also struggles to work out how your site is put together."
+      },
+      "language": {
+        "title": "The site's language isn't declared",
+        "impact": "Browsers need it to offer translation, and screen readers to pronounce words correctly. It is quite literally one line of code."
+      },
+      "headingOrder": {
+        "title": "Your headings are out of order",
+        "impact": "Google uses headings to understand what you're about and what matters most. Used as plain bold text, you throw that advantage away."
+      },
+      "consoleErrors": {
+        "title": "The site throws errors while being used",
+        "impact": "You can't see them, but they mean something isn't working as it should — often the forms or the buttons themselves."
+      },
+      "stretchedImages": {
+        "title": "Some images come out distorted",
+        "impact": "Photos squashed or stretched out of their real proportions. It's the thing that makes a site look homemade even when everything else is polished."
+      },
+      "outdatedCode": {
+        "title": "The site uses parts that are now obsolete",
+        "impact": "They still work, but browsers are removing them. Sooner or later something will stop working, and it'll happen without warning."
+      },
+      "redirects": {
+        "title": "The site bounces between addresses before it opens",
+        "impact": "Every bounce adds waiting before anything appears, and on a phone connection you feel it. It usually goes away by pointing links straight at the right address."
+      },
+      "unsizedImages": {
+        "title": "Your images don't declare how big they are",
+        "impact": "The browser doesn't know how much room to leave them, so the page rearranges itself while loading. That's why people occasionally tap the wrong button."
+      },
+      "canonical": {
+        "title": "The page's official address is declared incorrectly",
+        "impact": "It tells Google which address is the real one when the same page can be reached several ways. Get it wrong and Google may index the wrong version — or none at all."
+      },
+      "robotsTxt": {
+        "title": "The file that guides Google has errors in it",
+        "impact": "It's the instruction sheet search engines read first. Bad lines in it risk them ignoring pages you actually want found."
+      }
+    },
+    "wins": {
+      "https": "The site is secure: visitors see the padlock next to your address.",
+      "mobile": "It's built for phones: readable without pinch-zooming.",
+      "title": "The title Google shows in results is there and in good shape.",
+      "description": "The description that appears under your Google result is in place.",
+      "imageAlt": "Your images have descriptions: Google understands them and can show them.",
+      "contrast": "Text reads clearly, even on a phone in bright sun.",
+      "fastServer": "Your server answers quickly: the foundations are solid.",
+      "crawlable": "Google can read the site and put it in its results.",
+      "targets": "Buttons are big enough to tap accurately with a finger."
+    },
+    "cta": {
+      "title": "Want us to fix them?",
+      "text": "We'll go through the report together on a twenty-minute call: what's worth doing, what it costs, how long it takes. And if it isn't worth doing, we'll tell you that too.",
+      "primary": "Book a free call",
+      "secondary": "Send us a message"
+    },
+    "reassurance": {
+      "free": {
+        "title": "Free, no signup",
+        "body": "No email to hand over, no salesperson calling you back. You read the report here, right away."
+      },
+      "mobile": {
+        "title": "Measured on a phone",
+        "body": "Because that's where most of your visitors come from, and where the problems actually show."
+      },
+      "google": {
+        "title": "The same data Google uses",
+        "body": "We rely on PageSpeed Insights, the official tool Google measures websites with."
+      }
     }
   },
   "footer": {
-    "tagline": "Software, mobile, AI and cloud development.",
+    "tagline": "Websites, internal tools and apps for small and mid-sized businesses.",
     "rights": "All rights reserved.",
     "legal": {
       "privacy": "Privacy",
@@ -362,11 +555,12 @@
   },
   "newsletter": {
     "title": "Updates from the studio",
-    "headline": "Stay in the loop with our work",
-    "subtitle": "An email every now and then with projects, experiments and news. No spam.",
+    "headline": "Every now and then we write about what we're building",
+    "subtitle": "An email when there's something worth telling. No spam, no sales.",
     "placeholder": "Your email",
     "success": "Subscribed! Talk soon.",
-    "error": "Something went wrong, please try again."
+    "error": "Something went wrong, please try again.",
+    "submit": "Subscribe"
   },
   "modal": {
     "close": "Close"
@@ -434,5 +628,20 @@
       ],
       "outro": "Since these cookies are strictly necessary for the site to function, no prior consent is required. You can still clear them at any time from your browser settings."
     }
+  },
+  "notFound": {
+    "eyebrow": "404 error",
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Back to home",
+    "secondaryCta": "See our work"
+  },
+  "error": {
+    "eyebrow": "Unexpected error",
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Try again or head back home.",
+    "retry": "Try again",
+    "cta": "Back to home",
+    "digest": "Error code: {digest}"
   }
 }

@@ -27,7 +27,7 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex items-center justify-center gap-2 rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
+      className="inline-flex items-center justify-center gap-2 rounded-pill bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
     >
       {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
       {pending ? pendingLabel : label}
@@ -41,7 +41,7 @@ export function Contact() {
 
   return (
     <div className="relative pb-60 md:pb-56 lg:pb-46">
-      <StackedSection id="contatti" className='mb-0! z-20 bg-[#FAFAFA] dark:bg-neutral-900'>
+      <StackedSection id="contatti" className='mb-0! z-20 bg-[#eeece6] dark:bg-neutral-900'>
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
             <motion.div
@@ -50,13 +50,13 @@ export function Contact() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.35, ease: EASE_OUT }}
             >
-              <p className="mb-6 w-fit tracking-wider uppercase font-mono text-sm bg-muted/50 shadow-xl shadow-border/70 px-3 py-1 rounded-full border border-border">
+              <p className="mb-5 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted">
                 {t("eyebrow")}
               </p>
-              <h2 className="text-4xl font-bold tracking-[-0.02em] text-foreground">
+              <h2 className="text-3xl font-bold tracking-[-0.02em] text-balance text-foreground sm:text-4xl">
                 {t("title")}
               </h2>
-              <p className="mt-3 max-w-md text-foreground-muted">{t("subtitle")}</p>
+              <p className="mt-4 max-w-md text-foreground-muted">{t("subtitle")}</p>
               <p className="mt-8 flex items-center gap-2 text-sm text-foreground-muted">
                 <span className="size-1.5 shrink-0 rounded-full bg-brand" />
                 {t("response")}
@@ -66,9 +66,9 @@ export function Contact() {
                 href={siteConfig.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-[100px] border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-brand"
+                className="mt-6 inline-flex items-center gap-2 rounded-pill border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/30 hover:bg-muted/60"
               >
-                <CalendarClock className="size-4 text-brand" aria-hidden />
+                <CalendarClock className="size-4 text-foreground-muted" aria-hidden />
                 {t("bookCall")}
               </a>
             </motion.div>

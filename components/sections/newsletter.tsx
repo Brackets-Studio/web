@@ -14,8 +14,7 @@ export function Newsletter() {
   return (
     <StackedSection
       id="newsletter"
-      data-cursor-invert
-      className="bg-brand rounded-t-none! text-brand-foreground absolute w-full -bottom-20 z-10"
+      className="absolute -bottom-20 z-10 w-full rounded-t-none! border-t border-border bg-[#e2e0d9] dark:bg-neutral-800/70"
     >
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -25,14 +24,14 @@ export function Newsletter() {
         className="mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-16 pt-32 mt-20 md:flex-row sm:items-center md:justify-between md:gap-12"
       >
         <div className="w-fit mr-auto">
-          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-brand-foreground/20 bg-brand-foreground/10 px-3 py-1 font-mono text-sm uppercase tracking-wider">
+          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted">
             <Mail className="size-3.5" aria-hidden />
             {t("title")}
           </p>
-          <h2 className="text-3xl font-bold tracking-[-0.02em] md:text-4xl">
+          <h2 className="text-2xl font-bold tracking-[-0.02em] text-balance text-foreground md:text-3xl">
             {t("headline")}
           </h2>
-          <p className="mt-3 text-brand-foreground/80">{t("subtitle")}</p>
+          <p className="mt-3 max-w-md text-sm text-foreground-muted">{t("subtitle")}</p>
         </div>
 
         <div className="w-full max-w-fit mr-auto shrink-0">

@@ -55,7 +55,16 @@ export default async function WorkPage() {
             <p className="mt-2 text-sm text-foreground-muted">{t("empty.body")}</p>
           </Reveal>
         ) : (
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            className={`mt-16 grid grid-cols-1 gap-6 ${
+              caseStudies.length === 1
+                ? ""
+                : caseStudies.length === 2
+                  ? "sm:grid-cols-2"
+                  : "sm:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
+
             {caseStudies.map((caseStudy, index) => (
               <CaseStudyCard
                 key={caseStudy.id}

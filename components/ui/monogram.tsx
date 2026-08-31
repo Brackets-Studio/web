@@ -13,9 +13,9 @@ export function Monogram({
     .toUpperCase();
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand/15 via-background-elevated to-background-elevated">
+    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted via-background-elevated to-background-elevated">
       <span
-        className={className ?? "font-mono text-7xl font-bold tracking-tight text-brand/25 select-none sm:text-8xl"}
+        className={className ?? "font-mono text-7xl font-bold tracking-tight text-foreground/15 select-none sm:text-8xl"}
       >
         {initials}
       </span>

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "Bracket Studio | Software, app e automazione su misura",
-    "description": "Creiamo software su misura, app per cellulare e automazioni con l'intelligenza artificiale, così il tuo lavoro va più veloce."
+    "title": "Bracket Studio | Siti, gestionali e app su misura per le PMI",
+    "description": "Studio di sviluppo a Pesaro. Progettiamo siti, gestionali e app su misura per piccole e medie imprese, li mettiamo online e restiamo a seguirli."
   },
   "nav": {
     "services": "Servizi",
-    "caseStudies": "Case Study",
+    "caseStudies": "Lavori",
     "about": "Chi siamo",
     "pricing": "Prezzi",
     "blog": "Blog",
@@ -15,132 +15,120 @@
     "locales": {
       "it": "Italiano",
       "en": "English"
-    }
+    },
+    "analyze": "Analisi gratuita",
+    "resources": "Risorse",
+    "whatWeDo": "Cosa facciamo",
+    "howWeWork": "Come lavoriamo",
+    "servicesIndex": "Tutti i servizi"
   },
   "hero": {
-    "eyebrow": "Software · App · AI su misura",
-    "headline": "Dall'idea al software che usi ogni giorno",
-    "subline": "Progettiamo e sviluppiamo siti, app e automazioni intelligenti su misura per la tua azienda — e li portiamo online, facendoli funzionare davvero.",
-    "ctaPrimary": "Inizia un progetto",
-    "ctaSecondary": "Guarda i nostri lavori"
+    "eyebrow": "Studio di sviluppo · Pesaro",
+    "headline": "Il software della tua azienda, fatto bene.",
+    "subline": "Siti, gestionali e app su misura per piccole e medie imprese. Li progettiamo, li mettiamo online e restiamo a seguirli — e parli sempre con chi li costruisce.",
+    "ctaPrimary": "Raccontaci cosa ti serve",
+    "ctaSecondary": "Guarda i lavori fatti",
+    "proof": [
+      "Ti rispondiamo entro 24 ore",
+      "Il codice resta tuo",
+      "Un solo referente, dall'inizio alla fine"
+    ]
   },
   "techStack": {
-    "title": "Gli strumenti che usiamo ogni giorno"
+    "title": "Gli strumenti con cui lo costruiamo",
+    "subtitle": "Tecnologie standard e diffuse, non soluzioni chiuse: se un domani vuoi cambiare fornitore, chiunque può metterci mano."
   },
   "services": {
     "eyebrow": "Cosa facciamo",
-    "title": "Come possiamo aiutarti",
-    "subtitle": "Siamo il tuo unico punto di riferimento per un software che funziona davvero: dalla prima idea, al programma che usi ogni giorno, fino all'assistenza quando ti serve.",
-    "cta": "Parliamo del tuo progetto",
-    "items": {
-      "web": {
-        "title": "Siti e software su misura",
-        "description": "Programmi e pannelli di controllo pensati apposta per te.",
-        "tags": ["Next.js", "TypeScript", "PostgreSQL"],
-        "detail": {
-          "summary": "Costruiamo il software su misura per la tua azienda: dai pannelli di controllo interni ai prodotti che vendi ai tuoi stessi clienti. Lo progettiamo per durare nel tempo e funzionare bene anche quando aumentano gli utenti.",
-          "highlights": [
-            "Pannelli di controllo fatti su misura per te",
-            "Un sistema solido dietro le quinte, facile da collegare con altri programmi",
-            "Pronto a gestire tanti clienti diversi, se ti serve"
-          ]
-        }
-      },
-      "mobile": {
-        "title": "App per cellulare",
-        "description": "App per iPhone e Android, sia dedicate che multipiattaforma.",
-        "tags": ["React Native", "Expo", "Swift"],
-        "detail": {
-          "summary": "Creiamo app per cellulare, dalla prima idea fino alla pubblicazione sugli store, con attenzione a farle sentire veloci e a collegarle bene con gli strumenti che usi già in azienda.",
-          "highlights": [
-            "App multipiattaforma per essere online più in fretta",
-            "App dedicate a iPhone o Android quando serve il massimo delle prestazioni",
-            "Pubblicazione e gestione su App Store e Play Store"
-          ]
-        }
-      },
-      "ai": {
-        "title": "Intelligenza artificiale e automazione",
-        "description": "Automatizziamo il lavoro ripetitivo: lettura documenti e assistenti intelligenti.",
-        "tags": ["OCR", "LLM", "Agenti"],
-        "detail": {
-          "summary": "Automatizziamo i lavori ripetitivi, come leggere e archiviare documenti, usando l'intelligenza artificiale. Colleghiamo assistenti intelligenti direttamente al modo in cui lavori già, per farti risparmiare tempo e ridurre gli errori.",
-          "highlights": [
-            "Lettura automatica di documenti e moduli",
-            "Assistenti intelligenti inseriti nel tuo lavoro di ogni giorno",
-            "Automazioni pensate per te, non soluzioni standard"
-          ]
-        }
-      },
-      "cloud": {
-        "title": "Infrastruttura e collegamenti",
-        "description": "Server affidabili e collegamenti con WhatsApp e altri servizi di telefonia.",
-        "tags": ["WhatsApp API", "Telnyx", "AWS"],
-        "detail": {
-          "summary": "Costruiamo un'infrastruttura online solida e la colleghiamo a servizi come WhatsApp Business per automatizzare messaggi e notifiche. Ci occupiamo noi di tutto, dalla messa online al controllo costante.",
-          "highlights": [
-            "Messaggi automatici su WhatsApp Business",
-            "Server affidabili, controllati e pronti a crescere",
-            "Notifiche automatiche verso i tuoi clienti"
-          ]
-        }
+    "title": "Cosa possiamo costruire per te",
+    "subtitle": "Un unico interlocutore per tutto: dalla prima idea al programma che usi ogni giorno, fino all'assistenza quando ti serve.",
+    "cta": "Parliamo del tuo progetto"
+  },
+  "servizi": {
+    "index": {
+      "eyebrow": "Servizi",
+      "title": "Cosa possiamo costruire per te",
+      "subtitle": "Un unico interlocutore per tutto: dalla prima idea al programma che usi ogni giorno, fino all'assistenza quando ti serve."
+    },
+    "detail": {
+      "highlightsTitle": "Cosa include",
+      "priceFrom": "A partire da",
+      "timelineLabel": "di solito in",
+      "weeks": "{count, plural, one {# settimana} other {# settimane}}",
+      "ctaQuote": "Chiedi un preventivo",
+      "ctaContact": "Parliamone",
+      "back": "Tutti i servizi"
+    }
+  },
+  "quote": {
+    "eyebrow": "Preventivo",
+    "title": "Quanto costerebbe il tuo progetto?",
+    "subtitle": "Rispondi a qualche domanda: ti mostriamo una fascia realistica e i tempi tipici.",
+    "stepOf": "Passo {current} di {total}",
+    "back": "Indietro",
+    "next": "Avanti",
+    "chooseService": "Di cosa hai bisogno?",
+    "restart": "Ricomincia",
+    "result": {
+      "priceLabel": "Prezzo stimato",
+      "timelineLabel": "Tempistica stimata",
+      "weeks": "{count, plural, one {~# settimana} other {~# settimane}}",
+      "disclaimerFallback": "È una stima, non un preventivo fisso — il prezzo esatto lo confermiamo in una chiamata gratuita."
+    },
+    "form": {
+      "title": "Trasformalo in un preventivo vero",
+      "text": "Lasciaci nome e un contatto: ti rispondiamo con un prezzo fisso.",
+      "name": "Il tuo nome",
+      "contact": "Email o telefono",
+      "contactPlaceholder": "tu@email.it oppure il tuo numero",
+      "message": "Altro da aggiungere? (facoltativo)",
+      "messagePlaceholder": "Raccontaci di più sul tuo progetto…",
+      "submit": "Invia",
+      "submitting": "Invio…",
+      "genericError": "Controlla i campi evidenziati e riprova.",
+      "success": {
+        "title": "Ricevuto.",
+        "text": "Ti rispondiamo entro 24 ore con un prezzo fisso."
       }
     }
   },
   "caseStudies": {
-    "eyebrow": "I nostri lavori",
-    "title": "Case Study",
-    "subtitle": "Problemi veri, affrontati insieme ai nostri clienti, con soluzioni concrete che si vedono nei numeri e nel tempo risparmiato ogni giorno.",
-    "problem": "Problema",
-    "solution": "Soluzione",
-    "result": "Risultato",
-    "viewCaseStudy": "Vedi il case study",
-    "backToWork": "Tutti i progetti",
+    "eyebrow": "Lavori fatti",
+    "title": "Progetti veri, clienti veri",
+    "subtitle": "Ogni progetto nasce da un problema concreto di un'azienda. Qui trovi cosa non funzionava, cosa abbiamo costruito e cosa è cambiato dopo.",
+    "problem": "Il problema",
+    "solution": "Cosa abbiamo fatto",
+    "result": "Com'è andata",
+    "viewCaseStudy": "Vedi il progetto",
+    "backToWork": "Tutti i lavori",
     "empty": {
-      "title": "I primi case study sono in arrivo",
+      "title": "I primi lavori sono in arrivo",
       "body": "Stiamo preparando i primi progetti da raccontare. Nel frattempo scrivici: saremo felici di parlare del tuo."
     },
     "visitSite": "Visita il sito",
-    "overview": "Panoramica",
+    "overview": "In breve",
     "highlights": "Punti chiave",
     "details": "Dettagli progetto",
     "published": "Pubblicato",
     "cta": {
-      "title": "Vuoi un risultato simile?",
-      "text": "Raccontaci il tuo progetto: vediamo insieme come arrivarci.",
+      "title": "Ti serve qualcosa di simile?",
+      "text": "Raccontaci il tuo caso: vediamo insieme se possiamo aiutarti.",
       "button": "Parliamone"
-    },
-    "items": {
-      "smartables": {
-        "name": "Smartables",
-        "problem": "Il lavoro di ogni giorno era gestito a mano, con i dati sparsi tra fogli Excel e canali diversi.",
-        "solution": "Un programma su misura che automatizza la gestione dei documenti e mette tutto in un unico posto.",
-        "result": "Meno lavoro manuale e un solo posto da controllare per seguire tutto.",
-        "tags": ["Next.js", "OCR", "Cloud"],
-        "detail": {
-          "summary": "Smartables gestiva il lavoro di ogni giorno tra fogli Excel, email e strumenti scollegati tra loro, perdendo tempo e rischiando errori. Abbiamo costruito un programma centrale che mette insieme dati e processi, automatizzando le parti più ripetitive del lavoro con i documenti.",
-          "highlights": [
-            "Programma su misura costruito da zero",
-            "Lettura automatica dei documenti",
-            "Infrastruttura pronta a crescere insieme all'azienda"
-          ]
-        }
-      }
     }
   },
   "approach": {
-    "eyebrow": "Perché Bracket Studio",
-    "headline": "Ci occupiamo noi della parte difficile, così il tuo prodotto funziona e basta.",
-    "body": "Un solo referente dall'inizio alla fine: ogni collegamento, ogni messa online, ogni imprevisto lo gestiamo noi. Tu pensi al tuo lavoro, del resto ci occupiamo noi."
+    "eyebrow": "Perché noi",
+    "headline": "La parte difficile la gestiamo noi. Tu vedi solo la cosa che funziona.",
+    "body": "Collegamenti, messa online, imprevisti del sabato sera: sono problemi nostri, non tuoi. E dall'inizio alla fine parli sempre con chi sta costruendo il tuo prodotto — non con un intermediario che poi gira la domanda a qualcun altro."
   },
   "about": {
     "eyebrow": "Chi c'è dietro",
     "greeting": "Ciao, sono Tobia",
-    "role": "Full-stack developer e founder di Bracket Studio",
+    "role": "Sviluppatore e fondatore di Bracket Studio",
     "location": "Pesaro, Italia",
     "body": [
-      "Sviluppo prodotti web e mobile che risolvono problemi veri, con cura del dettaglio e soluzioni efficienti pensate per crescere nel tempo.",
-      "Quando scegli Bracket Studio parli direttamente con chi costruisce il tuo prodotto: nessun intermediario, nessun rimpallo. Dalla prima idea al lancio segui sempre la stessa persona."
+      "Costruisco siti, gestionali e app per aziende che hanno un problema concreto da risolvere — non progetti da vetrina.",
+      "Quando scrivi a Bracket Studio ti risponde chi il tuo prodotto lo costruisce davvero: nessun commerciale in mezzo, nessuna domanda girata a qualcun altro. Dalla prima chiamata al lancio, sai sempre con chi stai parlando."
     ],
     "linksLabel": "Dove trovarmi",
     "links": {
@@ -149,111 +137,90 @@
       "website": "Sito personale"
     },
     "metaTitle": "Chi c'è dietro Bracket Studio",
-    "metaDescription": "Bracket Studio è lo studio di Tobia Bartolomei, full-stack developer di Pesaro: web, mobile e automazioni con l'AI, dall'idea al lancio.",
-    "principlesTitle": "I miei principi",
-    "principlesSubtitle": "Tre cose su cui non scendo a compromessi, in ogni progetto.",
+    "metaDescription": "Bracket Studio è lo studio di Tobia Bartolomei, sviluppatore di Pesaro: siti, gestionali e app su misura per le piccole e medie imprese.",
+    "principlesTitle": "Come lavoriamo",
+    "principlesSubtitle": "Tre cose su cui non scendiamo a compromessi, in ogni progetto.",
     "principles": [
       {
-        "title": "Cura del dettaglio",
-        "description": "Ogni dettaglio conta: dall'architettura del codice alla singola interazione che l'utente tocca con mano."
+        "title": "Parliamo chiaro",
+        "description": "Niente parole tecniche per farci belli. Ti diciamo cosa costa, quanto ci vuole e cosa non possiamo fare — anche quando non è la risposta che speravi."
       },
       {
         "title": "Costruito per durare",
-        "description": "Soluzioni efficienti e scalabili, pensate per reggere il carico e crescere insieme alla tua azienda."
+        "description": "Non il lavoro più veloce da consegnare, ma quello che tra due anni funziona ancora e che qualcun altro può prendere in mano se serve."
       },
       {
         "title": "Un solo referente",
-        "description": "Parli sempre con chi costruisce il tuo prodotto: nessun intermediario, nessun rimpallo, dalla prima idea al lancio."
+        "description": "Parli sempre con chi sta costruendo il tuo prodotto: nessun intermediario, nessuna domanda rimbalzata, dalla prima chiamata al lancio."
       }
     ],
     "cta": {
       "title": "Lavoriamo insieme?",
-      "text": "Raccontami il tuo progetto: ti rispondo entro 24 ore, senza impegno.",
+      "text": "Raccontaci il tuo progetto: ti rispondiamo entro 24 ore, senza impegno.",
       "button": "Parliamone"
     }
   },
   "process": {
-    "eyebrow": "Il nostro percorso",
-    "title": "Come lavoriamo, passo dopo passo",
-    "subtitle": "Un unico percorso, senza intoppi, con tutti gli strumenti già inclusi: dalla prima chiacchierata conoscitiva fino all'assistenza dopo il lancio.",
+    "eyebrow": "Come lavoriamo",
+    "title": "Tre passaggi, nessuna sorpresa",
+    "subtitle": "Sai sempre a che punto siamo e quanto manca. Dalla prima chiacchierata fino all'assistenza dopo il lancio.",
     "steps": {
       "discovery": {
-        "title": "Prima chiacchierata e analisi",
-        "description": "Capiamo come lavori oggi, cosa vuoi ottenere e quali sono i vincoli, e disegniamo la soluzione giusta prima di scrivere anche solo una riga di codice."
+        "title": "Ci parliamo",
+        "description": "Ci racconti come lavori oggi e cosa non funziona. Ti diciamo subito se possiamo aiutarti, quanto costa e quanto ci vuole — prima di scrivere una riga di codice."
       },
       "build": {
-        "title": "Progettazione e sviluppo",
-        "description": "Lavoriamo a piccoli passi e ti mostriamo spesso a che punto siamo, così vedi il prodotto crescere e puoi dirci se qualcosa va cambiato."
+        "title": "Lo costruiamo",
+        "description": "Lavoriamo a piccoli passi e te lo facciamo vedere spesso. Se qualcosa non ti torna lo dici subito, non alla consegna."
       },
       "launch": {
-        "title": "Lancio e assistenza",
-        "description": "Ti seguiamo quando il prodotto va online e restiamo al tuo fianco per controlli, manutenzione e nuove funzioni."
+        "title": "Va online e resta seguito",
+        "description": "Lo mettiamo online noi e continuiamo a seguirlo: controlli, manutenzione e le modifiche che ti serviranno strada facendo."
       }
     }
   },
   "testimonials": {
-    "eyebrow": "Testimonianze",
-    "title": "Non fidarti solo delle nostre parole",
-    "subtitle": "Le parole di chi ha lavorato con noi: esperienze dirette delle aziende che hanno scelto Bracket Studio.",
-    "items": [
-      {
-        "quote": "Il team ha capito subito il problema e ci ha dato un programma che usiamo ogni giorno senza pensarci più.",
-        "name": "Nome Cliente",
-        "role": "Ruolo, Azienda"
-      },
-      {
-        "quote": "Comunicazione chiara e nessuna sorpresa alla consegna. Esattamente quello che serve quando affidi il tuo prodotto a qualcun altro.",
-        "name": "Nome Cliente",
-        "role": "Ruolo, Azienda"
-      },
-      {
-        "quote": "Hanno automatizzato un lavoro che ci portava via ore ogni settimana. Il risultato si è visto già dal primo mese.",
-        "name": "Nome Cliente",
-        "role": "Ruolo, Azienda"
-      }
-    ]
+    "eyebrow": "Dicono di noi",
+    "title": "Chi ha già lavorato con noi",
+    "subtitle": "Parole loro, non nostre."
   },
   "faqs": {
-    "eyebrow": "FAQ",
-    "title": "Tutto quello che devi sapere",
-    "subtitle": "Le risposte alle domande che ci vengono fatte più spesso, per aiutarti a capire subito come lavoriamo e cosa aspettarti da un progetto insieme.",
+    "eyebrow": "Domande",
+    "title": "Quello che ci chiedono sempre",
+    "subtitle": "Le risposte alle domande che arrivano più spesso, così sai cosa aspettarti prima ancora di scriverci.",
     "items": [
       {
-        "question": "Quanto costa un progetto?",
-        "answer": "Dipende da quanto è grande e complesso il progetto: un primo prodotto semplice parte da poche migliaia di euro, mentre un prodotto più grande, con intelligenza artificiale e server dedicati, richiede un investimento maggiore. Dopo una prima chiacchierata ti diamo un prezzo chiaro, senza sorprese durante il lavoro."
+        "question": "Chi ci lavora davvero?",
+        "answer": "Chi costruisce il tuo prodotto è la stessa persona con cui parli. Niente commerciale che ti vende una cosa e poi sparisce, niente domande girate a qualcun altro: chiedi, e ti risponde chi ci sta mettendo le mani."
       },
       {
-        "question": "Quanto tempo serve per lanciare un progetto?",
-        "answer": "Un primo prodotto semplice è pronto in genere in 4-8 settimane. I progetti più complessi, con più collegamenti o pensati per tanti clienti diversi, richiedono più tempo — te lo diciamo chiaramente già dal primo incontro."
+        "question": "Devo capirci qualcosa di tecnologia?",
+        "answer": "No. Il nostro lavoro è farti le domande giuste e tradurre noi le risposte in qualcosa che funziona. Se ti spieghiamo qualcosa e non è chiaro, è colpa nostra, non tua."
       },
       {
-        "question": "Che tecnologie usate?",
-        "answer": "Usiamo strumenti moderni e affidabili: Next.js e TypeScript per i siti, React Native/Expo o Swift per le app, PostgreSQL per i dati e AWS per i server. Scegliamo gli strumenti giusti in base al progetto, non il contrario."
+        "question": "Poi resto legato a voi?",
+        "answer": "No. Il codice, il dominio e i server sono intestati a te al 100%, dal primo giorno. Se un domani vuoi cambiare, porti via tutto e chiunque può proseguire il lavoro."
       },
       {
-        "question": "Offrite assistenza dopo il lancio?",
-        "answer": "Sì. Restiamo al tuo fianco per controlli, manutenzione e nuove funzioni: lo stesso team che ha costruito il prodotto continua a seguirlo anche dopo che è online."
+        "question": "E dopo? Se si rompe qualcosa?",
+        "answer": "Restiamo noi a seguirlo. Controlli, manutenzione e modifiche: chi l'ha costruito continua a occuparsene anche dopo che è online."
       },
       {
-        "question": "Il codice resta di mia proprietà?",
-        "answer": "Sempre. Il codice, i server e tutto quello che costruiamo per te sono tuoi al 100%, senza vincoli o dipendenze da noi."
-      },
-      {
-        "question": "Come si inizia?",
-        "answer": "Con una chiacchierata gratuita, senza impegno, per capire cosa ti serve. Da lì ti proponiamo cosa fare e quanto costa, e possiamo iniziare a lavorarci."
+        "question": "Come si comincia?",
+        "answer": "Con una chiamata gratuita, senza impegno. Ci racconti cosa ti serve, ti diciamo se possiamo aiutarti e quanto costa. Se non è cosa per noi, te lo diciamo."
       }
     ],
     "cta": {
-      "title": "Hai ancora domande?",
-      "text": "Prenota una chiamata gratuita, senza impegno: ti spieghiamo scope, tempi e budget.",
-      "button": "Contattaci",
-      "response": "Rispondiamo entro 24 ore."
+      "title": "Hai un'altra domanda?",
+      "text": "Chiamaci o scrivici: mezz'ora è di solito abbastanza per capire se ha senso lavorare insieme.",
+      "button": "Scrivici",
+      "response": "Ti rispondiamo entro 24 ore."
     }
   },
   "contact": {
     "eyebrow": "Contatti",
     "title": "Parliamo del tuo progetto",
-    "subtitle": "Raccontaci cosa ti serve: rispondiamo entro 24 ore con i prossimi passi.",
+    "subtitle": "Scrivici due righe su cosa ti serve. Ti rispondiamo entro 24 ore, senza impegno e senza che ti richiami nessun commerciale.",
     "response": "Rispondiamo entro 24 ore, senza impegno.",
     "bookCall": "Prenota una chiamata gratuita",
     "fields": {
@@ -268,18 +235,18 @@
         "error": "Inserisci un indirizzo email valido."
       },
       "projectType": {
-        "label": "Tipo di progetto",
+        "label": "Cosa ti serve",
         "placeholder": "Scegli l'opzione più vicina",
         "options": {
-          "web": "Sito o software su misura",
-          "mobile": "App per cellulare",
-          "ai": "Intelligenza artificiale e automazione",
+          "web": "Un sito o un gestionale",
+          "mobile": "Un'app per cellulare",
+          "ai": "Automatizzare un lavoro ripetitivo",
           "other": "Altro / non lo so ancora"
         }
       },
       "message": {
         "label": "Messaggio",
-        "placeholder": "Raccontaci brevemente il progetto, gli obiettivi e i tempi che hai in mente.",
+        "placeholder": "Due righe su cosa ti serve e quando. Non serve che sia preciso: ci pensiamo insieme.",
         "error": "Scrivi qualche riga in più (almeno 10 caratteri)."
       }
     },
@@ -288,72 +255,298 @@
     "privacyNote": "Inviando accetti la nostra <link>informativa privacy</link>.",
     "success": {
       "title": "Messaggio inviato",
-      "body": "Grazie! Abbiamo ricevuto la tua richiesta e ti risponderemo entro 24 ore."
+      "body": "Grazie! Abbiamo ricevuto la tua richiesta e ti rispondiamo entro 24 ore."
     }
   },
   "blog": {
     "eyebrow": "Blog",
-    "title": "Note tecniche",
-    "subtitle": "Scelte di stack, retrospettive di progetto e appunti pratici da quello che costruiamo ogni giorno.",
+    "title": "Cose che impariamo lavorando",
+    "subtitle": "Appunti su progetti, scelte tecniche e errori che abbiamo fatto — scritti in modo che si capiscano anche se non sei del mestiere.",
     "backToBlog": "Tutti gli articoli",
     "readMore": "Leggi l'articolo",
     "empty": {
       "title": "Stiamo scrivendo i primi articoli",
-      "body": "Il blog è appena nato: i primi articoli tecnici arrivano a breve. Nel frattempo dai un'occhiata ai nostri case study.",
-      "cta": "Vedi i nostri progetti"
+      "body": "Il blog è appena nato. Nel frattempo dai un'occhiata ai lavori che abbiamo fatto.",
+      "cta": "Vedi i lavori"
     }
   },
   "pricing": {
-    "eyebrow": "Investimento",
-    "title": "Quanto costa un progetto",
-    "subtitle": "Ogni progetto è diverso, ma ecco un'idea delle fasce in cui si muovono i lavori che facciamo di solito. Dopo una prima chiacchierata ti diamo un preventivo preciso, senza sorprese.",
-    "tiers": [
-      {
-        "name": "Primo prodotto",
-        "range": "Da poche migliaia di euro",
-        "timeline": "4-8 settimane",
-        "description": "Per chi parte da zero: un sito, un software semplice o un MVP con una funzione core ben fatta.",
-        "features": [
-          "Analisi iniziale e disegno della soluzione",
-          "Sviluppo con demo frequenti",
-          "Messa online e prima assistenza"
-        ]
-      },
-      {
-        "name": "Prodotto su misura",
-        "range": "Su preventivo, in base allo scope",
-        "timeline": "8+ settimane",
-        "description": "Piattaforme più complesse, con più integrazioni, pannelli di controllo dedicati o app multipiattaforma.",
-        "features": [
-          "Tutto quello incluso nel primo prodotto",
-          "Integrazioni con i tuoi strumenti esistenti",
-          "Architettura pensata per crescere nel tempo",
-          "Assistenza continuativa dopo il lancio"
-        ]
-      },
-      {
-        "name": "AI e infrastruttura dedicata",
-        "range": "Investimento maggiore, su preventivo",
-        "timeline": "Variabile in base allo scope",
-        "description": "Automazioni con intelligenza artificiale, infrastruttura cloud dedicata e integrazioni telefoniche/WhatsApp.",
-        "features": [
-          "Tutto quello incluso nel prodotto su misura",
-          "Automazioni con OCR, LLM e agenti intelligenti",
-          "Infrastruttura cloud dedicata e monitorata",
-          "Collegamenti a WhatsApp Business e servizi di telefonia"
-        ]
-      }
-    ],
-    "note": "I prezzi variano molto in base alla complessità: queste fasce sono indicative, non un listino. Il preventivo definitivo arriva sempre dopo una prima chiacchierata gratuita.",
+    "eyebrow": "Prezzi",
+    "title": "Quanto costa",
+    "subtitle": "Ogni progetto è diverso, ma non ci piace il \"dipende\" senza numeri. Ecco le fasce reali in cui si muovono i lavori che facciamo. Dopo una chiamata di mezz'ora ti diamo un prezzo scritto e fisso.",
+    "note": "Queste sono fasce indicative, non un listino: il prezzo definitivo arriva sempre dopo una chiamata gratuita, ed è scritto e fisso.",
     "cta": {
-      "title": "Non sai in che fascia rientra il tuo progetto?",
-      "text": "Raccontacelo: in una chiamata gratuita ti aiutiamo a capire scope, tempi e budget.",
+      "title": "Non sai in che fascia rientri?",
+      "text": "Raccontacelo: in mezz'ora capiamo insieme cosa ti serve e quanto costa.",
       "button": "Prenota una chiamata",
       "buttonSecondary": "Scrivici"
     }
   },
+  "analyze": {
+    "meta": {
+      "title": "Analisi gratuita del tuo sito",
+      "description": "Incolla l'indirizzo del tuo sito: in circa un minuto ti diciamo quanto è veloce, se si vede bene da telefono e cosa lo sta frenando su Google. Gratis, senza registrazione."
+    },
+    "hero": {
+      "eyebrow": "Strumento gratuito",
+      "title": "Il tuo sito sta facendo scappare i clienti?",
+      "subtitle": "Incolla il tuo indirizzo qui sotto. In circa un minuto ti diciamo cosa vede davvero chi ci arriva dal telefono, e cosa conviene sistemare per primo. Senza registrazione, senza lasciare l'email."
+    },
+    "home": {
+      "eyebrow": "Strumento gratuito",
+      "title": "E il tuo sito, come sta messo?",
+      "subtitle": "Scrivi il tuo indirizzo: in circa un minuto ti diciamo quanto ci mette ad aprirsi da telefono, come ti vede Google e cosa conviene sistemare per primo.",
+      "cta": "Analizza",
+      "hint": "Gratis, senza registrazione e senza lasciare l'email."
+    },
+    "form": {
+      "label": "Indirizzo del tuo sito",
+      "placeholder": "iltuosito.it",
+      "submit": "Analizza il sito",
+      "submitting": "Sto analizzando…",
+      "hint": "Ci mettiamo circa un minuto: apriamo davvero il tuo sito e lo misuriamo."
+    },
+    "loading": {
+      "title": "Analisi in corso — resta su questa pagina",
+      "steps": [
+        "Apriamo il tuo sito come farebbe un cliente col telefono…",
+        "Cronometriamo quanto ci mette ad apparire…",
+        "Controlliamo come ti vede Google…",
+        "Verifichiamo che si legga bene e si usi bene…",
+        "Prepariamo il referto, ancora qualche secondo…"
+      ]
+    },
+    "errors": {
+      "invalidUrl": "Non riconosciamo questo indirizzo. Prova a scriverlo così: iltuosito.it",
+      "privateUrl": "Questo indirizzo esiste solo sul tuo computer o sulla tua rete: da fuori non possiamo raggiungerlo.",
+      "unreachable": "Non siamo riusciti ad aprire questo sito. Può essere spento, protetto da password, oppure bloccare i controlli automatici. Ricontrolla l'indirizzo e riprova.",
+      "rateLimited": "Hai fatto parecchie analisi di fila. Aspetta qualche minuto e riprova.",
+      "notConfigured": "Lo strumento è momentaneamente fuori servizio. Scrivici e l'analisi te la mandiamo noi a mano.",
+      "generic": "Qualcosa è andato storto durante l'analisi. Riprova tra un momento."
+    },
+    "result": {
+      "overallLabel": "Voto complessivo",
+      "verdict": {
+        "good": {
+          "title": "Il tuo sito è messo bene.",
+          "body": "Non abbiamo trovato problemi grossi. Qui sotto trovi comunque le poche cose che si possono limare, in ordine di importanza."
+        },
+        "average": {
+          "title": "Funziona, ma perde pezzi per strada.",
+          "body": "Il tuo sito fa il suo lavoro, però ci sono cose che ti stanno costando visite e contatti. Sono poche e concrete: eccole, spiegate senza tecnicismi."
+        },
+        "poor": {
+          "title": "Il tuo sito sta perdendo clienti per strada.",
+          "body": "Chi ti apre dal telefono aspetta troppo, o non trova quello che cerca. Le cose da sistemare sono poche e concrete: eccole in ordine di quanto ti stanno costando."
+        }
+      },
+      "dataSource": {
+        "field": "Misure raccolte da visitatori reali del tuo sito negli ultimi 28 giorni.",
+        "lab": "Misure prese adesso, simulando un telefono di fascia media su rete 4G."
+      },
+      "screenshotAlt": "Come appare {host} sullo schermo di un telefono",
+      "screenshotCaption": "Il tuo sito, come lo vede un telefono",
+      "metricsTitle": "Cosa vede chi arriva sul tuo sito",
+      "metricsSubtitle": "Tre numeri che nessun visitatore legge mai, ma che sente tutti e tre.",
+      "categoriesTitle": "Le quattro pagelle",
+      "categoriesSubtitle": "Da 0 a 100, con le stesse soglie che usa Google: sopra 90 è buono, sotto 50 c'è da lavorare.",
+      "findingsTitle": "Cosa conviene sistemare per primo",
+      "findingsSubtitle": "In ordine di quanto ti sta costando. Ci fermiamo alle cinque cose che contano davvero: sotto ci sono decine di dettagli tecnici che a te non servono.",
+      "noFindings": "Non abbiamo trovato nessuno dei problemi che controlliamo. È raro: chi te l'ha fatto ha lavorato bene.",
+      "winsTitle": "Cosa funziona già",
+      "footnote": "Analisi basata su Google PageSpeed Insights, lo stesso strumento con cui Google valuta i siti. È la fotografia della sola pagina iniziale, presa in questo momento: è un buon punto di partenza, non un controllo completo del sito."
+    },
+    "grades": {
+      "good": "Buono",
+      "average": "Da migliorare",
+      "poor": "Da sistemare"
+    },
+    "metrics": {
+      "loadTime": {
+        "label": "Quanto ci mette ad apparire",
+        "good": "Ottimo: chi arriva vede subito il contenuto e non fa in tempo a spazientirsi.",
+        "average": "Un po' lento. Con la rete del telefono fuori casa, è il momento in cui qualcuno torna indietro.",
+        "poor": "Troppo lento. Una buona parte di chi arriva da Google se ne va prima ancora di vedere qualcosa."
+      },
+      "stability": {
+        "label": "Quanto balla la pagina mentre carica",
+        "good": "Stabile: niente si sposta sotto il dito mentre la pagina finisce di caricare.",
+        "average": "Qualcosa si sposta durante il caricamento. È il motivo per cui ogni tanto si tocca il pulsante sbagliato.",
+        "poor": "La pagina si riassesta parecchio mentre carica: chi prova a toccare qualcosa finisce spesso dove non voleva."
+      },
+      "responsiveness": {
+        "label": "Quanto resta bloccata al tocco",
+        "good": "Reattiva: quando si tocca qualcosa, risponde subito.",
+        "average": "Ogni tanto non risponde subito ai tocchi. Chi lo usa lo descrive come «un sito che si impalla».",
+        "poor": "Per un bel tratto il sito non risponde a quello che tocchi: sembra rotto anche quando non lo è."
+      }
+    },
+    "categories": {
+      "speed": {
+        "label": "Velocità",
+        "what": "Quanto aspetta un cliente prima di poter usare il sito dal telefono."
+      },
+      "google": {
+        "label": "Visibilità su Google",
+        "what": "Se il sito ha quello che serve a Google per capirlo e mostrarlo nei risultati."
+      },
+      "everyone": {
+        "label": "Leggibile da tutti",
+        "what": "Se resta usabile anche da chi vede poco, tocca male o guarda il telefono al sole."
+      },
+      "care": {
+        "label": "Cura tecnica",
+        "what": "Sicurezza, errori nascosti e cose fatte come si deve sotto il cofano."
+      }
+    },
+    "findings": {
+      "https": {
+        "title": "Il sito non è sicuro",
+        "impact": "Il browser mostra «Non sicuro» accanto al tuo indirizzo, e Google penalizza chi non ha il lucchetto. È la prima cosa da sistemare, e di solito si risolve in poche ore."
+      },
+      "viewport": {
+        "title": "Non è adattato al telefono",
+        "impact": "Chi ti apre dal cellulare vede la versione da computer rimpicciolita e deve fare zoom per leggere. La maggior parte se ne va senza nemmeno provarci."
+      },
+      "blockedFromGoogle": {
+        "title": "Stai dicendo a Google di non mostrarti",
+        "impact": "Dentro al sito c'è un'istruzione che chiede ai motori di ricerca di ignorarlo. Finché resta lì, su Google non ci sarai mai — qualunque altra cosa tu faccia."
+      },
+      "httpStatus": {
+        "title": "Il sito risponde con un errore",
+        "impact": "Il server non restituisce la pagina come dovrebbe. Google lo legge come un sito rotto e smette di proporlo nei risultati."
+      },
+      "title": {
+        "title": "Manca il titolo che appare su Google",
+        "impact": "È la riga cliccabile nei risultati di ricerca. Senza, Google se lo inventa a partire dal contenuto — di solito male."
+      },
+      "description": {
+        "title": "Manca la descrizione sotto il titolo su Google",
+        "impact": "Sono le due righe che convincono a cliccare su di te invece che sul concorrente sopra o sotto di te. Scriverle costa dieci minuti."
+      },
+      "linkText": {
+        "title": "Hai link che dicono solo «clicca qui»",
+        "impact": "Né le persone né Google capiscono dove portano. Scrivere cosa c'è dall'altra parte aiuta entrambi, e ti fa guadagnare posizioni."
+      },
+      "crawlableLinks": {
+        "title": "Alcuni link Google non riesce a seguirli",
+        "impact": "Sono costruiti in un modo che i motori di ricerca non leggono: le pagine che ci stanno dietro rischiano di non finire mai nei risultati."
+      },
+      "slowServer": {
+        "title": "Il tuo server ci mette troppo a rispondere",
+        "impact": "Prima ancora di mostrare qualcosa, il sito passa un tempo lungo ad aspettare. Spesso è l'hosting: cambiarlo è il modo più rapido di guadagnare secondi."
+      },
+      "heavyPage": {
+        "title": "La pagina pesa troppo",
+        "impact": "Chi ti apre con la rete del telefono scarica un file grosso prima di vedere qualcosa — e con una connessione lenta l'attesa raddoppia."
+      },
+      "heavyImages": {
+        "title": "Le immagini pesano più del necessario",
+        "impact": "È quasi sempre la causa numero uno di lentezza. Le stesse identiche foto, salvate nel formato giusto, possono pesare un quinto senza perdere qualità visibile."
+      },
+      "blockingResources": {
+        "title": "Il sito aspetta cose non urgenti prima di mostrarsi",
+        "impact": "Alcune parti bloccano la comparsa del contenuto pur non servendo subito. Spostarle è un intervento veloce e si sente al primo caricamento."
+      },
+      "unusedCode": {
+        "title": "Il sito carica codice che poi non usa",
+        "impact": "Succede quasi sempre con temi e plugin: il visitatore scarica funzioni che sulla sua pagina non servono, e aspetta per niente."
+      },
+      "invisibleText": {
+        "title": "Il testo resta invisibile mentre carica",
+        "impact": "Per un attimo la pagina appare vuota e poi compaiono le scritte. Chi arriva in quel momento pensa che il sito sia rotto."
+      },
+      "contrast": {
+        "title": "Alcuni testi sono poco leggibili",
+        "impact": "Colori troppo simili tra scritta e sfondo: sullo schermo del telefono, al sole, diventano illeggibili. Perdi chi non ha voglia di sforzarsi."
+      },
+      "smallTargets": {
+        "title": "Alcuni pulsanti sono troppo piccoli da toccare",
+        "impact": "Da telefono si sbaglia bersaglio. Se capita sul pulsante «prenota» o «chiama», il cliente l'hai perso proprio lì."
+      },
+      "imageAlt": {
+        "title": "Le immagini non hanno una descrizione",
+        "impact": "Google non vede le foto: legge la descrizione che le accompagna. Senza, perdi visibilità su Google Immagini, e chi naviga con un lettore vocale non sa cosa sta guardando."
+      },
+      "formLabels": {
+        "title": "Alcuni campi del modulo non hanno un'etichetta",
+        "impact": "Chi compila non sa sempre cosa scriverci, e chi usa un lettore vocale non ci riesce proprio. I moduli sono il punto in cui arrivano i contatti: vale la pena curarli."
+      },
+      "namelessControls": {
+        "title": "Ci sono pulsanti e link senza nome",
+        "impact": "Per il telefono di chi non vede sono «pulsante, pulsante, pulsante». Anche Google fatica a capire come è fatto il sito."
+      },
+      "language": {
+        "title": "Non è dichiarata la lingua del sito",
+        "impact": "Serve al browser per proporre la traduzione e ai lettori vocali per pronunciare le parole nel modo giusto. È letteralmente una riga di codice."
+      },
+      "headingOrder": {
+        "title": "I titoli della pagina sono in ordine sparso",
+        "impact": "Google usa i titoli per capire di cosa parli e cosa conta di più. Se sono usati come semplice grassetto, quel vantaggio lo perdi."
+      },
+      "consoleErrors": {
+        "title": "Il sito produce errori mentre viene usato",
+        "impact": "Non si vedono a occhio, ma segnalano che qualcosa non funziona come dovrebbe — spesso proprio i moduli o i pulsanti."
+      },
+      "stretchedImages": {
+        "title": "Alcune immagini vengono deformate",
+        "impact": "Foto schiacciate o stirate rispetto all'originale. Sono la cosa che fa sembrare «fatto in casa» un sito anche quando tutto il resto è curato."
+      },
+      "outdatedCode": {
+        "title": "Il sito usa pezzi ormai superati",
+        "impact": "Funzionano ancora, ma i browser li stanno togliendo. Prima o poi qualcosa smetterà di funzionare, e succederà senza preavviso."
+      },
+      "redirects": {
+        "title": "Prima di aprirsi, il sito rimbalza da un indirizzo all'altro",
+        "impact": "Ogni rimbalzo aggiunge attesa prima che compaia qualcosa, e sulla rete del telefono si sente. Di solito si elimina facendo puntare i link direttamente all'indirizzo giusto."
+      },
+      "unsizedImages": {
+        "title": "Le immagini non dichiarano quanto sono grandi",
+        "impact": "Il browser non sa quanto spazio lasciare loro, così la pagina si riassesta mentre carica. È il motivo per cui ogni tanto si tocca il pulsante sbagliato."
+      },
+      "canonical": {
+        "title": "L'indirizzo ufficiale della pagina è dichiarato male",
+        "impact": "Serve a dire a Google quale indirizzo è quello buono, quando la stessa pagina è raggiungibile in più modi. Se è sbagliato, Google può indicizzare la versione sbagliata — o nessuna."
+      },
+      "robotsTxt": {
+        "title": "Il file che guida Google contiene errori",
+        "impact": "È il foglio di istruzioni che i motori di ricerca leggono per primo. Se ha righe sbagliate, rischi che ignorino pagine che invece vuoi far trovare."
+      }
+    },
+    "wins": {
+      "https": "Il sito è sicuro: chi lo apre vede il lucchetto accanto all'indirizzo.",
+      "mobile": "È pensato per il telefono: si legge senza dover fare zoom.",
+      "title": "Il titolo che Google mostra nei risultati c'è ed è a posto.",
+      "description": "C'è la descrizione che compare sotto il titolo nei risultati di Google.",
+      "imageAlt": "Le immagini hanno una descrizione: Google le capisce e le può mostrare.",
+      "contrast": "I testi si leggono bene, anche da telefono al sole.",
+      "fastServer": "Il server risponde in fretta: le fondamenta sono buone.",
+      "crawlable": "Google può leggere il sito e metterlo nei risultati.",
+      "targets": "I pulsanti sono abbastanza grandi da toccare col dito senza sbagliare."
+    },
+    "cta": {
+      "title": "Vuoi che li sistemiamo noi?",
+      "text": "Guardiamo insieme il referto in una chiamata di venti minuti: ti diciamo cosa vale la pena fare, quanto costa e in quanto tempo. E se non vale la pena farlo, ti diciamo anche quello.",
+      "primary": "Prenota una chiamata gratuita",
+      "secondary": "Scrivici due righe"
+    },
+    "reassurance": {
+      "free": {
+        "title": "Gratis e senza registrazione",
+        "body": "Nessuna email da lasciare, nessun commerciale che ti richiama. Il referto lo leggi qui, subito."
+      },
+      "mobile": {
+        "title": "Misurato dal telefono",
+        "body": "Perché è da lì che arriva la maggior parte dei tuoi visitatori, ed è lì che i problemi si vedono davvero."
+      },
+      "google": {
+        "title": "Gli stessi dati che usa Google",
+        "body": "Ci appoggiamo a PageSpeed Insights, lo strumento ufficiale con cui Google misura i siti."
+      }
+    }
+  },
   "footer": {
-    "tagline": "Creiamo software, app e automazioni su misura.",
+    "tagline": "Siti, gestionali e app su misura per le piccole e medie imprese.",
     "rights": "Tutti i diritti riservati.",
     "legal": {
       "privacy": "Privacy",
@@ -362,11 +555,12 @@
   },
   "newsletter": {
     "title": "Novità dallo studio",
-    "headline": "Resta aggiornato sul nostro lavoro",
-    "subtitle": "Un'email ogni tanto con progetti, esperimenti e novità. Niente spam.",
+    "headline": "Ogni tanto scriviamo cosa stiamo costruendo",
+    "subtitle": "Un'email quando c'è qualcosa che vale la pena raccontare. Niente spam, niente vendite.",
     "placeholder": "La tua email",
     "success": "Iscritto! A presto.",
-    "error": "Qualcosa è andato storto, riprova."
+    "error": "Qualcosa è andato storto, riprova.",
+    "submit": "Iscriviti"
   },
   "modal": {
     "close": "Chiudi"
@@ -434,5 +628,20 @@
       ],
       "outro": "Trattandosi di cookie strettamente necessari al funzionamento del sito, non è richiesto un consenso preventivo. Puoi comunque cancellarli in qualsiasi momento dalle impostazioni del tuo browser."
     }
+  },
+  "notFound": {
+    "eyebrow": "Errore 404",
+    "title": "Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste o è stata spostata.",
+    "cta": "Torna alla home",
+    "secondaryCta": "Vai ai lavori"
+  },
+  "error": {
+    "eyebrow": "Errore imprevisto",
+    "title": "Qualcosa è andato storto",
+    "description": "Si è verificato un errore inatteso. Riprova o torna alla home.",
+    "retry": "Riprova",
+    "cta": "Torna alla home",
+    "digest": "Codice errore: {digest}"
   }
 }

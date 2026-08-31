@@ -47,9 +47,16 @@ export async function TechStack() {
     <StackedSection>
       <div className="mx-auto max-w-6xl px-6 py-12">
         <Reveal className="flex flex-col items-center gap-8">
-          <p className="font-mono text-xs uppercase tracking-wide text-foreground-muted">
-            {techStackT("title")}
-          </p>
+          <div className="max-w-xl text-center">
+            <p className="font-mono text-lg uppercase tracking-wider text-foreground-muted">
+              {techStackT("title")}
+            </p>
+            {/* Il perché conta per un imprenditore non è la lista, è il non
+                restare in ostaggio del fornitore. */}
+            <p className="mt-3 text-sm text-foreground-muted">
+              {techStackT("subtitle")}
+            </p>
+          </div>
 
           {/* Il marquee scorre in loop continuo: due tracce identiche, la seconda
               aria-hidden. L'animazione (solo transform) è nel CSS globale. */}

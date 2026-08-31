@@ -34,9 +34,9 @@ export function CaseStudyCard({
     >
       <Link
         href={`/work/${slug}`}
-        className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border bg-background/60 text-left shadow-sm outline-none transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand"
+        className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border bg-background-elevated/60 text-left shadow-sm outline-none transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand"
       >
-        <div className="relative aspect-16/10 w-full overflow-hidden">
+        <div className="relative aspect-16/10 w-full overflow-hidden bg-neutral-200/50 border-b border-border">
           {image ? (
             <Image
               src={image}
@@ -47,12 +47,11 @@ export function CaseStudyCard({
             />
           ) : (
             <Monogram title={title} />
-          )}
+          )}        
+        </div>
 
-          {/* Scrim in alto per rendere leggibili i tag su qualsiasi immagine */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-linear-to-b from-background/70 to-transparent" />
-
-          <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
+        <div className="flex flex-1 flex-col p-6">
+          <div className="flex flex-wrap gap-2 mb-3">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -62,15 +61,12 @@ export function CaseStudyCard({
               </span>
             ))}
           </div>
-        </div>
-
-        <div className="flex flex-1 flex-col p-6">
-          <h3 className="text-xl font-semibold tracking-[-0.01em] text-foreground transition-colors group-hover:text-brand">
+          <h3 className="text-xl font-semibold tracking-[-0.01em] text-foreground">
             {title}
           </h3>
 
           <div className="mt-3">
-            <p className="font-mono text-xs uppercase tracking-wide text-brand">{resultLabel}</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-foreground-muted">{resultLabel}</p>
             <p className="mt-2 line-clamp-2 text-sm text-foreground-muted">{result}</p>
           </div>
 

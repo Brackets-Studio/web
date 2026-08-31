@@ -12,9 +12,25 @@ const SOCIAL_LINKS = [
   { label: "Email", href: "mailto:info@bracketstudio.it" },
 ];
 
+/**
+ * Il footer è il secondo posto dove si cerca una pagina quando non è nella
+ * barra — e con una navbar che sta ferma a quattro voci, è dove le pagine
+ * nuove restano comunque raggiungibili. Le etichette arrivano da `nav`, così
+ * barra e footer non possono divergere.
+ */
+const SITE_LINKS = [
+  { href: "/work", key: "caseStudies" as const },
+  { href: "/servizi", key: "servicesIndex" as const },
+  { href: "/analisi", key: "analyze" as const },
+  { href: "/blog", key: "blog" as const },
+  { href: "/pricing", key: "pricing" as const },
+  { href: "/team", key: "about" as const },
+];
+
 export function Footer() {
   const pathname = usePathname();
   const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
   const year = new Date().getFullYear();
 
   return (
@@ -29,6 +45,18 @@ export function Footer() {
               <LocaleSwitcher pathname={pathname} />
             </div>
           </div>
+
+          <nav className="flex flex-col gap-2 text-sm">
+            {SITE_LINKS.map((link) => (
+              <Link
+                key={link.key}
+                href={link.href}
+                className="text-foreground-muted transition-colors hover:text-brand"
+              >
+                {tNav(link.key)}
+              </Link>
+            ))}
+          </nav>
 
           <nav className="flex flex-col gap-2 font-mono text-sm sm:items-end">
             {SOCIAL_LINKS.map((link) => (

@@ -8,13 +8,20 @@
 
 /*
  * Design tokens —  Studio
- * Palette dark-first ispirata a Geist/Vercel, un solo colore accento (brand).
+ * Palette neutra (zinc) + un solo accento caldo (brand).
  * Il tema è controllato da una classe .dark/.light su <html> (persistita in
  * localStorage), con prefers-color-scheme come fallback per il primo
  * render quando l'utente non ha ancora scelto esplicitamente.
  *
- * "--brand" è il colore d'accento del prodotto (CTA, link, focus). È tenuto
- * separato dai token semantici di shadcn/ui (--accent, --primary, ecc.), che
+ * "--brand" è il colore d'accento del prodotto. Le due varianti sono la STESSA
+ * tinta in OKLCH (H=40), separate solo in luminosità, così l'identità non cambia
+ * passando da un tema all'altro; entrambe superano AA (4.5:1) come testo sul
+ * proprio fondo, quindi "text-brand" è sempre leggibile. Regola d'uso: il brand
+ * marca la CTA primaria, il focus e i pochi accenti che portano significato —
+ * non è un colore decorativo. "--brand-subtle" è la versione da sfondo, per i
+ * pannelli che devono solo essere tinti senza urlare.
+ *
+ * Il brand resta separato dai token semantici di shadcn/ui (--accent, --primary, ecc.), che
  * restano neutri: shadcn usa --accent per gli hover/focus interni dei suoi
  * componenti (es. voci di un DropdownMenu), e se coincidesse con --brand
  * ogni hover lampeggerebbe del colore accento invece di un grigio discreto.
@@ -25,8 +32,9 @@
   --foreground: #1a1a1a;
   --foreground-muted: #52525b;
   --border: rgb(0 0 0 / 10%);
-  --brand: #00b39c;
-  --brand-foreground: #04120f;
+  --brand: #c33e00;
+  --brand-foreground: #ffffff;
+  --brand-subtle: #ffe8e0;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -66,8 +74,9 @@
     --foreground: #e5e7eb;
     --foreground-muted: #a1a1aa;
     --border: rgb(255 255 255 / 12%);
-    --brand: #00e5c7;
-    --brand-foreground: #04120f;
+    --brand: #ff8557;
+    --brand-foreground: #1a1a1a;
+    --brand-subtle: #411d10;
     --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
     --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
     --destructive: oklch(0.704 0.191 22.216);
@@ -80,21 +89,23 @@
   --foreground: #e5e7eb;
   --foreground-muted: #a1a1aa;
   --border: rgb(255 255 255 / 12%);
-  --brand: #00e5c7;
-  --brand-foreground: #04120f;
+  --brand: #ff8557;
+  --brand-foreground: #1a1a1a;
+  --brand-subtle: #411d10;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
   --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
   --destructive: oklch(0.704 0.191 22.216);
 }
 
 :root.light {
-  --background: #ffffff;
+  --background: #f5f4ef;
   --background-elevated: #ffffff;
   --foreground: #1a1a1a;
   --foreground-muted: #52525b;
   --border: rgb(0 0 0 / 10%);
-  --brand: #00b39c;
-  --brand-foreground: #04120f;
+  --brand: #c33e00;
+  --brand-foreground: #ffffff;
+  --brand-subtle: #ffe8e0;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%), 0 0 0 1px var(--border);
   --shadow-md: 0 4px 12px rgb(0 0 0 / 8%), 0 0 0 1px var(--border);
   --destructive: oklch(0.577 0.245 27.325);
@@ -108,12 +119,17 @@
   --color-border: var(--border);
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
+  --color-brand-subtle: var(--brand-subtle);
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
   --radius-pill: var(--radius-pill);
   --font-sans: var(--font-bricolage);
   --font-mono: var(--font-space-mono);
+  /* Titoli delle landing verticali: la famiglia la sceglie il preset
+     (lib/verticals/presets.ts), qui c'è solo l'aggancio all'utility Tailwind
+     `font-title`. Fuori dalle verticali ricade su Bricolage. */
+  --font-title: var(--font-vertical-display, var(--font-bricolage));
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -139,6 +155,38 @@ body {
   transition: background-color 250ms var(--ease-out-custom), color 250ms var(--ease-out-custom);
 }
 
+/*
+ * Landing verticali — il layout `(verticali)/[vertical]` mette su un wrapper le
+ * custom property del preset scelto su Sanity (--background, --foreground,
+ * --brand, ...), e siccome i colori Tailwind del progetto sono dichiarati in
+ * `@theme inline` come `var(--background)` &c., l'intero sottoalbero cambia
+ * tema senza che un solo componente lo sappia.
+ *
+ * I token semantici di shadcn vanno però RIDICHIARATI qui. Sono definiti su
+ * `:root` come `var(--background-elevated)`, `color-mix(... var(--foreground))`
+ * e simili: le custom property sostituiscono i `var()` nel contesto in cui sono
+ * dichiarate, quindi su :root si "congelano" sui valori del tema del sito e
+ * scenderebbero invariate nel wrapper. Ripetendo le stesse formule qui, si
+ * risolvono contro i valori del preset. Le formule devono restare identiche a
+ * quelle di :root — se una cambia là, va cambiata anche qui.
+ */
+[data-vertical-theme] {
+  --card: var(--background-elevated);
+  --card-foreground: var(--foreground);
+  --popover: var(--background-elevated);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: color-mix(in oklch, var(--foreground) 6%, var(--background));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in oklch, var(--foreground) 6%, var(--background));
+  --muted-foreground: var(--foreground-muted);
+  --accent: color-mix(in oklch, var(--foreground) 8%, var(--background));
+  --accent-foreground: var(--foreground);
+  --input: var(--border);
+  --ring: var(--brand);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -148,12 +196,6 @@ footer[id] {
   scroll-margin-top: 96px;
 }
 
-@media (pointer: fine) {
-  html.custom-cursor,
-  html.custom-cursor * {
-    cursor: none !important;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -184,4 +226,383 @@ footer[id] {
 
 .marquee-mask:hover .marquee-track {
   animation-play-state: paused;
+}
+
+/* Texture delle landing verticali — quale si applica lo decide il preset
+   (`VerticalPreset.texture`), non il documento Sanity. Vanno sempre su un
+   elemento decorativo a bassa opacità dietro il contenuto: sono un accento di
+   materia, non uno sfondo da leggerci sopra. */
+
+/* Tovaglia a quadretti — ristorazione. */
+.pattern-checkered {
+  --pc: var(--brand);
+  background-image:
+    linear-gradient(45deg, var(--pc) 25%, transparent 25%, transparent 75%, var(--pc) 75%, var(--pc)),
+    linear-gradient(45deg, var(--pc) 25%, transparent 25%, transparent 75%, var(--pc) 75%, var(--pc));
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Grana di carta — ospitalità e retail. Puntini irregolari da due gradienti
+   radiali sfasati: costa un solo dipinto, nessuna immagine da scaricare. */
+.pattern-grain {
+  --pc: var(--foreground);
+  background-image:
+    radial-gradient(var(--pc) 0.5px, transparent 0.5px),
+    radial-gradient(var(--pc) 0.5px, transparent 0.5px);
+  background-size: 7px 7px, 11px 11px;
+  background-position: 0 0, 3px 5px;
+}
+
+/* ============================================================================
+ * IL VESTITO DELLE LANDING VERTICALI
+ *
+ * I preset (`lib/verticals/presets.ts`) mettono sul wrapper le custom property
+ * `--v-*`; queste classi sono l'unico posto in cui quelle proprietà diventano
+ * forma. Servono perché un preset che cambia solo i colori produce sette volte
+ * la stessa pagina ridipinta: la differenza tra una landing per ristoranti e
+ * una per palestre sta negli angoli, nello spessore dei bordi, nella forma dei
+ * bottoni e nel trattamento delle etichette, non nel colore della CTA.
+ *
+ * Regola d'uso: la FORMA (raggio, bordo, ombra, famiglia, maiuscolo) sta qui e
+ * arriva dal preset; SPAZIATURA e LAYOUT (padding, margini, griglie, corpo del
+ * testo) restano classi Tailwind nel TSX. Non mescolare: queste regole sono
+ * fuori da `@layer`, quindi battono le utility Tailwind — un `rounded-lg`
+ * messo su un `.v-card` non avrebbe effetto.
+ *
+ * Le regole base sono il registro "stampato" (spigoli vivi, bordo doppio in
+ * inchiostro, etichette mono maiuscole): i preset non ancora vestiti lo
+ * ereditano senza sorprese. Sotto, solo ciò che ogni nicchia cambia davvero.
+ * ==========================================================================*/
+
+/* --- Titoli --------------------------------------------------------------- */
+.v-title {
+  font-family: var(--font-vertical-display, var(--font-bricolage));
+  font-weight: var(--v-title-weight, 700);
+  letter-spacing: var(--v-title-tracking, -0.015em);
+  text-transform: var(--v-title-transform, none);
+  line-height: var(--v-title-leading, 1.1);
+  text-wrap: balance;
+}
+
+/* --- Occhiello ------------------------------------------------------------
+ * Il segno che tiene insieme la pagina scorrendola. Di base è un trattino più
+ * una riga in mono maiuscolo; l'ospitalità lo trasforma in pastiglia, il
+ * fitness in un blocco inclinato. Il testo sta in uno `<span>` proprio perché
+ * il fitness deve poterlo raddrizzare dentro un genitore inclinato. */
+.v-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-vertical-label, var(--font-space-mono));
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: var(--v-label-weight, 700);
+  font-style: var(--v-label-style, normal);
+  text-transform: var(--v-label-transform, uppercase);
+  letter-spacing: var(--v-label-tracking, 0.1em);
+  color: var(--brand);
+}
+
+.v-eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Testo in voce "etichetta" fuori da occhielli e bottoni: la firma in fondo,
+   il nome dello studio in header e footer, le note in mono. Non impone il
+   maiuscolo — quello lo chiede chi lo vuole, con `uppercase`. */
+.v-label {
+  font-family: var(--font-vertical-label, var(--font-space-mono));
+  font-weight: var(--v-label-weight, 700);
+  letter-spacing: var(--v-label-tracking, 0.1em);
+}
+
+/* --- Bottoni --------------------------------------------------------------
+ * Padding e corpo restano qui (non nel TSX) perché un bottone a pillola e un
+ * bottone squadrato non vogliono lo stesso respiro ai lati. */
+.v-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-vertical-label, var(--font-space-mono));
+  font-size: 0.875rem;
+  font-weight: var(--v-label-weight, 700);
+  font-style: var(--v-label-style, normal);
+  text-transform: var(--v-label-transform, uppercase);
+  letter-spacing: var(--v-label-tracking, 0.1em);
+  border-radius: var(--v-radius-control, 0px);
+  border: var(--v-border-strong, 2px) solid transparent;
+  transition:
+    background-color 200ms var(--ease-out-custom),
+    color 200ms var(--ease-out-custom),
+    border-color 200ms var(--ease-out-custom),
+    box-shadow 200ms var(--ease-out-custom),
+    transform 200ms var(--ease-out-custom);
+}
+
+.v-btn--primary {
+  background: var(--v-btn-bg, var(--foreground));
+  color: var(--v-btn-fg, var(--background));
+  border-color: var(--v-btn-border, var(--foreground));
+}
+
+/* Di base l'hover svuota il bottone: è il registro tipografico, il colore si
+   ritira e resta la cornice. I preset che non lo vogliono lo riscrivono. */
+.v-btn--primary:hover {
+  background: transparent;
+  color: var(--v-btn-border, var(--foreground));
+}
+
+.v-btn--ghost {
+  border-color: var(--foreground);
+  color: var(--foreground);
+}
+
+.v-btn--ghost:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* --- Superfici ------------------------------------------------------------ */
+
+/* Card: bordo sottile, il raggio e l'ombra li decide il preset. */
+.v-card {
+  background: var(--background-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--v-radius-card, 0px);
+  box-shadow: var(--v-shadow, none);
+  overflow: hidden;
+}
+
+/* La variante tinta della card (la conferma "Ricevuto."). Serve una classe e
+   non `bg-brand-subtle` nel TSX: `.v-card` sta fuori da `@layer`, quindi
+   un'utility di sfondo non riuscirebbe a scavalcarla. */
+.v-card--tint {
+  background: var(--brand-subtle);
+}
+
+/* Pannello: la cosa incorniciata sul serio — il prezzo. Bordo forte. */
+.v-panel {
+  background: var(--background-elevated);
+  border: var(--v-border-strong, 2px) solid var(--v-panel-border, var(--foreground));
+  border-radius: var(--v-radius-card, 0px);
+}
+
+/* Cornice di un'immagine. */
+.v-media {
+  border: 1px solid var(--border);
+  border-radius: var(--v-radius-media, 0px);
+  box-shadow: var(--v-shadow, none);
+  overflow: hidden;
+}
+
+/* La fascia tinta a tutta larghezza (sezione prezzo). Era un beige cablato nel
+   TSX: sul preset scuro diventava una banda chiara con sopra testo chiaro. */
+.v-band {
+  background: var(--v-surface-alt, var(--background-elevated));
+}
+
+/* Campi di form. */
+.v-input {
+  border-radius: var(--v-radius-input, 0px);
+}
+
+/* Il numero di uno step del "come funziona". */
+.v-step {
+  font-family: var(--font-vertical-label, var(--font-space-mono));
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.6;
+}
+
+/* Un beneficio. Di base è testo nudo: chi vuole la card la riscrive sotto. */
+.v-benefit {
+  display: block;
+}
+
+/* Una riga dell'accordion obiezioni. Il bordo lo ridichiara questa classe e
+   non l'utility del componente: essendo fuori da `@layer`, `last:border-b-0`
+   non arriverebbe più a spegnerlo, quindi l'ultima riga se la spegne qui. */
+.v-faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.v-faq-item:last-child {
+  border-bottom: 0;
+}
+
+/* ============================================================================
+ * OSPITALITÀ — vivace e tondo.
+ * Niente cornici spesse: qui il rilievo lo danno le ombre basse e il secondo
+ * colore. Le etichette perdono il maiuscoletto mono e diventano pastiglie.
+ * ==========================================================================*/
+
+[data-vertical-theme="ospitalita"] .v-eyebrow {
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  background: var(--brand-subtle);
+  font-size: 0.8125rem;
+}
+
+/* Il trattino diventa un pallino, e prende l'accento secondario: è il punto in
+   cui la pagina smette di essere monocroma. */
+[data-vertical-theme="ospitalita"] .v-eyebrow::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: var(--v-accent);
+}
+
+[data-vertical-theme="ospitalita"] .v-btn {
+  padding: 0.95rem 1.75rem;
+  font-size: 0.9375rem;
+}
+
+/* L'hover non svuota: solleva. Un bottone tondo che si svuota sembra rotto. */
+[data-vertical-theme="ospitalita"] .v-btn--primary:hover {
+  background: var(--v-btn-bg);
+  color: var(--v-btn-fg);
+  transform: translateY(-2px);
+  box-shadow: var(--v-shadow);
+}
+
+[data-vertical-theme="ospitalita"] .v-btn--ghost {
+  border-color: var(--v-accent);
+  background: var(--v-accent-subtle);
+}
+
+[data-vertical-theme="ospitalita"] .v-btn--ghost:hover {
+  background: var(--v-accent);
+  color: var(--brand-foreground);
+  transform: translateY(-2px);
+}
+
+/* Ogni beneficio è una card: sono le "cose belle della casa", si guardano una
+   per una, non si leggono come un elenco. */
+[data-vertical-theme="ospitalita"] .v-benefit {
+  background: var(--background-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--v-radius-card);
+  box-shadow: var(--v-shadow);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* Lo step è un pallino numerato, non una cifra in mono. */
+[data-vertical-theme="ospitalita"] .v-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: var(--v-accent-subtle);
+  color: var(--v-accent);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Le obiezioni diventano riquadri separati invece di righe di un elenco. */
+[data-vertical-theme="ospitalita"] .v-faq-item,
+[data-vertical-theme="ospitalita"] .v-faq-item:last-child {
+  border: 1px solid var(--border);
+  border-radius: var(--v-radius-card);
+  background: var(--background-elevated);
+  margin-bottom: 0.75rem;
+  padding: 0 1.25rem;
+}
+
+/* ============================================================================
+ * FITNESS — molto dinamico.
+ * Maiuscolo, corsivo, inclinazioni, ombra dura. Nessuna morbidezza.
+ * ==========================================================================*/
+
+/* L'occhiello è un blocco di colore inclinato; il testo dentro si raddrizza,
+   altrimenti sarebbe illeggibile oltre che sgraziato. */
+[data-vertical-theme="fitness"] .v-eyebrow {
+  padding: 0.4rem 0.85rem;
+  background: var(--brand);
+  color: var(--brand-foreground);
+  transform: skewX(-10deg);
+}
+
+[data-vertical-theme="fitness"] .v-eyebrow > span {
+  display: block;
+  transform: skewX(10deg);
+}
+
+[data-vertical-theme="fitness"] .v-eyebrow::before {
+  display: none;
+}
+
+[data-vertical-theme="fitness"] .v-btn {
+  padding: 1rem 1.75rem;
+}
+
+/* L'hover non svuota e non solleva: sposta il bottone e gli lascia dietro
+   un'ombra netta, come uno scatto. */
+[data-vertical-theme="fitness"] .v-btn--primary:hover {
+  background: var(--v-btn-bg);
+  color: var(--v-btn-fg);
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--v-accent);
+}
+
+[data-vertical-theme="fitness"] .v-btn--ghost {
+  border-color: var(--foreground);
+}
+
+[data-vertical-theme="fitness"] .v-btn--ghost:hover {
+  background: var(--v-accent);
+  border-color: var(--v-accent);
+  color: #ffffff;
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--brand);
+}
+
+/* Un beneficio è marcato a sinistra da una barra piena: la lista si legge come
+   una scheda di allenamento. */
+[data-vertical-theme="fitness"] .v-benefit {
+  border-left: 3px solid var(--brand);
+  padding-left: 1.25rem;
+}
+
+/* Il numero dello step diventa un'insegna: grande, condensato, tagliato. */
+[data-vertical-theme="fitness"] .v-step {
+  font-family: var(--font-vertical-display);
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 0.85;
+  font-style: normal;
+  letter-spacing: -0.03em;
+  color: var(--brand);
+}
+
+[data-vertical-theme="fitness"] .v-faq-item [data-slot="accordion-trigger"] {
+  font-family: var(--font-vertical-label);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Le card si accendono al passaggio: il bordo prende l'accento e si stacca. */
+[data-vertical-theme="fitness"] .v-card:hover {
+  border-color: var(--brand);
+}
+
+/* Bande diagonali — fitness. Le stesse strisce del nastro di un cantiere o del
+   bordo pista: dicono "movimento" prima di qualsiasi parola. */
+.pattern-stripes {
+  --pc: var(--brand);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--pc) 0 6px,
+    transparent 6px 18px
+  );
 }

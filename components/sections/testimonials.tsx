@@ -7,6 +7,7 @@ import { urlFor } from "@/sanity/image";
 import type { Testimonial } from "@/sanity/types";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
 
 // Iniziali come fallback finché una testimonianza non ha ancora l'avatar,
 // così la card resta pulita e non mostra mai un'immagine rotta.
@@ -33,16 +34,12 @@ export async function Testimonials() {
 
   return (
     <StackedSection id="testimonianze">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal>
-          <p className="mb-6 w-fit uppercase font-mono text-sm bg-muted/50 shadow-xl shadow-border/70 px-3 py-1 rounded-full border border-border">
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-4xl font-bold tracking-[-0.02em] text-foreground">
-            {t("title")}
-          </h2>
-          <p className="mt-3 max-w-md text-foreground-muted">{t("subtitle")}</p>
-        </Reveal>
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeader
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+        />
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {testimonials.map((item, index) => (
@@ -52,11 +49,13 @@ export async function Testimonials() {
               className="flex flex-col rounded-lg border border-border bg-background-elevated p-6 shadow-sm"
             >
               <figure className="flex h-full flex-col">
-                <Quote className="size-5 text-brand" strokeWidth={1.75} />
-                <blockquote className="mt-4 flex-1 text-sm text-foreground">
-                  {item.quote}
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
+                <div className="overflow-y-auto max-h-52 scroll-auto pb-4">
+                  <Quote className="size-5 text-foreground-muted/50" strokeWidth={1.75} />
+                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed whitespace-pre-line text-foreground">
+                    {item.quote}
+                  </blockquote>
+                </div>
+                <figcaption className="mt-auto flex items-center gap-3 border-t border-border pt-4">
                   {item.avatar?.asset ? (
                     <Image
                       src={urlFor(item.avatar).width(96).height(96).fit("crop").url()}

@@ -10,19 +10,54 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { useTranslations } from "next-intl";
+import { ChevronDown } from "lucide-react";
 import LocaleSwitcher from "../utils/LocaleSwitcher";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Magnetic } from "@/components/ui/magnetic";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
+type NavLink = { href: string; key: string };
+type NavEntry = NavLink | { key: string; items: NavLink[] };
 
-const NAV_ITEMS = [
-  { href: "/#servizi", key: "services" as const },
-  { href: "/work", key: "caseStudies" as const },
-  { href: "/team", key: "about" as const },
-  { href: "/pricing", key: "pricing" as const },
-  { href: "/blog", key: "blog" as const },
+/**
+ * Quattro voci, e quattro devono restare.
+ *
+ * La barra collassa a max-w-2xl appena si scorre: ogni voce in più la stringe
+ * fino a spezzarla, e ogni nuova pagina (le landing verticali, le pagine per
+ * servizio, /lab) chiederebbe il suo posto. Quindi la barra non cresce mai:
+ * cresce quello che sta dentro i gruppi. Una pagina nuova entra come voce di
+ * un menu, non come voce della navbar.
+ */
+const NAV: NavEntry[] = [
+  {
+    key: "services",
+    items: [
+      { href: "/#servizi", key: "whatWeDo" },
+      { href: "/servizi", key: "servicesIndex" },
+      { href: "/#processo", key: "howWeWork" },
+      { href: "/pricing", key: "pricing" },
+    ],
+  },
+  { href: "/work", key: "caseStudies" },
+  {
+    key: "resources",
+    items: [
+      { href: "/analisi", key: "analyze" },
+      { href: "/blog", key: "blog" },
+    ],
+  },
+  { href: "/team", key: "about" },
 ];
+
+function isGroup(entry: NavEntry): entry is { key: string; items: NavLink[] } {
+  return "items" in entry;
+}
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const MotionLink = motion.create(Link);
@@ -72,7 +107,7 @@ export function Navbar() {
         <header
           className={`w-full border bg-background transition-[max-width,margin-top,border-radius,border-color,background-color,box-shadow] duration-500 ${
             scrolled
-              ? "max-w-2xl mt-4 rounded-4xl border-border bg-background/80 shadow-md backdrop-blur-md"
+              ? "max-w-2xl mt-4 rounded-4xl border-border bg-background-elevated shadow-md backdrop-blur-md"
               : "max-w-full mt-0 rounded-none border-x-transparent border-t-transparent border-b-border backdrop-blur-none"
           }`}
           style={{ transitionTimingFunction: EASE_OUT_CSS }}
@@ -105,20 +140,46 @@ export function Navbar() {
             </motion.p>
           </Link>
 
-          <nav className="col-start-2 hidden items-center gap-4 justify-self-center md:flex">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="group relative text-sm text-foreground-muted transition-colors hover:text-foreground"
-              >
-                {t(item.key)}
-                <span
-                  aria-hidden
-                  className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-200 ease-out group-hover:scale-x-100"
-                />
-              </Link>
-            ))}
+          <nav className="col-start-2 hidden items-center gap-5 justify-self-center md:flex">
+            {NAV.map((entry) =>
+              isGroup(entry) ? (
+                <DropdownMenu key={entry.key}>
+                  <DropdownMenuTrigger className="group flex items-center gap-1 text-sm text-foreground-muted outline-none transition-colors hover:text-foreground focus-visible:text-foreground data-popup-open:text-foreground">
+                    {t(entry.key)}
+                    <ChevronDown
+                      className="size-3.5 transition-transform duration-200 group-data-popup-open:rotate-180"
+                      aria-hidden
+                    />
+                  </DropdownMenuTrigger>
+                  {/* w-auto annulla il w-(--anchor-width) del componente, che
+                      altrimenti stringerebbe il menu sulla larghezza della
+                      parola che lo apre. */}
+                  <DropdownMenuContent align="center" sideOffset={10} className="w-auto min-w-52 p-1.5">
+                    {entry.items.map((item) => (
+                      <DropdownMenuItem
+                        key={item.key}
+                        className="px-2.5 py-2 text-foreground-muted transition-colors hover:text-foreground"
+                        render={<Link href={item.href} />}
+                      >
+                        {t(item.key)}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link
+                  key={entry.key}
+                  href={entry.href}
+                  className="group relative text-sm text-foreground-muted transition-colors hover:text-foreground"
+                >
+                  {t(entry.key)}
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-200 ease-out group-hover:scale-x-100"
+                  />
+                </Link>
+              ),
+            )}
           </nav>
 
           <div className="col-start-3 hidden items-center gap-3 justify-self-end md:flex">
@@ -189,17 +250,38 @@ export function Navbar() {
               transition={{ duration: 0.25, ease: EASE_OUT }}
               className="overflow-hidden border-t border-border md:hidden"
             >
+              {/* Da telefono niente tendine: il pannello è già un elenco, e
+                  nasconderci dentro altri livelli servirebbe solo a far
+                  toccare due volte. I gruppi diventano intestazioni. */}
               <nav className="flex flex-col gap-1 px-6 py-4">
-                {NAV_ITEMS.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
-                  >
-                    {t(item.key)}
-                  </Link>
-                ))}
+                {NAV.map((entry) =>
+                  isGroup(entry) ? (
+                    <div key={entry.key} className="mt-3 first:mt-0">
+                      <p className="py-1 font-mono text-xs tracking-wider text-foreground-muted/70 uppercase">
+                        {t(entry.key)}
+                      </p>
+                      {entry.items.map((item) => (
+                        <Link
+                          key={item.key}
+                          href={item.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="block py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+                        >
+                          {t(item.key)}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      key={entry.key}
+                      href={entry.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+                    >
+                      {t(entry.key)}
+                    </Link>
+                  ),
+                )}
                 <MotionLink
                   href="/#contatti"
                   onClick={() => setMenuOpen(false)}

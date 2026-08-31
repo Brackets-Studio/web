@@ -20,7 +20,7 @@ export function Approach() {
   const gridY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   return (
-    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-neutral-200/20 dark:bg-neutral-900">
+    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-[#eeece6] dark:bg-neutral-900">
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -33,16 +33,16 @@ export function Approach() {
         }}
       />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-24 sm:py-28 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-20 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.3, ease: EASE_OUT }}
-            className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 font-mono text-sm text-brand backdrop-blur-sm"
+            className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted"
           >
-            <span className="size-1.5 rounded-full bg-brand" />
+            <span className="size-1.5 rounded-full bg-brand" aria-hidden />
             {t("eyebrow")}
           </motion.div>
 
@@ -51,7 +51,7 @@ export function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.4, delay: 0.05, ease: EASE_OUT }}
-            className="max-w-3xl text-4xl font-semibold tracking-[-0.02em] sm:text-5xl md:text-6xl"
+            className="max-w-3xl text-3xl font-bold tracking-[-0.02em] text-balance sm:text-4xl md:text-5xl"
           >
             {t("headline")}
           </motion.h2>
@@ -79,7 +79,7 @@ export function Approach() {
               Keep this motion.div wrapping it so the parallax carries over. */}
           <motion.div
             style={{ y: imageY }}
-            className="absolute inset-[-10%] flex items-center justify-center bg-linear-to-br from-neutral-300/60 via-neutral-200/40 to-brand/10 dark:from-neutral-800 dark:via-neutral-900 dark:to-brand/10"
+            className="absolute inset-[-10%] flex items-center justify-center bg-linear-to-br from-neutral-300/60 via-neutral-200/40 to-neutral-100 dark:from-neutral-800 dark:via-neutral-900 dark:to-neutral-950"
           >
             <div
               className="absolute inset-0 opacity-[0.05]"

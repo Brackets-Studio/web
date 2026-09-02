@@ -20,7 +20,8 @@
     "resources": "Risorse",
     "whatWeDo": "Cosa facciamo",
     "howWeWork": "Come lavoriamo",
-    "servicesIndex": "Tutti i servizi"
+    "servicesIndex": "Tutti i servizi",
+    "lab": "Laboratorio"
   },
   "hero": {
     "eyebrow": "Studio di sviluppo · Pesaro",
@@ -47,8 +48,12 @@
   "servizi": {
     "index": {
       "eyebrow": "Servizi",
-      "title": "Cosa possiamo costruire per te",
-      "subtitle": "Un unico interlocutore per tutto: dalla prima idea al programma che usi ogni giorno, fino all'assistenza quando ti serve."
+      "title": "Tutto quello che costruiamo",
+      "subtitle": "Apri il servizio che ti riguarda: dentro trovi cosa comprende, in quanto tempo si fa e da quanto si parte.",
+      "empty": {
+        "title": "I servizi sono in aggiornamento",
+        "body": "Stiamo riscrivendo questa pagina. Nel frattempo scrivici: ti diciamo subito se possiamo aiutarti."
+      }
     },
     "detail": {
       "highlightsTitle": "Cosa include",
@@ -110,10 +115,13 @@
     "highlights": "Punti chiave",
     "details": "Dettagli progetto",
     "published": "Pubblicato",
+    "retrospective": "Cosa abbiamo imparato",
     "cta": {
+      "eyebrow": "Passo successivo",
       "title": "Ti serve qualcosa di simile?",
       "text": "Raccontaci il tuo caso: vediamo insieme se possiamo aiutarti.",
-      "button": "Parliamone"
+      "button": "Parliamone",
+      "buttonSecondary": "Scrivici"
     }
   },
   "approach": {
@@ -155,9 +163,11 @@
       }
     ],
     "cta": {
+      "eyebrow": "Possibilità",
       "title": "Lavoriamo insieme?",
       "text": "Raccontaci il tuo progetto: ti rispondiamo entro 24 ore, senza impegno.",
-      "button": "Parliamone"
+      "button": "Parliamone",
+      "buttonSecondary": "Connettiamoci"
     }
   },
   "process": {
@@ -167,16 +177,77 @@
     "steps": {
       "discovery": {
         "title": "Ci parliamo",
-        "description": "Ci racconti come lavori oggi e cosa non funziona. Ti diciamo subito se possiamo aiutarti, quanto costa e quanto ci vuole — prima di scrivere una riga di codice."
+        "description": "Ci racconti come lavori oggi e cosa non funziona. Ti diciamo subito se possiamo aiutarti, quanto costa e quanto ci vuole — prima di scrivere una riga di codice.",
+        "detail": "Nessun preventivo scritto prima di aver capito il problema. Passiamo mezza giornata sul posto o in videochiamata a guardare come lavori adesso: quali fogli apri, dove ricopi le stesse cose due volte, cosa ti fa perdere tempo il lunedì mattina. Da lì esce una proposta con un prezzo fisso — non una forbice, una cifra — e le date. Se pensiamo che non valga la pena farlo, o che ti basti qualcosa di più piccolo, te lo diciamo qui: è gratis e non ti costa niente scoprirlo.",
+        "duration": "Da 1 a 2 settimane, dalla prima chiamata alla proposta",
+        "deliverable": "Una proposta scritta con prezzo fisso, date e cosa è incluso"
       },
       "build": {
         "title": "Lo costruiamo",
-        "description": "Lavoriamo a piccoli passi e te lo facciamo vedere spesso. Se qualcosa non ti torna lo dici subito, non alla consegna."
+        "description": "Lavoriamo a piccoli passi e te lo facciamo vedere spesso. Se qualcosa non ti torna lo dici subito, non alla consegna.",
+        "detail": "Lavoriamo a pezzi di una o due settimane e alla fine di ognuno ti mandiamo un link con quello che c'è. Non un rapporto: la cosa vera, da usare col telefono in mano. Serve perché le abitudini di chi lavorerà con il prodotto si scoprono solo mettendoglielo davanti — e correggere la rotta alla seconda settimana costa niente, alla ventesima costa il progetto. Se qualcosa non ti torna lo dici lì, non alla consegna.",
+        "duration": "Da 3 a 10 settimane, secondo la dimensione",
+        "deliverable": "Un link aggiornato ogni una o due settimane, sempre visitabile"
       },
       "launch": {
         "title": "Va online e resta seguito",
-        "description": "Lo mettiamo online noi e continuiamo a seguirlo: controlli, manutenzione e le modifiche che ti serviranno strada facendo."
+        "description": "Lo mettiamo online noi e continuiamo a seguirlo: controlli, manutenzione e le modifiche che ti serviranno strada facendo.",
+        "detail": "Alla messa online ci pensiamo noi: dominio, server, certificati, il passaggio dal vecchio sito con i redirect al posto giusto perché tu non perda le posizioni che hai su Google. Poi restiamo. Controlli, aggiornamenti, le modifiche che servono strada facendo, e l'avviso che arriva a noi prima che a te quando qualcosa non va. Accessi e password sono tuoi dal primo giorno, non dal giorno in cui li chiedi.",
+        "duration": "Messa online in 1 o 2 giorni, poi assistenza continua",
+        "deliverable": "Il progetto online, gli accessi a tuo nome e chi risponde al telefono"
       }
+    },
+    "moreLink": "Come lavoriamo, nel dettaglio",
+    "durationLabel": "Quanto dura",
+    "deliverableLabel": "Cosa ti resta in mano"
+  },
+  "howWeWork": {
+    "meta": {
+      "title": "Come lavoriamo",
+      "description": "Cosa c'è scritto nel contratto, di chi è il codice, chi ci mette le mani, in quanto rispondiamo e come porti via tutto se un giorno vuoi cambiare. Senza giri di parole."
+    },
+    "eyebrow": "Come lavoriamo",
+    "title": "Prima di firmare, è giusto che tu sappia come funziona",
+    "subtitle": "La paura più comune di chi ci scrive non è che il lavoro venga male: è restare in ostaggio di chi l'ha fatto. Qui c'è tutto quello che di solito si scopre dopo — messo prima.",
+    "guarantees": {
+      "eyebrow": "Nero su bianco",
+      "title": "Le domande scomode, con la risposta",
+      "subtitle": "Sono le stesse cose che trovi scritte nel contratto. Le mettiamo qui perché tu le legga prima di parlarci, non dopo.",
+      "items": [
+        {
+          "question": "Di chi è il codice, davvero?",
+          "answer": "Tuo, dal primo giorno. Il repository è intestato a te e ci lavoriamo dentro noi, non il contrario. Dominio, server, account dei servizi: tutti a tuo nome, con le credenziali in mano a te da subito — non dal giorno in cui le chiedi. Non c'è un momento del progetto in cui qualcosa è nostro e poi te lo cediamo."
+        },
+        {
+          "question": "Cosa c'è scritto nel contratto?",
+          "answer": "Un prezzo fisso, non una forbice: dopo la chiamata di inquadramento ti diamo una cifra e quella resta, salvo che sia tu a chiedere cose in più — e in quel caso te lo diciamo prima di farle, non in fattura. Ci sono le date, cosa è incluso e, soprattutto, cosa non lo è. Nessun vincolo di durata: l'assistenza si disdice con un mese di preavviso e non ha penali."
+        },
+        {
+          "question": "Chi ci mette le mani?",
+          "answer": "Una persona sola, e sempre la stessa. Non c'è un commerciale che ti vende una cosa e poi sparisce, non c'è un account che gira la domanda a qualcun altro. Quando scrivi, risponde chi sta scrivendo il codice. È anche il nostro limite dichiarato: se ci chiedi qualcosa che non sappiamo fare, o che non abbiamo il tempo di fare bene, te lo diciamo invece di provarci."
+        },
+        {
+          "question": "E se un giorno spariste?",
+          "answer": "Hai già tutto: il codice è nel tuo repository, i server sono a tuo nome, e la documentazione di come si mette online sta dentro il progetto, non nella nostra testa. Usiamo apposta strumenti standard e diffusi — Next.js, PostgreSQL, servizi cloud comuni — invece di soluzioni nostre: qualsiasi sviluppatore serio può prendere in mano il lavoro senza ricominciare da zero. Non è generosità, è il motivo per cui non abbiamo bisogno di trattenerti."
+        },
+        {
+          "question": "In quanto rispondete?",
+          "answer": "Entro 24 ore lavorative a chiunque scriva, cliente o no. Se il progetto è tuo e qualcosa è rotto in produzione, hai un canale diretto e ci muoviamo lo stesso giorno. Quando non possiamo risolvere subito, ti diciamo cosa è successo e in quanto tempo contiamo di chiuderla — non ti lasciamo a controllare il sito da solo."
+        },
+        {
+          "question": "E se a metà cambio idea?",
+          "answer": "Succede quasi sempre, ed è previsto. È il motivo per cui lavoriamo a pezzi di una o due settimane e te li facciamo vedere: cambiare rotta alla seconda settimana costa poco, alla ventesima costa il progetto. Se la modifica è dentro il perimetro la facciamo e basta; se lo sposta, ti diciamo quanto costa e decidi tu. Nessuno dei due casi finisce in una discussione."
+        }
+      ]
+    },
+    "ctaTitle": "Ricapitolando",
+    "ctaText": "Se hai altre domande, dubbi o qualcosa non ti è chiaro ti consigliamo di contattarci",
+    "cta": {
+      "eyebrow": "Passo successivo",
+      "title": "Ti torna come lavoriamo?",
+      "text": "Mezz'ora di chiamata, senza impegno: ci racconti cosa ti serve e ti diciamo se possiamo aiutarti e quanto costa.",
+      "button": "Prenota una chiamata",
+      "buttonSecondary": "Scrivici"
     }
   },
   "testimonials": {
@@ -276,6 +347,7 @@
     "subtitle": "Ogni progetto è diverso, ma non ci piace il \"dipende\" senza numeri. Ecco le fasce reali in cui si muovono i lavori che facciamo. Dopo una chiamata di mezz'ora ti diamo un prezzo scritto e fisso.",
     "note": "Queste sono fasce indicative, non un listino: il prezzo definitivo arriva sempre dopo una chiamata gratuita, ed è scritto e fisso.",
     "cta": {
+      "eyebrow": "Passo successivo",
       "title": "Non sai in che fascia rientri?",
       "text": "Raccontacelo: in mezz'ora capiamo insieme cosa ti serve e quanto costa.",
       "button": "Prenota una chiamata",
@@ -643,5 +715,31 @@
     "retry": "Riprova",
     "cta": "Torna alla home",
     "digest": "Codice errore: {digest}"
+  },
+  "lab": {
+    "eyebrow": "Lab",
+    "title": "Esperimenti, componenti, piccoli tool",
+    "subtitle": "Le cose che costruiamo per curiosità o per risolvere un nostro problema, e che teniamo qui pubbliche invece che chiuse in un repo privato.",
+    "kinds": {
+      "experiment": "Esperimento",
+      "component": "Componente open source",
+      "tool": "Tool"
+    },
+    "status": {
+      "wip": "In lavorazione"
+    },
+    "viewDemo": "Vedi la demo",
+    "viewRepo": "Codice sorgente",
+    "empty": {
+      "title": "I primi esperimenti sono in lavorazione",
+      "body": "Questa pagina si riempie appena i primi progetti sono pronti da mostrare."
+    },
+    "cta": {
+      "eyebrow": "Ti serve altro",
+      "title": "Ti serve qualcosa su misura?",
+      "text": "Se una di queste idee ti torna utile per il tuo progetto, parliamone.",
+      "button": "Parliamone",
+      "buttonSecondary": "Scrivici"
+    }
   }
 }

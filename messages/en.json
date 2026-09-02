@@ -20,7 +20,8 @@
     "resources": "Resources",
     "whatWeDo": "What we do",
     "howWeWork": "How we work",
-    "servicesIndex": "All services"
+    "servicesIndex": "All services",
+    "lab": "The Lab"
   },
   "hero": {
     "eyebrow": "Software studio · Pesaro, Italy",
@@ -47,8 +48,12 @@
   "servizi": {
     "index": {
       "eyebrow": "Services",
-      "title": "What we can build for you",
-      "subtitle": "One point of contact for all of it: from the first idea to the tool you use every day, and the support you need afterwards."
+      "title": "Everything we build",
+      "subtitle": "Open the service that applies to you: inside you'll find what it covers, how long it takes and where the price starts.",
+      "empty": {
+        "title": "Services are being updated",
+        "body": "We're rewriting this page. In the meantime, get in touch — we'll let you know right away if we can help."
+      }
     },
     "detail": {
       "highlightsTitle": "What's included",
@@ -110,10 +115,13 @@
     "highlights": "Highlights",
     "details": "Project details",
     "published": "Published",
+    "retrospective": "What we learned",
     "cta": {
+      "eyebrow": "Next step",
       "title": "Need something similar?",
       "text": "Tell us about your case — let's see whether we can help.",
-      "button": "Let's talk"
+      "button": "Let's talk",
+      "buttonSecondary": "Get in touch"
     }
   },
   "approach": {
@@ -155,9 +163,11 @@
       }
     ],
     "cta": {
+      "eyebrow": "By chance",
       "title": "Shall we work together?",
       "text": "Tell us about your project — we'll get back to you within 24 hours, no commitment.",
-      "button": "Let's talk"
+      "button": "Let's talk",
+      "buttonSecondary": "Let's connect"
     }
   },
   "process": {
@@ -167,16 +177,77 @@
     "steps": {
       "discovery": {
         "title": "We talk",
-        "description": "You tell us how you work today and what isn't working. We tell you straight away whether we can help, what it costs and how long it takes — before writing a line of code."
+        "description": "You tell us how you work today and what isn't working. We tell you straight away whether we can help, what it costs and how long it takes — before writing a line of code.",
+        "detail": "No written quote before we've understood the problem. We spend half a day on site or on a call watching how you work today: which spreadsheets you open, where you retype the same thing twice, what wastes your Monday morning. Out of that comes a proposal with a fixed price — one figure, not a range — and dates. If we think it isn't worth doing, or that something smaller would serve you better, we say so here: it's free, and finding out costs you nothing.",
+        "duration": "1 to 2 weeks, from the first call to the proposal",
+        "deliverable": "A written proposal with a fixed price, dates and what's included"
       },
       "build": {
         "title": "We build it",
-        "description": "We work in small steps and show you often. If something feels wrong you say so right away, not at delivery."
+        "description": "We work in small steps and show you often. If something feels wrong you say so right away, not at delivery.",
+        "detail": "We work in one- or two-week chunks and send you a link at the end of each one. Not a status report: the real thing, to use with your phone in your hand. It matters because you only discover how people will actually use the product by putting it in front of them — and correcting course in week two costs nothing, while in week twenty it costs the project. If something feels wrong, you say so then, not at handover.",
+        "duration": "3 to 10 weeks, depending on size",
+        "deliverable": "A link updated every week or two, always live"
       },
       "launch": {
         "title": "It goes live, and stays looked after",
-        "description": "We put it online and keep looking after it: monitoring, maintenance, and the changes you'll need along the way."
+        "description": "We put it online and keep looking after it: monitoring, maintenance, and the changes you'll need along the way.",
+        "detail": "Going live is on us: domain, servers, certificates, and the move from the old site with the redirects in the right places so you don't lose the ranking you already have on Google. Then we stay. Monitoring, updates, the changes you need along the way, and the alert that reaches us before it reaches you when something breaks. Credentials and passwords are yours from day one, not from the day you ask for them.",
+        "duration": "Live in a day or two, then ongoing support",
+        "deliverable": "The project online, credentials in your name, and someone who answers"
       }
+    },
+    "moreLink": "How we work, in detail",
+    "durationLabel": "How long it takes",
+    "deliverableLabel": "What you end up with"
+  },
+  "howWeWork": {
+    "meta": {
+      "title": "How we work",
+      "description": "What the contract says, who owns the code, who actually writes it, how fast we reply, and how you'd take everything with you if you ever wanted to switch. No hedging."
+    },
+    "eyebrow": "How we work",
+    "title": "Before you sign, you should know how this goes",
+    "subtitle": "The most common fear people bring us isn't that the work will be bad: it's being held hostage by whoever did it. Everything you'd normally find out afterwards is written down here instead.",
+    "guarantees": {
+      "eyebrow": "In writing",
+      "title": "The awkward questions, answered",
+      "subtitle": "These are the same terms that end up in the contract. They're here so you can read them before talking to us, not after.",
+      "items": [
+        {
+          "question": "Who actually owns the code?",
+          "answer": "You do, from day one. The repository is in your name and we work inside it, not the other way round. Domain, servers, service accounts: all yours, with the credentials in your hands straight away — not from the day you ask for them. There's no point in the project where something is ours and then gets handed over."
+        },
+        {
+          "question": "What does the contract say?",
+          "answer": "A fixed price, not a range: after the scoping call we give you a figure and it holds, unless you ask for more — and if you do, we tell you before we build it, not on the invoice. It has the dates, what's included and, more importantly, what isn't. No minimum term: support can be cancelled with a month's notice and carries no penalty."
+        },
+        {
+          "question": "Who actually does the work?",
+          "answer": "One person, and always the same one. There's no salesperson who sells you something then disappears, no account manager passing your question along. When you write, the person who answers is the person writing the code. That's also our stated limit: if you ask for something we can't do, or can't do well in the time available, we say so instead of trying."
+        },
+        {
+          "question": "What if you disappeared tomorrow?",
+          "answer": "You'd already have everything: the code is in your repository, the servers are in your name, and how to deploy it is documented inside the project rather than in our heads. We deliberately use standard, widely known tools — Next.js, PostgreSQL, common cloud services — rather than anything homegrown: any competent developer can pick the work up without starting over. It isn't generosity, it's why we don't need to keep you."
+        },
+        {
+          "question": "How fast do you reply?",
+          "answer": "Within 24 working hours to anyone who writes, client or not. If the project is yours and something is broken in production, you have a direct line and we move the same day. When we can't fix it immediately, we tell you what happened and how long we expect it to take — we don't leave you refreshing the site on your own."
+        },
+        {
+          "question": "What if I change my mind halfway?",
+          "answer": "That happens almost every time, and it's planned for. It's why we work in one- or two-week chunks and show you each one: changing course in week two costs little, in week twenty it costs the project. If the change fits the scope we just do it; if it moves the scope, we tell you what it costs and you decide. Neither case turns into an argument."
+        }
+      ]
+    },
+    "ctaTitle": "Seems right?",
+    "ctaText": "If you have any other questions, concerns, or if something isn't clear to you, we recommend that you contact us",
+    "cta": {
+      "eyebrow": "Next step",
+      "title": "Does this way of working suit you?",
+      "text": "Half an hour on a call, no commitment: you tell us what you need and we tell you whether we can help and what it costs.",
+      "button": "Book a call",
+      "buttonSecondary": "Get in touch"
     }
   },
   "testimonials": {
@@ -276,6 +347,7 @@
     "subtitle": "Every project is different, but we don't like an \"it depends\" with no numbers. Here are the real ranges our work falls into. After a half-hour call we give you a written, fixed price.",
     "note": "These are indicative ranges, not a price list: the final price always comes after a free call, and it's written down and fixed.",
     "cta": {
+      "eyebrow": "Next step",
       "title": "Not sure which range you're in?",
       "text": "Tell us about it: half an hour is enough to work out what you need and what it costs.",
       "button": "Book a call",
@@ -643,5 +715,31 @@
     "retry": "Try again",
     "cta": "Back to home",
     "digest": "Error code: {digest}"
+  },
+  "lab": {
+    "eyebrow": "Lab",
+    "title": "Experiments, components, small tools",
+    "subtitle": "Things we build out of curiosity or to solve our own problems, kept public here instead of sitting in a private repo.",
+    "kinds": {
+      "experiment": "Experiment",
+      "component": "Open source component",
+      "tool": "Tool"
+    },
+    "status": {
+      "wip": "Work in progress"
+    },
+    "viewDemo": "View demo",
+    "viewRepo": "Source code",
+    "empty": {
+      "title": "The first experiments are in progress",
+      "body": "This page fills up as soon as the first projects are ready to show."
+    },
+    "cta": {
+      "eyebrow": "Need more",
+      "title": "Need something custom?",
+      "text": "If one of these ideas is useful for your project, let's talk.",
+      "button": "Let's talk",
+      "buttonSecondary": "Get in touch"
+    }
   }
 }

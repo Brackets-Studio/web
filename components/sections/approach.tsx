@@ -20,7 +20,7 @@ export function Approach() {
   const gridY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   return (
-    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-[#eeece6] dark:bg-neutral-900">
+    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-surface-alt">
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -75,8 +75,6 @@ export function Approach() {
           transition={{ duration: 0.5, ease: EASE_OUT }}
           className="relative aspect-4/5 w-full overflow-hidden rounded-2xl border border-border shadow-md"
         >
-          {/* Placeholder — swap for an <Image src="..." fill /> when the asset lands.
-              Keep this motion.div wrapping it so the parallax carries over. */}
           <motion.div
             style={{ y: imageY }}
             className="absolute inset-[-10%] flex items-center justify-center bg-linear-to-br from-neutral-300/60 via-neutral-200/40 to-neutral-100 dark:from-neutral-800 dark:via-neutral-900 dark:to-neutral-950"
@@ -91,7 +89,7 @@ export function Approach() {
             />
             <Image
               src="/assets/approach-image.png"
-              alt="Approach"
+              alt=""
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 40vw, 100vw"

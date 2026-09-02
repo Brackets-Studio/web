@@ -2,8 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { StackedSection } from "@/components/layout/stacked-section";
-import LocaleSwitcher from "../utils/LocaleSwitcher";
+import LocaleSwitcher from "../utils/localeswitcher";
 import { Link, usePathname } from "@/i18n/navigation";
+import { isCurrent } from "@/lib/utils";
 import { ThemeToggle } from "../theme/theme-toggle";
 
 const SOCIAL_LINKS = [
@@ -21,8 +22,10 @@ const SOCIAL_LINKS = [
 const SITE_LINKS = [
   { href: "/work", key: "caseStudies" as const },
   { href: "/servizi", key: "servicesIndex" as const },
+  { href: "/come-lavoriamo", key: "howWeWork" as const },
   { href: "/analisi", key: "analyze" as const },
   { href: "/blog", key: "blog" as const },
+  { href: "/lab", key: "lab" as const },
   { href: "/pricing", key: "pricing" as const },
   { href: "/team", key: "about" as const },
 ];
@@ -47,15 +50,21 @@ export function Footer() {
           </div>
 
           <nav className="flex flex-col gap-2 text-sm">
-            {SITE_LINKS.map((link) => (
-              <Link
-                key={link.key}
-                href={link.href}
-                className="text-foreground-muted transition-colors hover:text-brand"
-              >
-                {tNav(link.key)}
-              </Link>
-            ))}
+            {SITE_LINKS.map((link) => {
+              const current = isCurrent(pathname, link.href);
+              return (
+                <Link
+                  key={link.key}
+                  href={link.href}
+                  aria-current={current ? "page" : undefined}
+                  className={`transition-colors hover:text-brand ${
+                    current ? "text-foreground" : "text-foreground-muted"
+                  }`}
+                >
+                  {tNav(link.key)}
+                </Link>
+              );
+            })}
           </nav>
 
           <nav className="flex flex-col gap-2 font-mono text-sm sm:items-end">

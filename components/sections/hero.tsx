@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Check, MapPin } from "lucide-react";
 import { StackedSection } from "@/components/layout/stacked-section";
-import { Magnetic } from "@/components/ui/magnetic";
 import { Link } from "@/i18n/navigation";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -58,16 +57,14 @@ export function Hero() {
           variants={item}
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
-          <Magnetic>
-            <MotionLink
-              href="/#contatti"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center rounded-pill bg-brand px-6 py-3 text-sm font-medium text-brand-foreground"
-            >
-              {t("ctaPrimary")}
-            </MotionLink>
-          </Magnetic>
+          <MotionLink
+            href="/#contatti"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center rounded-pill bg-brand px-6 py-3 text-sm font-medium text-brand-foreground"
+          >
+            {t("ctaPrimary")}
+          </MotionLink>
           <MotionLink
             href="/#lavori"
             whileTap={{ scale: 0.98 }}

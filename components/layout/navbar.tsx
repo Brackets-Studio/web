@@ -11,10 +11,10 @@ import {
 } from "motion/react";
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-import LocaleSwitcher from "../utils/LocaleSwitcher";
+import LocaleSwitcher from "../utils/localeswitcher";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
-import { Magnetic } from "@/components/ui/magnetic";
+import { isCurrent } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,7 +40,6 @@ const NAV: NavEntry[] = [
     items: [
       { href: "/#servizi", key: "whatWeDo" },
       { href: "/servizi", key: "servicesIndex" },
-      { href: "/#processo", key: "howWeWork" },
       { href: "/pricing", key: "pricing" },
     ],
   },
@@ -48,8 +47,10 @@ const NAV: NavEntry[] = [
   {
     key: "resources",
     items: [
+      { href: "/come-lavoriamo", key: "howWeWork" },
       { href: "/analisi", key: "analyze" },
       { href: "/blog", key: "blog" },
+      { href: "/lab", key: "lab" },
     ],
   },
   { href: "/team", key: "about" },
@@ -84,10 +85,49 @@ export function Navbar() {
   });
   const bracketRef = useRef<HTMLSpanElement>(null);
   const [bracketWidth, setBracketWidth] = useState<number | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (bracketRef.current) setBracketWidth(bracketRef.current.scrollWidth);
   }, []);
+
+  /*
+   * Quello che ci si aspetta da un pannello aperto sopra la pagina, e che qui
+   * mancava: Esc lo chiude, un tocco fuori lo chiude, e la pagina sotto non
+   * scorre mentre è aperto (era la cosa più fastidiosa: si scrollava l'articolo
+   * dietro il menu). Chiudendo, il focus torna sul bottone che l'ha aperto —
+   * altrimenti chi naviga da tastiera riparte dall'inizio del documento.
+   *
+   * Il listener sta sul document e non sul pannello: un `onBlur` non basta,
+   * perché il tocco può cadere su un'area senza elementi focusabili.
+   */
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setMenuOpen(false);
+      toggleRef.current?.focus();
+    }
+
+    function onPointerDown(event: PointerEvent) {
+      if (headerRef.current?.contains(event.target as Node)) return;
+      setMenuOpen(false);
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
 
   const bracketContainerWidth = useTransform(
     scrollY,
@@ -105,6 +145,7 @@ export function Navbar() {
         style={{ transitionTimingFunction: EASE_OUT_CSS }}
       >
         <header
+          ref={headerRef}
           className={`w-full border bg-background transition-[max-width,margin-top,border-radius,border-color,background-color,box-shadow] duration-500 ${
             scrolled
               ? "max-w-2xl mt-4 rounded-4xl border-border bg-background-elevated shadow-md backdrop-blur-md"
@@ -144,7 +185,21 @@ export function Navbar() {
             {NAV.map((entry) =>
               isGroup(entry) ? (
                 <DropdownMenu key={entry.key}>
-                  <DropdownMenuTrigger className="group flex items-center gap-1 text-sm text-foreground-muted outline-none transition-colors hover:text-foreground focus-visible:text-foreground data-popup-open:text-foreground">
+                  {/* Il solo cambio di colore del testo non è un indicatore di
+                      focus sufficiente: serve un contorno. `rounded-sm` +
+                      `outline-offset` lo staccano dalla parola.
+
+                      Niente `aria-current` qui: il trigger non è un link e non
+                      porta da nessuna parte. Segnala solo, a colpo d'occhio, che
+                      la pagina corrente sta in questo gruppo — il `current` vero
+                      va sulla voce dentro il menu. */}
+                  <DropdownMenuTrigger
+                    className={`group flex items-center gap-1 rounded-sm text-sm transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground data-popup-open:text-foreground ${
+                      entry.items.some((item) => isCurrent(pathname, item.href))
+                        ? "text-foreground"
+                        : "text-foreground-muted"
+                    }`}
+                  >
                     {t(entry.key)}
                     <ChevronDown
                       className="size-3.5 transition-transform duration-200 group-data-popup-open:rotate-180"
@@ -155,29 +210,52 @@ export function Navbar() {
                       altrimenti stringerebbe il menu sulla larghezza della
                       parola che lo apre. */}
                   <DropdownMenuContent align="center" sideOffset={10} className="w-auto min-w-52 p-1.5">
-                    {entry.items.map((item) => (
-                      <DropdownMenuItem
-                        key={item.key}
-                        className="px-2.5 py-2 text-foreground-muted transition-colors hover:text-foreground"
-                        render={<Link href={item.href} />}
-                      >
-                        {t(item.key)}
-                      </DropdownMenuItem>
-                    ))}
+                    {entry.items.map((item) => {
+                      const current = isCurrent(pathname, item.href);
+                      return (
+                        <DropdownMenuItem
+                          key={item.key}
+                          className={`px-2.5 py-2 transition-colors hover:text-foreground ${
+                            current ? "text-foreground" : "text-foreground-muted"
+                          }`}
+                          render={
+                            <Link
+                              href={item.href}
+                              aria-current={current ? "page" : undefined}
+                            />
+                          }
+                        >
+                          {t(item.key)}
+                        </DropdownMenuItem>
+                      );
+                    })}
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Link
-                  key={entry.key}
-                  href={entry.href}
-                  className="group relative text-sm text-foreground-muted transition-colors hover:text-foreground"
-                >
-                  {t(entry.key)}
-                  <span
-                    aria-hidden
-                    className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-200 ease-out group-hover:scale-x-100"
-                  />
-                </Link>
+                (() => {
+                  const current = isCurrent(pathname, entry.href);
+                  return (
+                    <Link
+                      key={entry.key}
+                      href={entry.href}
+                      aria-current={current ? "page" : undefined}
+                      className={`group relative text-sm transition-colors hover:text-foreground ${
+                        current ? "text-foreground" : "text-foreground-muted"
+                      }`}
+                    >
+                      {t(entry.key)}
+                      {/* La sottolineatura dell'hover esisteva già: sulla pagina
+                          corrente resta semplicemente ferma a scale-x-100
+                          invece di comparire al passaggio del mouse. */}
+                      <span
+                        aria-hidden
+                        className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-brand transition-transform duration-200 ease-out group-hover:scale-x-100 ${
+                          current ? "scale-x-100" : "scale-x-0"
+                        }`}
+                      />
+                    </Link>
+                  );
+                })()
               ),
             )}
           </nav>
@@ -200,25 +278,25 @@ export function Navbar() {
               )}
             </AnimatePresence>
 
-            <Magnetic strength={0.25}>
-              <MotionLink
-                href="/#contatti"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
-              >
-                {t("cta")}
-              </MotionLink>
-            </Magnetic>
+            <MotionLink
+              href="/#contatti"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center rounded-[100px] bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
+            >
+              {t("cta")}
+            </MotionLink>
           </div>
 
           <div className="col-start-3 flex items-center gap-2 justify-self-end md:hidden">
             <ThemeToggle />
             <button
+              ref={toggleRef}
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
               aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
               aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
               className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground-muted transition-colors hover:border-brand hover:text-foreground"
             >
               <svg
@@ -244,6 +322,7 @@ export function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
+              id="mobile-nav"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -265,7 +344,14 @@ export function Navbar() {
                           key={item.key}
                           href={item.href}
                           onClick={() => setMenuOpen(false)}
-                          className="block py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+                          aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
+                          /* Da telefono non c'è hover: la pagina corrente si
+                             riconosce solo dal colore pieno e dal trattino. */
+                          className={`block border-l-2 py-2 pl-3 text-sm transition-colors hover:text-foreground ${
+                            isCurrent(pathname, item.href)
+                              ? "border-brand text-foreground"
+                              : "border-transparent text-foreground-muted"
+                          }`}
                         >
                           {t(item.key)}
                         </Link>
@@ -276,7 +362,12 @@ export function Navbar() {
                       key={entry.key}
                       href={entry.href}
                       onClick={() => setMenuOpen(false)}
-                      className="py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+                      aria-current={isCurrent(pathname, entry.href) ? "page" : undefined}
+                      className={`border-l-2 py-2 pl-3 text-sm transition-colors hover:text-foreground ${
+                        isCurrent(pathname, entry.href)
+                          ? "border-brand text-foreground"
+                          : "border-transparent text-foreground-muted"
+                      }`}
                     >
                       {t(entry.key)}
                     </Link>

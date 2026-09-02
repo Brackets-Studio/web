@@ -22,7 +22,7 @@ export function AnalyzerCta() {
   const [url, setUrl] = useState("");
 
   return (
-    <StackedSection className="bg-[#eeece6] dark:bg-neutral-900">
+    <StackedSection className="bg-surface-alt">
       <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
         <Reveal className="flex flex-col items-center text-center">
           <p className="mb-5 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs tracking-wider text-foreground-muted uppercase">

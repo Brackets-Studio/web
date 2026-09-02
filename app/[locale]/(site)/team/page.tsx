@@ -7,6 +7,7 @@ import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import CtaSection from "@/components/utils/cta-section";
 
 // lucide (questa versione) non espone icone brand: SVG inline per GitHub/LinkedIn.
 type IconProps = SVGProps<SVGSVGElement>;
@@ -120,7 +121,7 @@ export default async function TeamPage() {
       </StackedSection>
 
       {/* Principi */}
-      <StackedSection className="bg-neutral-200/20 dark:bg-neutral-900">
+      <StackedSection className="bg-surface-alt">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-[-0.02em] text-foreground sm:text-4xl">
@@ -149,19 +150,17 @@ export default async function TeamPage() {
         </div>
       </StackedSection>
 
-      {/* CTA */}
       <StackedSection>
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <Reveal className="rounded-lg border border-border bg-background-elevated p-8 text-center">
-            <h2 className="text-xl font-semibold text-foreground">{t("cta.title")}</h2>
-            <p className="mt-2 text-sm text-foreground-muted">{t("cta.text")}</p>
-            <Link
-              href="/#contatti"
-              className="mt-6 inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-            >
-              {t("cta.button")}
-            </Link>
-          </Reveal>
+          <CtaSection
+            textSettings={{
+              eyebrow: t("cta.eyebrow"),
+              title: t("cta.title"),
+              text: t("cta.text"),
+              button: t("cta.button"),
+              buttonSecondary: t("cta.buttonSecondary")
+            }}
+          />
         </div>
       </StackedSection>
     </>

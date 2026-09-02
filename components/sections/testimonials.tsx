@@ -49,7 +49,22 @@ export async function Testimonials() {
               className="flex flex-col rounded-lg border border-border bg-background-elevated p-6 shadow-sm"
             >
               <figure className="flex h-full flex-col">
-                <div className="overflow-y-auto max-h-52 scroll-auto pb-4">
+                {/*
+                  Le testimonianze vere non hanno tutte la stessa lunghezza: una
+                  è di sei righe, un'altra di due. L'area scorre invece di far
+                  crescere la card, ma allora deve essere raggiungibile da
+                  tastiera (`tabIndex`, altrimenti chi non usa il mouse non può
+                  arrivare in fondo alla citazione) e deve dichiarare di essere
+                  scorrevole a occhio: la sfumatura in basso è l'unico segnale
+                  che sotto c'è dell'altro. Su una citazione corta il gradiente
+                  copre spazio vuoto e non si vede.
+                */}
+                <div
+                  tabIndex={0}
+                  role="region"
+                  aria-label={item.authorName}
+                  className="relative max-h-52 overflow-y-auto pb-4 after:pointer-events-none after:sticky after:bottom-0 after:-mt-8 after:block after:h-8 after:bg-linear-to-t after:from-background-elevated after:to-transparent"
+                >
                   <Quote className="size-5 text-foreground-muted/50" strokeWidth={1.75} />
                   <blockquote className="mt-4 flex-1 text-sm leading-relaxed whitespace-pre-line text-foreground">
                     {item.quote}

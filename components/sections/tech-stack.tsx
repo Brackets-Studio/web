@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
+import { repeatToMinLength } from "@/lib/utils";
 
 // Loghi con variante chiara/scura: la giusta viene mostrata via CSS in base
 // alla classe .dark su <html> (nessun JS, nessun flash all'idratazione).
@@ -40,41 +42,52 @@ function LogoItem({ name, light, dark }: (typeof LOGOS)[number]) {
   );
 }
 
+// Con pochi loghi una singola passata è più stretta del contenitore: la
+// ripetiamo fino a una larghezza sicura prima di duplicarla per il loop.
+const MARQUEE_LOGOS = repeatToMinLength(LOGOS, 8);
+
 export async function TechStack() {
   const techStackT = await getTranslations("techStack");
 
   return (
     <StackedSection>
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <Reveal className="flex flex-col items-center gap-8">
-          <div className="max-w-xl text-center">
-            <p className="font-mono text-lg uppercase tracking-wider text-foreground-muted">
-              {techStackT("title")}
-            </p>
-            {/* Il perché conta per un imprenditore non è la lista, è il non
-                restare in ostaggio del fornitore. */}
-            <p className="mt-3 text-sm text-foreground-muted">
-              {techStackT("subtitle")}
-            </p>
-          </div>
+        {/* Un <div> e non un <Reveal>: `SectionHeader` porta già il suo, e due
+            motion.div annidati con lo stesso `whileInView` sommerebbero le due
+            traslazioni. Il marquee ha il proprio, sfasato di un tempo. */}
+        <div className="flex flex-col items-center gap-8">
+          {/* Registro leggero: è una striscia di servizio, non una sezione con
+              un argomento. Prima aveva un titolo `text-lg uppercase` e un
+              sottotitolo, cioè la stessa autorità visiva dei case study — e
+              non se la merita. Il perché che conta per un imprenditore non è
+              comunque la lista dei loghi, è il non restare in ostaggio. */}
+          <SectionHeader
+            weight="light"
+            align="center"
+            title={techStackT("title")}
+            subtitle={techStackT("subtitle")}
+          />
 
           {/* Il marquee scorre in loop continuo: due tracce identiche, la seconda
               aria-hidden. L'animazione (solo transform) è nel CSS globale. */}
-          <div className="marquee-mask relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <Reveal
+            index={1}
+            className="marquee-mask relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+          >
             <div className="marquee-track flex w-max">
               <ul className="flex shrink-0 items-center gap-14 pr-14">
-                {LOGOS.map((logo) => (
-                  <LogoItem key={logo.name} {...logo} />
+                {MARQUEE_LOGOS.map((logo, index) => (
+                  <LogoItem key={`${logo.name}-${index}`} {...logo} />
                 ))}
               </ul>
               <ul className="flex shrink-0 items-center gap-14 pr-14" aria-hidden>
-                {LOGOS.map((logo) => (
-                  <LogoItem key={`${logo.name}-dup`} {...logo} />
+                {MARQUEE_LOGOS.map((logo, index) => (
+                  <LogoItem key={`${logo.name}-dup-${index}`} {...logo} />
                 ))}
               </ul>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </StackedSection>
   );

@@ -62,7 +62,7 @@ export function ServicesAccordion({ items }: { items: ServiceListItem[] }) {
                 </ul>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.tags.map((tag) => (
-                    <Badge key={tag.text}>{tag.text}</Badge>
+                    <Badge variant='outline' key={tag.text}>{tag.text}</Badge>
                   ))}
                 </div>
               </AccordionPanel>

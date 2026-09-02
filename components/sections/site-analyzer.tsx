@@ -13,7 +13,7 @@ import {
   TriangleAlert,
   XCircle,
 } from "lucide-react";
-import { analyzeSite, type AnalyzeFormState } from "@/lib/actions/analyze";
+import { analyzeSite, type AnalyzeErrorKey, type AnalyzeFormState } from "@/lib/actions/analyze";
 import type { AnalysisReport, CategoryKey, Grade, MetricKey } from "@/lib/analysis/report";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
@@ -132,18 +132,7 @@ export function SiteAnalyzer({ initialUrl }: { initialUrl?: string }) {
         {isPending && <LoadingPanel key="loading" />}
 
         {!isPending && state.status === "error" && (
-          <motion.div
-            key="error"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: EASE_OUT }}
-            role="alert"
-            className="mx-auto flex max-w-xl items-start gap-3 rounded-2xl border border-border bg-background-elevated p-5"
-          >
-            <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
-            <p className="text-sm text-foreground">{t(`errors.${state.error}`)}</p>
-          </motion.div>
+          <ErrorPanel key="error" errorKey={state.error} />
         )}
 
         {!isPending && state.status === "success" && (
@@ -214,11 +203,48 @@ function LoadingPanel() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Errore                                                                      */
+/* -------------------------------------------------------------------------- */
+
+function ErrorPanel({ errorKey }: { errorKey: AnalyzeErrorKey }) {
+  const t = useTranslations("analyze");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: EASE_OUT }}
+      role="alert"
+      className="mx-auto flex max-w-xl items-start gap-3 rounded-2xl border border-border bg-background-elevated p-5"
+    >
+      <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
+      <p className="text-sm text-foreground">{t(`errors.${errorKey}`)}</p>
+    </motion.div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
 /* Referto                                                                     */
 /* -------------------------------------------------------------------------- */
 
 function ReportView({ report }: { report: AnalysisReport }) {
   const t = useTranslations("analyze");
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  // Il referto arriva dopo 30-60 s di attesa: senza spostare lo scroll e il
+  // focus, chi ha distolto lo sguardo (o naviga da tastiera/lettore vocale)
+  // non ha modo di accorgersi che è pronto.
+  useEffect(() => {
+    headingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    headingRef.current?.focus();
+  }, []);
 
   return (
     <motion.div
@@ -235,7 +261,11 @@ function ReportView({ report }: { report: AnalysisReport }) {
           <p className="font-mono text-xs tracking-wider text-foreground-muted uppercase">
             {report.host}
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-[-0.02em] text-balance text-foreground sm:text-4xl">
+          <h2
+            ref={headingRef}
+            tabIndex={-1}
+            className="mt-2 text-3xl font-bold tracking-[-0.02em] text-balance text-foreground outline-none sm:text-4xl"
+          >
             {t(`result.verdict.${report.verdict}.title`)}
           </h2>
           <p className="mt-3 max-w-lg text-foreground-muted">

@@ -27,7 +27,7 @@
  * ogni hover lampeggerebbe del colore accento invece di un grigio discreto.
  */
 :root {
-  --background: #fafafa;
+  --background: #f5f4ef;
   --background-elevated: #ffffff;
   --foreground: #1a1a1a;
   --foreground-muted: #52525b;
@@ -35,6 +35,30 @@
   --brand: #c33e00;
   --brand-foreground: #ffffff;
   --brand-subtle: #ffe8e0;
+
+  /*
+   * Le due fasce alternate.
+   *
+   * La home alterna una sezione su `--background` e una su `--surface-alt`: è
+   * l'unica cosa che dà ritmo a una pagina in cui ogni sezione ha per il resto
+   * la stessa forma. Erano scritte a mano come `bg-[#eeece6] dark:bg-neutral-900`
+   * in cinque file più un terzo beige su /team, quindi fuori dal sistema di
+   * token: non rispondevano ai preset delle verticali e cambiare palette voleva
+   * dire un find-and-replace.
+   *
+   * `--surface-sunken` è la fascia più profonda, e serve per una ragione sola:
+   * la newsletter viene subito dopo il modulo di contatto, che è già `alt`. Con
+   * lo stesso valore le due sezioni si fonderebbero in un unico blocco.
+   *
+   * Al buio i due valori NON sono la conversione diretta di `neutral-900` e
+   * `neutral-800/70` come nel tema chiaro, e non è una svista: `neutral-900` è
+   * `#171717`, cioè esattamente `--background-elevated`. Le card su una fascia
+   * alternata sparivano nel fondo e restava solo il loro bordo a segnalarle.
+   * `#121212` sta sotto le card e sopra `--background` (#0a0a0a), così i tre
+   * livelli — pagina, fascia, card — restano tre.
+   */
+  --surface-alt: #eeece6;
+  --surface-sunken: #e2e0d9;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -77,6 +101,8 @@
     --brand: #ff8557;
     --brand-foreground: #1a1a1a;
     --brand-subtle: #411d10;
+    --surface-alt: #121212;
+    --surface-sunken: #1c1c1c;
     --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
     --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
     --destructive: oklch(0.704 0.191 22.216);
@@ -92,6 +118,8 @@
   --brand: #ff8557;
   --brand-foreground: #1a1a1a;
   --brand-subtle: #411d10;
+  --surface-alt: #121212;
+  --surface-sunken: #1c1c1c;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
   --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
   --destructive: oklch(0.704 0.191 22.216);
@@ -106,6 +134,8 @@
   --brand: #c33e00;
   --brand-foreground: #ffffff;
   --brand-subtle: #ffe8e0;
+  --surface-alt: #eeece6;
+  --surface-sunken: #e2e0d9;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%), 0 0 0 1px var(--border);
   --shadow-md: 0 4px 12px rgb(0 0 0 / 8%), 0 0 0 1px var(--border);
   --destructive: oklch(0.577 0.245 27.325);
@@ -120,6 +150,8 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-subtle: var(--brand-subtle);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-sunken: var(--surface-sunken);
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
@@ -196,6 +228,25 @@ footer[id] {
   scroll-margin-top: 96px;
 }
 
+/*
+ * Anello di focus di base.
+ *
+ * Sta qui e non sulle singole CTA perché le pastiglie `bg-brand` sono ~25 sparse
+ * in una dozzina di file: un anello dichiarato caso per caso sarebbe divergito
+ * come già successo agli occhielli. `--foreground` è quasi-nero sul tema chiaro e
+ * quasi-bianco su quello scuro, quindi si stacca sia dal fondo pagina sia
+ * dall'arancione del brand — un `ring-brand` su un bottone arancione sarebbe
+ * invisibile, che è il motivo per cui non lo usiamo.
+ *
+ * `:where()` ha specificità zero: qualsiasi componente che voglia un focus
+ * diverso lo sovrascrive senza `!important`. Chi mette `outline-none` però lo
+ * spegne, quindi deve dichiararne uno proprio (vedi accordion e i trigger dei
+ * dropdown, che infatti ora lo fanno).
+ */
+:where(a, button, [role="button"], summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -226,6 +277,22 @@ footer[id] {
 
 .marquee-mask:hover .marquee-track {
   animation-play-state: paused;
+}
+
+/*
+ * Con reduced-motion il marquee va SPENTO, non accelerato.
+ *
+ * La regola generica qui sopra porta `animation-duration` a 0.01ms e le
+ * iterazioni a 1: applicata a questo keyframe non ferma il nastro, lo fa
+ * arrivare istantaneamente a `translateX(-50%)` e congelare lì — cioè mostrando
+ * la seconda traccia, quella `aria-hidden`, e nascondendo la prima. `none`
+ * lascia i loghi fermi dove stanno. Specificità 0,1,0 contro 0,0,0: vince questa
+ * anche se entrambe sono !important.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
 }
 
 /* Texture delle landing verticali — quale si applica lo decide il preset

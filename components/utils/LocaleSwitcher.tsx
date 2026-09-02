@@ -18,7 +18,7 @@ function LocaleSwitcher({ pathname }: { pathname: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="flex items-center gap-1.5 rounded-md border border-transparent px-2 py-1.5 font-mono text-xs uppercase text-foreground-muted outline-none transition-colors hover:text-foreground data-popup-open:text-foreground"
+        className="flex items-center gap-1.5 rounded-md border border-transparent px-2 py-1.5 font-mono text-xs uppercase text-foreground-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground data-popup-open:text-foreground"
         aria-label={t("language")}
       >
         <Globe className="size-3.5" strokeWidth={1.75} />

@@ -8,6 +8,7 @@ import { StackedSection } from "@/components/layout/stacked-section";
 import { Monogram } from "@/components/ui/monogram";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
+import type { SanityImage } from "@/sanity/types";
 import { routing } from "@/i18n/routing";
 import { sanityFetch, client } from "@/sanity/client";
 import { SERVICE_BY_SLUG_QUERY, SERVICE_SLUGS_QUERY } from "@/sanity/queries";
@@ -58,10 +59,41 @@ export async function generateMetadata({
   };
 }
 
-const bodyComponents: PortableTextComponents = {
+const portableTextComponents: PortableTextComponents = {
   block: {
+    h2: ({ children }) => (
+      <h2 className="mt-10 text-2xl font-semibold tracking-[-0.01em] text-foreground">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="mt-8 text-xl font-semibold tracking-[-0.01em] text-foreground">
+        {children}
+      </h3>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="mt-6 border-l-2 border-brand pl-4 text-foreground-muted italic">
+        {children}
+      </blockquote>
+    ),
     normal: ({ children }) => (
       <p className="mt-4 text-base leading-relaxed text-foreground-muted">{children}</p>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mt-4 list-inside list-disc space-y-4 text-foreground-muted">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="mt-4 list-inside list-decimal space-y-2 text-foreground-muted">{children}</ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="text-foreground-muted mt-1">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="text-foreground-muted mt-1">{children}</li>
     ),
   },
   marks: {
@@ -75,6 +107,23 @@ const bodyComponents: PortableTextComponents = {
         {children}
       </a>
     ),
+  },
+  types: {
+    image: ({ value }: { value: SanityImage }) =>
+      value?.asset ? (
+        <span className="mt-6 block overflow-hidden rounded-lg border border-border">
+          <Image
+            src={urlFor(value).width(1200).url()}
+            alt={value.alt ?? ""}
+            width={1200}
+            height={Math.round(
+              (1200 * (value.asset.metadata?.dimensions.height ?? 630)) /
+                (value.asset.metadata?.dimensions.width ?? 1200)
+            )}
+            className="w-full object-cover"
+          />
+        </span>
+      ) : null,
   },
 };
 
@@ -155,7 +204,7 @@ export default async function ServiceDetailPage({
             )}
           </div>
 
-          <div className="relative mx-auto flex size-48 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-background-elevated/60 sm:size-56">
+          <div className="relative mx-auto flex size-full shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-background-elevated/60 sm:size-56">
             <div
               className="pointer-events-none absolute inset-0 opacity-[0.06]"
               style={{
@@ -172,7 +221,7 @@ export default async function ServiceDetailPage({
                 height={320}
                 priority
                 sizes="224px"
-                className="relative h-auto w-28 object-contain sm:w-36"
+                className="relative h-auto w-full object-contain sm:w-36"
               />
             ) : (
               <Monogram title={service.title} />
@@ -197,7 +246,7 @@ export default async function ServiceDetailPage({
                   {service.detail.highlights.map((highlight) => (
                     <li
                       key={highlight.text}
-                      className="flex items-start gap-3 rounded-lg border border-border bg-background-elevated/40 p-3 text-sm text-foreground"
+                      className="flex items-start gap-3 rounded-lg border border-border bg-background-elevated p-3 text-sm text-foreground"
                     >
                       <Check className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
                       {highlight.text}
@@ -209,7 +258,7 @@ export default async function ServiceDetailPage({
 
             {service.body && service.body.length > 0 && (
               <div className="mt-10">
-                <PortableText value={service.body} components={bodyComponents} />
+                <PortableText value={service.body} components={portableTextComponents} />
               </div>
             )}
 

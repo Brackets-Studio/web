@@ -123,12 +123,33 @@ export const pricingSettings = defineType({
                       initialValue: 0,
                     }),
                   ],
-                  preview: { select: { title: "label.en", subtitle: "key" } },
+                  preview: {
+                    select: {
+                      title: "label.en",
+                      key: "key",
+                      multiplier: "priceMultiplier",
+                      add: "priceAdd",
+                    },
+                    prepare({ title, key, multiplier, add }) {
+                      const effect = [
+                        multiplier && multiplier !== 1 ? `×${multiplier}` : null,
+                        add ? `+€${add}` : null,
+                      ]
+                        .filter(Boolean)
+                        .join(" ") || "nessun effetto sul prezzo";
+                      return { title: title || key || "(senza chiave)", subtitle: effect };
+                    },
+                  },
                 },
               ],
             }),
           ],
-          preview: { select: { title: "label.en", subtitle: "key" } },
+          preview: {
+            select: { title: "label.en", key: "key" },
+            prepare({ title, key }) {
+              return { title: title || key || "(senza chiave)", subtitle: key };
+            },
+          },
         },
       ],
     }),
@@ -158,8 +179,14 @@ export const pricingSettings = defineType({
     }),
   ],
   preview: {
-    prepare() {
-      return { title: "Impostazioni prezzi", subtitle: "Valore unico — servizi, prezzi, preventivatore" };
+    select: { services: "services", questions: "quoteQuestions" },
+    prepare({ services, questions }) {
+      const serviceCount = Array.isArray(services) ? services.length : 0;
+      const questionCount = Array.isArray(questions) ? questions.length : 0;
+      return {
+        title: "Impostazioni prezzi",
+        subtitle: `${serviceCount} servizi — ${questionCount} domande preventivatore`,
+      };
     },
   },
 });

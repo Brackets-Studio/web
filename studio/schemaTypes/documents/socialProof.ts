@@ -47,8 +47,13 @@ export const socialProof = defineType({
     }),
   ],
   preview: {
-    prepare() {
-      return { title: "Loghi clienti", subtitle: "Marquee sotto l'hero della home" };
+    select: { logos: "logos" },
+    prepare({ logos }) {
+      const count = Array.isArray(logos) ? logos.length : 0;
+      return {
+        title: "Loghi clienti",
+        subtitle: count === 0 ? "Vuoto — sezione nascosta in home" : `${count} loghi`,
+      };
     },
   },
 });

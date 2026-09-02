@@ -12,6 +12,7 @@ import { verticalDefaults } from "./documents/verticalDefaults";
 import { service } from "./documents/service";
 import { pricingSettings } from "./documents/pricingSettings";
 import { socialProof } from "./documents/socialProof";
+import { labItem } from "./documents/labItem";
 
 export const schemaTypes = [
   localeString,
@@ -28,4 +29,5 @@ export const schemaTypes = [
   service,
   pricingSettings,
   socialProof,
+  labItem,
 ];

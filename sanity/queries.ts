@@ -85,6 +85,7 @@ export const CASE_STUDY_BY_SLUG_QUERY = defineQuery(/* groq */ `
   "highlights": coalesce(highlights[]{
     "text": select($locale == "it" => it, en)
   }, []),
+  "retrospective": ${localeField("retrospective")},
   externalLink,
   featured,
   publishedAt,
@@ -368,6 +369,24 @@ export const PRICING_SETTINGS_QUERY = defineQuery(/* groq */ `
     "resultDisclaimer": ${localeField("quoteSettings.resultDisclaimer")},
     "ctaLabel": ${localeField("quoteSettings.ctaLabel")}
   }
+}`);
+
+export const LAB_ITEMS_QUERY = defineQuery(/* groq */ `
+*[_type == "labItem" && status != "archived"] | order(featured desc, order asc) {
+  "id": _id,
+  "title": ${localeField("title")},
+  "slug": slug.current,
+  kind,
+  "shortDescription": ${localeField("shortDescription")},
+  "tags": coalesce(tags, []),
+  "image": image {
+    ${imageFragment}
+    ,"alt": ${localeField("alt")}
+  },
+  demoUrl,
+  repoUrl,
+  status,
+  featured
 }`);
 
 export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `

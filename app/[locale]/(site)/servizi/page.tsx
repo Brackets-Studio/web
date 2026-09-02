@@ -57,6 +57,12 @@ export default async function ServicesIndexPage({
           <p className="mt-4 text-foreground-muted">{t("subtitle")}</p>
         </Reveal>
 
+        {services.length === 0 ? (
+          <Reveal className="mx-auto mt-16 max-w-md rounded-lg border border-border bg-background-elevated p-8 text-center">
+            <p className="text-base font-semibold text-foreground">{t("empty.title")}</p>
+            <p className="mt-2 text-sm text-foreground-muted">{t("empty.body")}</p>
+          </Reveal>
+        ) : (
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {services.map((service, index) => (
             <Reveal key={service.slug} index={index} className="h-full">
@@ -104,6 +110,7 @@ export default async function ServicesIndexPage({
             </Reveal>
           ))}
         </div>
+        )}
       </div>
     </StackedSection>
   );

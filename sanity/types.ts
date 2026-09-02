@@ -46,6 +46,7 @@ export type CaseStudySEO = {
 
 export type CaseStudyDetail = CaseStudyListItem & {
   publishedAt: string | null;
+  retrospective: string | null;
   seo: CaseStudySEO;
 };
 
@@ -190,6 +191,20 @@ export type ServiceDetail = ServiceListItem & {
   price: ServicePrice | null;
   seo: CaseStudySEO;
   updatedAt: string;
+};
+
+export type LabItem = {
+  id: string;
+  title: string;
+  slug: string;
+  kind: "experiment" | "component" | "tool";
+  shortDescription: string;
+  tags: string[];
+  image: SanityImage | null;
+  demoUrl: string | null;
+  repoUrl: string | null;
+  status: "live" | "wip" | "archived";
+  featured: boolean;
 };
 
 export type PricingService = {

@@ -1,15 +1,14 @@
 import { getTranslations } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
 import { SocialProof } from "@/components/sections/social-proof";
-import { TechStack } from "@/components/sections/tech-stack";
 import { Services } from "@/components/sections/services";
-import { Process } from "@/components/sections/process";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { Testimonials } from "@/components/sections/testimonials";
 import { AnalyzerCta } from "@/components/sections/analyzer-cta";
-import { Approach } from "@/components/sections/approach";
 import { Faqs } from "@/components/sections/faqs";
 import { Contact } from "@/components/sections/contact";
+import { Newsletter } from "@/components/sections/newsletter";
+import { Process } from "@/components/sections/process";
 
 async function faqJsonLd() {
   const t = await getTranslations("faqs");
@@ -54,11 +53,17 @@ export default async function Home({
           spezzarli — spostarlo è una riga. */}
       <AnalyzerCta />
       <Services locale={locale} />
-      <Process />
-      <TechStack />
-      <Approach />
+      {/* Taglio corto: la versione con illustrazioni, tempi e consegne sta su
+          /come-lavoriamo, dove c'è lo spazio per leggerla. Qui basta togliere
+          la paura in dieci secondi. */}
+      <Process variant="teaser" />
+
       <Faqs />
       <Contact />
+      {/* La newsletter è l'ultima e la più piccola: chiede un'email a chi non
+          era pronto a compilare il modulo qui sopra. Era annidata dentro
+          `Contact` in posizione assoluta — ora è una sezione come le altre. */}
+      <Newsletter />
     </>
   );
 }

@@ -6,11 +6,17 @@ export const post = defineType({
   title: "Blog post",
   type: "document",
   icon: DocumentTextIcon,
+  groups: [
+    { name: "content", title: "Contenuto", default: true },
+    { name: "body", title: "Corpo" },
+    { name: "settings", title: "Impostazioni" },
+  ],
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "localeString",
+      group: "content",
       validation: (Rule) =>
         Rule.custom((value: { it?: string; en?: string } | undefined) => {
           if (!value?.it || !value?.en) return "Both languages are required";
@@ -22,6 +28,7 @@ export const post = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "title.en", maxLength: 96 },
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -29,6 +36,7 @@ export const post = defineType({
       title: "Excerpt",
       description: "Short summary used in listings and as a meta description fallback.",
       type: "localeText",
+      group: "content",
       validation: (Rule) =>
         Rule.custom((value: { it?: string; en?: string } | undefined) => {
           if (!value?.it || !value?.en) return "Both languages are required";
@@ -40,6 +48,7 @@ export const post = defineType({
       title: "Cover image",
       type: "image",
       options: { hotspot: true },
+      group: "content",
       fields: [
         defineField({
           name: "alt",
@@ -55,16 +64,19 @@ export const post = defineType({
       type: "array",
       of: [{ type: "string" }],
       options: { layout: "tags" },
+      group: "content",
     }),
     defineField({
       name: "body",
       title: "Body",
       type: "localeBlockContent",
+      group: "body",
     }),
     defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
+      group: "settings",
       validation: (Rule) => Rule.required(),
       initialValue: () => new Date().toISOString(),
     }),
@@ -72,6 +84,7 @@ export const post = defineType({
       name: "seo",
       title: "SEO",
       type: "seo",
+      group: "settings",
     }),
   ],
   orderings: [

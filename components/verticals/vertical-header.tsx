@@ -14,13 +14,19 @@ import { siteConfig } from "@/lib/site";
  */
 export function VerticalHeader({ telHref }: { telHref: string }) {
   return (
-    <header className="border-b border-border">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-        <div className="min-w-0">
-          <p className="v-label truncate text-xs uppercase text-foreground">
-            {siteConfig.name}
-          </p>
-          <p className="truncate text-xs text-foreground-muted">{siteConfig.areaServed}</p>
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+        <div className="min-w-0 flex items-center gap-2">
+          <div className="flex items-center gap-0.5 text-3xl">
+            <span>{"{"}</span>
+            <span>{"}"}</span>
+          </div>
+          <div>
+            <p className="v-label truncate text-xs uppercase text-foreground">
+              {siteConfig.name}
+            </p>
+            <p className="truncate text-xs text-foreground-muted">{siteConfig.areaServed}</p>
+          </div>
         </div>
 
         <a

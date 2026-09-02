@@ -68,6 +68,7 @@ export default async function WorkPage() {
             {caseStudies.map((caseStudy, index) => (
               <CaseStudyCard
                 key={caseStudy.id}
+                headingLevel="h2"
                 slug={caseStudy.slug}
                 title={caseStudy.name}
                 tags={caseStudy.tags ?? []}

@@ -7,7 +7,6 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/brackets-studio",
   },
   booking: "https://cal.com/bracketstudio",
-  /** Placeholder — sostituire con il numero reale prima di pubblicare /it/ristoranti. */
   phone: "+39 348 697 4498",
   whatsapp: "https://wa.me/393486974498",
   /** Area servita dalle landing verticali (JSON-LD LocalBusiness). Solo Pesaro finché non si espande. */

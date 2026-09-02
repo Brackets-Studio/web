@@ -21,7 +21,13 @@ export const verticalPrice = defineType({
       fields: [
         defineField({name: 'label', title: 'Etichetta', type: 'string'}),
         defineField({name: 'amount', title: 'Importo', type: 'string'}),
-        defineField({name: 'includes', title: 'Cosa include', type: 'string'}),
+        defineField({
+          name: 'includes', 
+          title: 'Cosa include', 
+          type: 'text',
+          rows: 4,
+          validation: Rule => Rule.max(300).error('Massimo 300 caratteri')
+        }),
         defineField({
           name: 'features',
           title: 'Voci incluse',
@@ -39,7 +45,7 @@ export const verticalPrice = defineType({
       fields: [
         defineField({name: 'label', title: 'Etichetta', type: 'string'}),
         defineField({name: 'amount', title: 'Importo', type: 'string'}),
-        defineField({name: 'note', title: 'Nota', type: 'string'}),
+        defineField({name: 'note', title: 'Nota', type: 'text', rows: 2}),
       ],
     }),
   ],

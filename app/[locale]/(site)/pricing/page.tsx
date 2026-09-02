@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { CalendarClock, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { Reveal } from "@/components/ui/reveal";
 import { QuoteCalculator } from "@/components/sections/quote-calculator";
-import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { siteConfig } from "@/lib/site";
 import { getPricingSettings } from "@/sanity/pricing";
+import CtaSection from "@/components/utils/cta-section";
 
 export async function generateMetadata({
   params,
@@ -99,27 +98,15 @@ export default async function PricingPage({
             </div>
           )}
 
-          <Reveal className="mt-16 rounded-lg border border-border bg-background-elevated p-8 text-center">
-            <h2 className="text-xl font-semibold text-foreground">{t("cta.title")}</h2>
-            <p className="mt-2 text-sm text-foreground-muted">{t("cta.text")}</p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={siteConfig.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <CalendarClock className="size-4" aria-hidden />
-                {t("cta.button")}
-              </a>
-              <Link
-                href="/#contatti"
-                className="inline-flex items-center rounded-[100px] border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-brand"
-              >
-                {t("cta.buttonSecondary")}
-              </Link>
-            </div>
-          </Reveal>
+          <CtaSection 
+            textSettings={{
+              eyebrow: t("cta.eyebrow"),
+              title: t("cta.title"),
+              text: t("cta.text"),
+              button: t("cta.button"),
+              buttonSecondary: t("cta.buttonSecondary")
+            }}
+          />
         </div>
       </StackedSection>
     </>

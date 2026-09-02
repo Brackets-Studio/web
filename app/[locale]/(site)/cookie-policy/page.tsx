@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { LegalPage } from "@/components/layout/legal-page";
+import { routing } from "@/i18n/routing";
 
 type CookieItem = { name: string; type: string; purpose: string; duration: string };
 
@@ -11,7 +12,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.cookiePolicy" });
-  return { title: t("title") };
+  return {
+    title: t("title"),
+    alternates: {
+      canonical: `/${locale}/cookie-policy`,
+      languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}/cookie-policy`])),
+    },
+  };
 }
 
 export default async function CookiePolicyPage() {

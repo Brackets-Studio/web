@@ -324,10 +324,11 @@ export const vertical = defineType({
     seo: { noIndex: true },
   },
   preview: {
-    select: { title: "name", subtitle: "slug.current", active: "active" },
-    prepare({ title, subtitle, active }) {
+    select: { title: "name", media: "hero.image", subtitle: "slug.current", active: "active" },
+    prepare({ title, media, subtitle, active }) {
       return {
         title,
+        media,
         subtitle: `/it/${subtitle ?? ""}${active ? "" : " — inattiva"}`,
       };
     },

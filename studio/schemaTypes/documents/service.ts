@@ -15,11 +15,17 @@ export const service = defineType({
   title: "Servizio",
   type: "document",
   icon: WrenchIcon,
+  groups: [
+    { name: "content", title: "Contenuto", default: true },
+    { name: "detail", title: "Dettaglio" },
+    { name: "settings", title: "Impostazioni" },
+  ],
   fields: [
     defineField({
       name: "title",
       title: "Titolo",
       type: "localeString",
+      group: "content",
       validation: (Rule) =>
         Rule.custom((value: { it?: string; en?: string } | undefined) => {
           if (!value?.it || !value?.en) return "Both languages are required";
@@ -32,18 +38,21 @@ export const service = defineType({
       description: "Determina l'URL: /servizi/<slug>. Deve combaciare con la chiave usata in \"Impostazioni prezzi\" per collegare il prezzo.",
       type: "slug",
       options: { source: "title.en", maxLength: 96 },
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "eyebrow",
       title: "Eyebrow",
       type: "localeString",
+      group: "content",
     }),
     defineField({
       name: "shortDescription",
       title: "Descrizione breve",
       description: "Usata nelle card (home, indice servizi) e come meta description di fallback.",
       type: "localeText",
+      group: "content",
       validation: (Rule) =>
         Rule.custom((value: { it?: string; en?: string } | undefined) => {
           if (!value?.it || !value?.en) return "Both languages are required";
@@ -55,12 +64,14 @@ export const service = defineType({
       title: "Tag",
       type: "array",
       of: [{ type: "localeString" }],
+      group: "content",
     }),
     defineField({
       name: "heroImage",
       title: "Immagine",
       type: "image",
       options: { hotspot: true },
+      group: "content",
       fields: [
         defineField({ name: "alt", title: "Testo alternativo", type: "localeString" }),
       ],
@@ -69,6 +80,7 @@ export const service = defineType({
       name: "detail",
       title: "Dettaglio",
       type: "object",
+      group: "detail",
       fields: [
         defineField({ name: "summary", title: "Riassunto", type: "localeText" }),
         defineField({
@@ -84,6 +96,7 @@ export const service = defineType({
       title: "Corpo (opzionale)",
       description: "Contenuto extra per la pagina di dettaglio. Può restare vuoto — la pagina è volutamente barebone.",
       type: "localeBlockContent",
+      group: "detail",
     }),
     defineField({
       name: "order",
@@ -91,11 +104,13 @@ export const service = defineType({
       description: "Determina la posizione in home e nell'indice /servizi.",
       type: "number",
       initialValue: 0,
+      group: "settings",
     }),
     defineField({
       name: "seo",
       title: "SEO",
       type: "seo",
+      group: "settings",
     }),
   ],
   orderings: [

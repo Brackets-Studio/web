@@ -57,7 +57,7 @@ export function CallbackForm({
 
   if (state.status === "success") {
     return (
-      <div className="v-card v-card--tint flex items-start gap-3 p-6">
+      <div role="status" className="v-card v-card--tint flex items-start gap-3 p-6">
         <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
         <div>
           <p className="font-medium text-foreground">Ricevuto.</p>

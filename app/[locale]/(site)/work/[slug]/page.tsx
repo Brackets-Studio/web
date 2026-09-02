@@ -13,6 +13,7 @@ import { CASE_STUDY_BY_SLUG_QUERY, CASE_STUDY_SLUGS_QUERY } from "@/sanity/queri
 import { urlFor } from "@/sanity/image";
 import type { CaseStudyDetail } from "@/sanity/types";
 import { siteConfig } from "@/lib/site";
+import CtaSection from "@/components/utils/cta-section";
 
 export async function generateStaticParams() {
   const slugs = await client.fetch<{ slug: string }[]>(CASE_STUDY_SLUGS_QUERY);
@@ -234,58 +235,72 @@ export default async function CaseStudyPage({
                   </ul>
                 </div>
               )}
+
+              {caseStudy.retrospective && (
+                <div className="mt-12 rounded-lg border border-brand/30 bg-brand-subtle/20 p-6">
+                  <p className="font-mono text-xs uppercase tracking-wide text-brand">
+                    {t("retrospective")}
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed text-foreground">
+                    {caseStudy.retrospective}
+                  </p>
+                </div>
+              )}
             </div>
 
             <aside className="lg:sticky lg:top-24 lg:h-fit">
-              <div className="rounded-lg border border-border bg-background-elevated p-6">
-                <p className="font-mono text-xs uppercase tracking-wide text-foreground-muted">
-                  {t("details")}
-                </p>
-
-                {caseStudy.publishedAt && (
-                  <div className="mt-4">
-                    <p className="text-xs text-foreground-muted">{t("published")}</p>
-                    <time dateTime={caseStudy.publishedAt} className="text-sm text-foreground">
-                      {new Date(caseStudy.publishedAt).toLocaleDateString(locale, {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </time>
-                  </div>
-                )}
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {caseStudy.tags.map((tag) => (
-                    <Badge key={tag}>{tag}</Badge>
-                  ))}
+              <div className="rounded-lg border border-border bg-background-elevated py-4">
+                <div className="px-6 border-b border-border pb-4">
+                  <p className="font-mono text-xs uppercase tracking-wide text-foreground-muted">
+                    {t("details")}
+                  </p>
                 </div>
 
-                {caseStudy.externalLink && (
-                  <a
-                    href={caseStudy.externalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-[100px] bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-                  >
-                    {t("visitSite")}
-                    <ArrowUpRight size={14} />
-                  </a>
-                )}
+                <div className="px-4">
+                  {caseStudy.publishedAt && (
+                    <div className="mt-4">
+                      <p className="text-xs text-foreground-muted">{t("published")}</p>
+                      <time dateTime={caseStudy.publishedAt} className="text-sm text-foreground">
+                        {new Date(caseStudy.publishedAt).toLocaleDateString(locale, {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })}
+                      </time>
+                    </div>
+                  )}
+
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {caseStudy.tags.map((tag) => (
+                      <Badge variant='outline' key={tag}>{tag}</Badge>
+                    ))}
+                  </div>
+
+                  {caseStudy.externalLink && (
+                    <a
+                      href={caseStudy.externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-[100px] bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                      {t("visitSite")}
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </div>
               </div>
             </aside>
           </div>
 
-          <div className="mt-16 rounded-lg border border-border bg-background-elevated p-8 text-center">
-            <h2 className="text-xl font-semibold text-foreground">{t("cta.title")}</h2>
-            <p className="mt-2 text-sm text-foreground-muted">{t("cta.text")}</p>
-            <Link
-              href="/#contatti"
-              className="mt-6 inline-flex items-center rounded-[100px] bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-            >
-              {t("cta.button")}
-            </Link>
-          </div>
+          <CtaSection
+            textSettings={{
+              eyebrow: t("cta.eyebrow"),
+              title: t("cta.title"),
+              text: t("cta.text"),
+              button: t("cta.button"),
+              buttonSecondary: t("cta.buttonSecondary")
+            }}
+          />
         </div>
       </StackedSection>
     </>

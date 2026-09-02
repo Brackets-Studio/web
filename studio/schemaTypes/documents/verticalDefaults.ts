@@ -125,8 +125,14 @@ export const verticalDefaults = defineType({
     }),
   ],
   preview: {
-    prepare() {
-      return {title: 'Impostazioni verticali', subtitle: 'Valori condivisi da tutte le landing'}
+    select: {trustItems: 'trust.items', objectionItems: 'objections.items'},
+    prepare({trustItems, objectionItems}) {
+      const trustCount = Array.isArray(trustItems) ? trustItems.length : 0
+      const objectionCount = Array.isArray(objectionItems) ? objectionItems.length : 0
+      return {
+        title: 'Impostazioni verticali',
+        subtitle: `${trustCount} voci di fiducia — ${objectionCount} obiezioni predefinite`,
+      }
     },
   },
 })

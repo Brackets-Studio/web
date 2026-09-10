@@ -37,6 +37,22 @@
   --brand-subtle: #ffe8e0;
 
   /*
+   * Secondo e terzo accento del sito (non delle landing verticali, che hanno
+   * già i propri `--v-accent*` in `presets.ts`). Servono per dare al colore un
+   * ruolo decorativo/orientativo in home — le "tre porte" e le fasce alternate
+   * — senza toccare `--brand` (l'unico che comanda l'azione: CTA, focus) né
+   * `--accent`, che qui sotto resta il token NEUTRO di shadcn per gli
+   * hover/focus interni dei suoi componenti. Chiamarli "accent" tout court
+   * avrebbe fatto lampeggiare colorato ogni voce di un DropdownMenu — da qui
+   * il prefisso `-brand`, che li lega chiaramente al secondo/terzo colore del
+   * brand dello studio e non al semantico shadcn.
+   */
+  --accent-brand: #745f4a;
+  --accent-brand-2: #9c6110;
+  --accent-brand-subtle: #d9efec;
+  --accent-brand-2-subtle: #f3e6c9;
+
+  /*
    * Le due fasce alternate.
    *
    * La home alterna una sezione su `--background` e una su `--surface-alt`: è
@@ -59,6 +75,25 @@
    */
   --surface-alt: #eeece6;
   --surface-sunken: #e2e0d9;
+
+  /*
+   * Hero — l'unica sezione con una fascia di sfondo propria invece del beige
+   * di pagina. Prima era un colore scritto a mano (#141210) uguale in
+   * entrambi i temi: restava scura anche col tema chiaro attivo, letto come
+   * bug. Ora è tokenizzata come le altre fasce: segue il tema, e lo scuro
+   * (`#141210`, "inchiostro caldo") sopravvive solo come valore del token nel
+   * tema scuro.
+   *
+   * `--hero-glow-strength` è la percentuale del `color-mix` dei due glow
+   * radiali in `hero.tsx`: sul fondo scuro il 45% si vede già bene, sullo
+   * stesso 45% su fondo sabbia i glow sono quasi invisibili — va più alto.
+   * Dichiararla come token invece di scriverla due volte nel componente
+   * evita che le due copie divergano.
+   */
+  --hero-bg: #ece2d6;
+  --hero-foreground: #1a1a1a;
+  --hero-foreground-muted: #52525b;
+  --hero-glow-strength: 70%;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -101,8 +136,18 @@
     --brand: #ff8557;
     --brand-foreground: #1a1a1a;
     --brand-subtle: #411d10;
+    /* Stessa logica di --brand-subtle: tinta scurissima e desaturata alla
+       tonalità dell'accento invece che del brand (vedi il commento su :root). */
+    --accent-brand: #745f4a;
+    --accent-brand-2: #e0a83c;
+    --accent-brand-subtle: #10413c;
+    --accent-brand-2-subtle: #412f10;
     --surface-alt: #121212;
     --surface-sunken: #1c1c1c;
+    --hero-bg: #141210;
+    --hero-foreground: #ffffff;
+    --hero-foreground-muted: #a8a29e;
+    --hero-glow-strength: 45%;
     --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
     --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
     --destructive: oklch(0.704 0.191 22.216);
@@ -118,8 +163,16 @@
   --brand: #ff8557;
   --brand-foreground: #1a1a1a;
   --brand-subtle: #411d10;
+  --accent-brand: #745f4a;
+  --accent-brand-2: #e0a83c;
+  --accent-brand-subtle: #10413c;
+  --accent-brand-2-subtle: #412f10;
   --surface-alt: #121212;
   --surface-sunken: #1c1c1c;
+  --hero-bg: #141210;
+  --hero-foreground: #ffffff;
+  --hero-foreground-muted: #a8a29e;
+  --hero-glow-strength: 45%;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 12%), 0 0 0 1px var(--border);
   --shadow-md: 0 8px 24px rgb(0 0 0 / 24%), 0 0 0 1px var(--border);
   --destructive: oklch(0.704 0.191 22.216);
@@ -134,8 +187,16 @@
   --brand: #c33e00;
   --brand-foreground: #ffffff;
   --brand-subtle: #ffe8e0;
+  --accent-brand: #745f4a;
+  --accent-brand-2: #9c6110;
+  --accent-brand-subtle: #d9efec;
+  --accent-brand-2-subtle: #f3e6c9;
   --surface-alt: #eeece6;
   --surface-sunken: #e2e0d9;
+  --hero-bg: #ece2d6;
+  --hero-foreground: #1a1a1a;
+  --hero-foreground-muted: #52525b;
+  --hero-glow-strength: 70%;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%), 0 0 0 1px var(--border);
   --shadow-md: 0 4px 12px rgb(0 0 0 / 8%), 0 0 0 1px var(--border);
   --destructive: oklch(0.577 0.245 27.325);
@@ -150,8 +211,15 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-subtle: var(--brand-subtle);
+  --color-accent-brand: var(--accent-brand);
+  --color-accent-brand-2: var(--accent-brand-2);
+  --color-accent-brand-subtle: var(--accent-brand-subtle);
+  --color-accent-brand-2-subtle: var(--accent-brand-2-subtle);
   --color-surface-alt: var(--surface-alt);
   --color-surface-sunken: var(--surface-sunken);
+  --color-hero-bg: var(--hero-bg);
+  --color-hero-foreground: var(--hero-foreground);
+  --color-hero-foreground-muted: var(--hero-foreground-muted);
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);

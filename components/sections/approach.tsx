@@ -20,7 +20,7 @@ export function Approach() {
   const gridY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   return (
-    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-surface-alt">
+    <StackedSection className="relative flex min-h-[70vh] items-center overflow-hidden bg-surface-alt border border-border">
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -40,7 +40,7 @@ export function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.3, ease: EASE_OUT }}
-            className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted"
+            className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground"
           >
             <span className="size-1.5 rounded-full bg-brand" aria-hidden />
             {t("eyebrow")}

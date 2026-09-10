@@ -77,26 +77,6 @@ export default async function HowWeWorkPage() {
       <Guarantees />
       <Process variant="full" />
       <TechStack />
-
-      <StackedSection className="bg-surface-alt">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div>
-            <h2 className="text-4xl font-bold tracking-[-0.02em] text-balance text-foreground">
-              {t("ctaTitle")}
-            </h2>
-            <p className="mt-5 text-pretty text-foreground-muted">{t("ctaText")}</p>
-          </div>
-          <CtaSection
-            textSettings={{
-              eyebrow: t("cta.eyebrow"),
-              title: t("cta.title"),
-              text: t("cta.text"),
-              button: t("cta.button"),
-              buttonSecondary: t("cta.buttonSecondary"),
-            }}
-          />
-        </div>
-      </StackedSection>
     </>
   );
 }

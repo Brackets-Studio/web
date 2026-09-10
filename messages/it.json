@@ -25,15 +25,18 @@
   },
   "hero": {
     "eyebrow": "Studio di sviluppo · Pesaro",
-    "headline": "Il software della tua azienda, fatto bene.",
+    "headline": "Siti e gestionali che ti tolgono lavoro, invece di aggiungertene.",
     "subline": "Siti, gestionali e app su misura per piccole e medie imprese. Li progettiamo, li mettiamo online e restiamo a seguirli — e parli sempre con chi li costruisce.",
     "ctaPrimary": "Raccontaci cosa ti serve",
-    "ctaSecondary": "Guarda i lavori fatti",
     "proof": [
       "Ti rispondiamo entro 24 ore",
       "Il codice resta tuo",
       "Un solo referente, dall'inizio alla fine"
     ]
+  },
+  "contactInfo": {
+    "address": "Pesaro (PU), Italy",
+    "vat": "P.IVA 02863390411"
   },
   "techStack": {
     "title": "Gli strumenti con cui lo costruiamo",

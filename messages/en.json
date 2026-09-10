@@ -25,15 +25,18 @@
   },
   "hero": {
     "eyebrow": "Software studio · Pesaro, Italy",
-    "headline": "The software your business runs on, done properly.",
+    "headline": "Websites and internal tools that take work off your plate, instead of adding to it.",
     "subline": "Websites, internal tools and apps built for small and mid-sized businesses. We design them, put them online and keep looking after them — and you always talk to the person building them.",
     "ctaPrimary": "Tell us what you need",
-    "ctaSecondary": "See the work",
     "proof": [
       "We reply within 24 hours",
       "The code stays yours",
       "One point of contact, start to finish"
     ]
+  },
+  "contactInfo": {
+    "address": "Pesaro (PU), Italy",
+    "vat": "VAT 02863390411"
   },
   "techStack": {
     "title": "What we build it with",

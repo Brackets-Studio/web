@@ -121,7 +121,7 @@ export default async function TeamPage() {
       </StackedSection>
 
       {/* Principi */}
-      <StackedSection className="bg-surface-alt">
+      <StackedSection className="bg-surface-alt border border-border">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-[-0.02em] text-foreground sm:text-4xl">

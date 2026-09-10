@@ -226,7 +226,7 @@ export function QuoteCalculator({
                 {t("back")}
               </button>
             ) : (
-              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs tracking-wider text-foreground-muted uppercase">
+              <p className="inline-flex items-center gap-2 rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs tracking-wider text-foreground uppercase">
                 <Calculator className="size-3.5" aria-hidden />
                 {t("eyebrow")}
               </p>

@@ -49,7 +49,7 @@ export function Process({ variant = "full" }: { variant?: "teaser" | "full" }) {
 
   if (variant === "teaser") {
     return (
-      <StackedSection id="processo" className="bg-surface-alt">
+      <StackedSection id="processo" className="bg-background-elevated border border-border">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeader eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 
@@ -109,7 +109,7 @@ export function Process({ variant = "full" }: { variant?: "teaser" | "full" }) {
   }
 
   return (
-    <StackedSection id="processo" className="bg-surface-alt">
+    <StackedSection id="processo" className="bg-surface-alt border border-border">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 

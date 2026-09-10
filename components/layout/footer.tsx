@@ -6,6 +6,7 @@ import LocaleSwitcher from "../utils/localeswitcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import { isCurrent } from "@/lib/utils";
 import { ThemeToggle } from "../theme/theme-toggle";
+import { siteConfig } from "@/lib/site";
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/Brackets-Studio" },
@@ -34,15 +35,27 @@ export function Footer() {
   const pathname = usePathname();
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const tContact = useTranslations("contactInfo");
   const year = new Date().getFullYear();
 
   return (
-    <StackedSection as="footer" last className='mt-20'>
+    <StackedSection as="footer" last className='mt-20 border-t border-border bg-background-elevated rounded-b-none!'>
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pt-16">
         {/* Top row: tagline + controls / social links */}
         <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col gap-4">
             <p className="max-w-xs text-sm text-foreground-muted">{t("tagline")}</p>
+            {/* Telefono, indirizzo, P.IVA — ripetuti qui perché il footer è il
+                secondo posto in cui si cerca "dove siete", dopo la hero. */}
+            <p className="text-xs text-foreground-muted">
+              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
+                {siteConfig.phone}
+              </a>
+              {" · "}
+              {tContact("address")}
+              {" · "}
+              {tContact("vat")}
+            </p>
             <div className="flex items-center gap-2">
               <ThemeToggle />
               <LocaleSwitcher pathname={pathname} />

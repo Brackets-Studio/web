@@ -22,10 +22,10 @@ export function AnalyzerCta() {
   const [url, setUrl] = useState("");
 
   return (
-    <StackedSection className="bg-surface-alt">
+    <StackedSection className="bg-background-elevated border border-border">
       <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
         <Reveal className="flex flex-col items-center text-center">
-          <p className="mb-5 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs tracking-wider text-foreground-muted uppercase">
+          <p className="mb-5 w-fit rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs tracking-wider text-foreground uppercase">
             {t("home.eyebrow")}
           </p>
           <h2 className="max-w-2xl text-3xl font-bold tracking-[-0.02em] text-balance text-foreground sm:text-4xl">

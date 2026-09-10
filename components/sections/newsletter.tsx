@@ -24,13 +24,13 @@ export function Newsletter() {
   const t = useTranslations("newsletter");
 
   return (
-    <StackedSection id="newsletter" className="bg-surface-sunken max-w-7xl! mt-16 mx-auto">
+    <StackedSection id="newsletter" className="bg-background-elevated border border-border max-w-7xl! mt-16 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.35, ease: EASE_OUT }}
-        className="mx-auto flex flex-col gap-6 px-6 py-14 md:flex-row md:items-center md:justify-between md:gap-12"
+        className="mx-auto flex flex-col gap-6 px-10 py-14 md:flex-row md:items-center md:justify-between md:gap-12"
       >
         <div className="max-w-md">
           <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground-muted">

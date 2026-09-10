@@ -27,7 +27,7 @@ const CtaSection = ({
 
       <div className="relative grid gap-8 px-6 py-14 text-center sm:px-12 sm:py-16 md:grid-cols-[1.4fr_auto] md:items-center md:text-left">
         <div>
-          <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted md:mx-0">
+          <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground md:mx-0">
             <CalendarClock className="size-3.5" aria-hidden />
             {textSettings.eyebrow}
           </p>

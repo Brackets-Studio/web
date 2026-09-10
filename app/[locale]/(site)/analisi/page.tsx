@@ -58,7 +58,7 @@ export default async function AnalysisPage({
     <StackedSection>
       <div className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
         <Reveal className="flex flex-col items-center text-center">
-          <p className="mb-6 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs tracking-wider text-foreground-muted uppercase">
+          <p className="mb-6 w-fit rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs tracking-wider text-accent-brand uppercase">
             {t("hero.eyebrow")}
           </p>
           <h1 className="max-w-3xl text-4xl font-bold tracking-[-0.03em] text-balance text-foreground sm:text-5xl">

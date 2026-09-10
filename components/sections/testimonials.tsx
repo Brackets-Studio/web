@@ -33,7 +33,7 @@ export async function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <StackedSection id="testimonianze">
+    <StackedSection id="testimonianze" className="bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeader
           eyebrow={t("eyebrow")}

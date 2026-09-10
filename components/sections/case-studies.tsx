@@ -23,7 +23,7 @@ export async function CaseStudies() {
   // La sezione si renderizza sempre: la CTA secondaria dell'hero punta a
   // "#lavori", quindi l'ancora deve esistere nel DOM anche a vetrina vuota.
   return (
-    <StackedSection id="lavori" className="bg-surface-alt">
+    <StackedSection id="lavori" className="bg-background-elevated border border-border">
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-28">
         {/* Peso forte: insieme al modulo di contatto è una delle due sezioni
             che devono fermare lo scorrimento. Vedi i tre registri in

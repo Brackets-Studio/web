@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { CheckCircle2, Loader2, CalendarClock } from "lucide-react";
+import { CheckCircle2, Loader2, CalendarClock, Phone, MapPin, Landmark } from "lucide-react";
 import { StackedSection } from "@/components/layout/stacked-section";
 import { submitContactForm, type ContactFormState } from "@/lib/actions/contact";
 import { cn } from "@/lib/utils";
@@ -36,10 +36,11 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
 
 export function Contact() {
   const t = useTranslations("contact");
+  const tContact = useTranslations("contactInfo");
   const [state, formAction] = useActionState(submitContactForm, initialState);
 
   return (
-    <StackedSection id="contatti" className="bg-surface-alt">
+    <StackedSection id="contatti" className="bg-background-elevated border border-border">
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
           <motion.div
@@ -48,7 +49,7 @@ export function Contact() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.35, ease: EASE_OUT }}
           >
-            <p className="mb-5 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted">
+            <p className="mb-5 w-fit rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground">
               {t("eyebrow")}
             </p>
             {/* Peso forte, come i case study: sono i due momenti che devono
@@ -73,6 +74,25 @@ export function Contact() {
               <CalendarClock className="size-4 text-foreground-muted" aria-hidden />
               {t("bookCall")}
             </a>
+
+            {/* Telefono, indirizzo, P.IVA — la domanda di fiducia di chi firma
+                da €1.500 in su: "dove siete e vi posso chiamare". */}
+            <ul className="mt-6 flex flex-col gap-2 text-sm text-foreground-muted">
+              <li className="flex items-center gap-2">
+                <Phone className="size-4 shrink-0 text-foreground-muted" aria-hidden />
+                <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="size-4 shrink-0 text-foreground-muted" aria-hidden />
+                {tContact("address")}
+              </li>
+              <li className="flex items-center gap-2">
+                <Landmark className="size-4 shrink-0 text-foreground-muted" aria-hidden />
+                {tContact("vat")}
+              </li>
+            </ul>
           </motion.div>
 
           <motion.div

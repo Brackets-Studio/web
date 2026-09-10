@@ -76,7 +76,7 @@ export function SectionHeader({
       )}
     >
       {eyebrow && weight !== "light" && (
-        <p className="mb-5 w-fit rounded-full border border-border bg-muted/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground-muted">
+        <p className="mb-5 w-fit rounded-full border border-accent-brand/25 bg-accent-brand/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-foreground">
           {eyebrow}
         </p>
       )}

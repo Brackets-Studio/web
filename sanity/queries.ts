@@ -182,7 +182,10 @@ export const VERTICAL_BY_SLUG_QUERY = defineQuery(/* groq */ `
     // Demo finte di vetrina/, non lavori veri — vedi demo.ts. Solo quelle
     // attive: una demo disattivata non deve comparire per il solo fatto di
     // essere ancora referenziata da qualche landing.
-    "demos": coalesce(demos[]-> {
+    // Le parentesi attorno a proof.demos[]->{...} non sono decorative: senza,
+    // il filtro [defined(url) && active == true] si applica in un punto
+    // diverso della pipeline GROQ e l'array proiettato torna sempre [null].
+    "demos": coalesce((proof.demos[]-> {
       "id": _id,
       name,
       tipologia,
@@ -191,7 +194,7 @@ export const VERTICAL_BY_SLUG_QUERY = defineQuery(/* groq */ `
       "screenshot": screenshot { ${imageFragment} },
       pitchLine,
       active
-    }[defined(url) && active == true] | order(varianteLabel asc), [])
+    })[defined(url) && active == true] | order(varianteLabel asc), [])
   },
   "benefits": {
     "title": benefits.title,

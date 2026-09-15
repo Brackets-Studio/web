@@ -63,7 +63,7 @@ export async function Testimonials() {
                   tabIndex={0}
                   role="region"
                   aria-label={item.authorName}
-                  className="relative max-h-52 overflow-y-auto pb-4 after:pointer-events-none after:sticky after:bottom-0 after:-mt-8 after:block after:h-8 after:bg-linear-to-t after:from-background-elevated after:to-transparent"
+                  className="relative max-h-52 overflow-y-auto  after:pointer-events-none after:sticky after:bottom-0 after:-mt-8 after:block after:h-8 after:bg-linear-to-t after:from-background-elevated after:to-transparent"
                 >
                   <Quote className="size-5 text-foreground-muted/50" strokeWidth={1.75} />
                   <blockquote className="mt-4 flex-1 text-sm leading-relaxed whitespace-pre-line text-foreground">

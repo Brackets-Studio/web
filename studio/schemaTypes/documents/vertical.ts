@@ -58,6 +58,23 @@ export const vertical = defineType({
       group: "settings",
     }),
     defineField({
+      name: "linea",
+      title: "Linea",
+      description:
+        "Prodotto (€800) o commessa (da €1.500). Filtra quali demo (sotto, in \"Prova\") questa landing può referenziare: una demo di linea commessa non deve poter finire accanto agli €800, altrimenti ancora al ribasso un lavoro da €1.500 (`docs/strategy/positioning-bracketstudio.md` §3.1).",
+      type: "string",
+      options: {
+        list: [
+          { title: "Prodotto (€800)", value: "prodotto" },
+          { title: "Commessa (da €1.500)", value: "commessa" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "prodotto",
+      validation: (Rule) => Rule.required(),
+      group: "settings",
+    }),
+    defineField({
       name: "hero",
       title: "Hero",
       type: "object",
@@ -178,6 +195,25 @@ export const vertical = defineType({
                     media,
                   };
                 },
+              },
+            },
+          ],
+        }),
+        defineField({
+          name: "demos",
+          title: "Demo",
+          description:
+            "Esempi finti da mostrare in questa landing, gestiti su `vetrina/` — mai il case study vero: quello resta in \"Screenshot\" sopra. Il filtro ammette solo demo con la stessa `linea` di questa landing, per costruzione, non per convenzione.",
+          type: "array",
+          of: [
+            {
+              type: "reference",
+              to: [{ type: "demo" }],
+              options: {
+                filter: ({ document }: { document: { linea?: string } }) => ({
+                  filter: "linea == $linea",
+                  params: { linea: document.linea ?? "prodotto" },
+                }),
               },
             },
           ],

@@ -3,6 +3,7 @@ import {CogIcon} from '@sanity/icons/Cog'
 import {PinIcon} from '@sanity/icons/Pin'
 import {BarChartIcon} from '@sanity/icons/BarChart'
 import {UsersIcon} from '@sanity/icons/Users'
+import {PlayIcon} from '@sanity/icons/Play'
 
 const VERTICAL_DEFAULTS_ID = 'verticalDefaults'
 const PRICING_SETTINGS_ID = 'pricingSettings'
@@ -61,6 +62,33 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
       S.listItem()
+        .title('Demo')
+        .icon(PlayIcon)
+        .child(
+          S.list()
+            .title('Demo')
+            .items([
+              // Divisa per LINEA, non per tipologia: è la linea che si sbaglia
+              // con conseguenze (una demo commessa accanto agli €800 ancora al
+              // ribasso un lavoro da €1.500) — vedi il filtro su `vertical.demos`.
+              S.listItem()
+                .title('Prodotto')
+                .icon(PlayIcon)
+                .child(
+                  S.documentTypeList('demo')
+                    .title('Prodotto')
+                    .filter('_type == "demo" && linea == "prodotto"'),
+                ),
+              S.listItem()
+                .title('Commessa')
+                .child(
+                  S.documentTypeList('demo')
+                    .title('Commessa')
+                    .filter('_type == "demo" && linea == "commessa"'),
+                ),
+            ]),
+        ),
+      S.listItem()
         .title('Impostazioni prezzi')
         .icon(BarChartIcon)
         .child(
@@ -82,7 +110,7 @@ export const structure: StructureResolver = (S) =>
       // Tutto il resto invariato, meno i tipi già collocati sopra.
       ...S.documentTypeListItems().filter(
         (item) =>
-          !['vertical', 'verticalDefaults', 'pricingSettings', 'socialProof'].includes(
+          !['vertical', 'verticalDefaults', 'pricingSettings', 'socialProof', 'demo'].includes(
             item.getId() ?? '',
           ),
       ),

@@ -178,7 +178,20 @@ export const VERTICAL_BY_SLUG_QUERY = defineQuery(/* groq */ `
       clientName,
       consentGiven,
       href
-    }, [])
+    }, []),
+    // Demo finte di vetrina/, non lavori veri — vedi demo.ts. Solo quelle
+    // attive: una demo disattivata non deve comparire per il solo fatto di
+    // essere ancora referenziata da qualche landing.
+    "demos": coalesce(demos[]-> {
+      "id": _id,
+      name,
+      tipologia,
+      varianteLabel,
+      url,
+      "screenshot": screenshot { ${imageFragment} },
+      pitchLine,
+      active
+    }[defined(url) && active == true] | order(varianteLabel asc), [])
   },
   "benefits": {
     "title": benefits.title,

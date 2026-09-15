@@ -13,6 +13,7 @@ import {
 import { Reveal } from "@/components/ui/reveal";
 import { Monogram } from "@/components/ui/monogram";
 import { VerticalProof } from "@/components/verticals/vertical-proof";
+import { VerticalDemos } from "@/components/verticals/vertical-demos";
 import { CallbackForm } from "@/components/verticals/callback-form";
 import { VerticalCtaLinks } from "@/components/verticals/cta-links";
 import { client } from "@/sanity/client";
@@ -23,6 +24,8 @@ import type { VerticalDetail } from "@/sanity/types";
 import { resolvePreset } from "@/lib/verticals/presets";
 import { HERO_ID, telHref } from "@/lib/verticals/shared";
 import { siteConfig } from "@/lib/site";
+
+
 
 export async function generateStaticParams() {
   const slugs = await client.fetch<{ slug: string }[]>(VERTICAL_SLUGS_QUERY);
@@ -514,6 +517,19 @@ export default async function VerticalPage({
           </div>
         </Section>
       )}
+
+      {/* DEMO — esempi finti di `vetrina/`, subito dopo la prova vera e mai
+          prima: in outbound la demo apre e la prova chiude, qui è al contrario
+          perché chi arriva da Google è uno sconosciuto e la credibilità viene
+          prima (`docs/ideas/vetrina-demo-per-tipologia.md` §10.4). */}
+
+        <Section className="border-t border-border bg-background-elevated">
+          <SectionTitle label="Esempi" title="Com'è per il tuo mestiere" />
+          <div className="mt-12">
+            <VerticalDemos demos={proof.demos} />
+          </div>
+        </Section>
+
 
       {/* OBIEZIONI — accordion: chi ha quella paura la apre, gli altri scorrono. */}
       {objections.items.length > 0 && (

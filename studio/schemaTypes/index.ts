@@ -13,6 +13,7 @@ import { service } from "./documents/service";
 import { pricingSettings } from "./documents/pricingSettings";
 import { socialProof } from "./documents/socialProof";
 import { labItem } from "./documents/labItem";
+import { demo } from "./documents/demo";
 
 export const schemaTypes = [
   localeString,
@@ -30,4 +31,5 @@ export const schemaTypes = [
   pricingSettings,
   socialProof,
   labItem,
+  demo,
 ];

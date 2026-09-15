@@ -84,6 +84,21 @@ export type VerticalScreenshot = {
   href: string | null;
 };
 
+/**
+ * Una demo finta di `vetrina/` (`demo.bracketstudio.it`), referenziata da
+ * `vertical.proof.demos`. La query include solo demo `active == true` con
+ * `url` valorizzato.
+ */
+export type VerticalDemo = {
+  id: string;
+  name: string;
+  tipologia: string;
+  varianteLabel: string | null;
+  url: string;
+  screenshot: SanityImage;
+  pitchLine: string | null;
+};
+
 export type VerticalTrustItem = { title: string; text: string };
 
 /** Etichette delle sezioni, con fallback garantito dalla query. */
@@ -142,6 +157,7 @@ export type VerticalDetail = {
     intro: string | null;
     anonymousCaption: string | null;
     screenshots: VerticalScreenshot[];
+    demos: VerticalDemo[];
   };
   benefits: { title: string | null; items: VerticalBenefit[] };
   process: { title: string | null; steps: VerticalStep[] };

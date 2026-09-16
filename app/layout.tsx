@@ -30,6 +30,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <meta name="facebook-domain-verification" content="v05w0656gy6fl9q6bkt75txyxafzot" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

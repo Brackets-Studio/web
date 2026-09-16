@@ -625,7 +625,8 @@
     "rights": "All rights reserved.",
     "legal": {
       "privacy": "Privacy",
-      "cookiePolicy": "Cookies"
+      "cookiePolicy": "Cookies",
+      "dataDeletion": "Data deletion"
     }
   },
   "newsletter": {
@@ -672,6 +673,10 @@
           "body": "This site does not use profiling cookies or third-party analytics. The only information stored in your browser is your chosen language and theme (light/dark), to remember your preferences — see our cookie policy for details."
         },
         {
+          "heading": "Public data read from Instagram and Facebook (business research)",
+          "body": "For our business research work on local businesses (identifying potential clients for our services) we use Meta's official APIs to read public data from Instagram/Facebook business profiles — name, follower count, post count, biography and bio link of public professional accounts. We do not collect private data, do not require authorization from individual profiles (the data read is already public), and do not process data about identifiable individuals outside the commercial context of the business. This data is kept in our internal business-research archive for as long as the business remains a potential contact, and deleted on request — see our data deletion page."
+        },
+        {
           "heading": "Your rights",
           "body": "You can request access, correction, deletion or restriction of your data at any time by writing to info@bracketstudio.it. You also have the right to lodge a complaint with your local data protection authority."
         }
@@ -702,6 +707,25 @@
         }
       ],
       "outro": "Since these cookies are strictly necessary for the site to function, no prior consent is required. You can still clear them at any time from your browser settings."
+    },
+    "dataDeletion": {
+      "title": "Data deletion",
+      "updated": "Last updated: September 16, 2026",
+      "intro": "This page explains how to request deletion of the data Bracket Studio has collected about you or your business, including data read via Meta's APIs (Instagram/Facebook) for our business research.",
+      "sections": [
+        {
+          "heading": "What we collect from Instagram/Facebook",
+          "body": "Only public business profile data (name, followers, post count, bio, bio link), read via Meta's official APIs to identify potential clients for our services. We do not collect private data or non-public content."
+        },
+        {
+          "heading": "How to request deletion",
+          "body": "Write to info@bracketstudio.it with the business name or the Instagram/Facebook profile in question. We delete the record from our business-research archive within 30 days and confirm by email."
+        },
+        {
+          "heading": "Other data (contact form)",
+          "body": "For deletion of data collected through the site's contact form, see our privacy policy — the same email procedure applies."
+        }
+      ]
     }
   },
   "notFound": {

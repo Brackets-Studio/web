@@ -130,6 +130,9 @@ export function Footer() {
             <Link href="/cookie-policy" className="transition-colors hover:text-foreground">
               {t("legal.cookiePolicy")}
             </Link>
+            <Link href="/data-deletion" className="transition-colors hover:text-foreground">
+              {t("legal.dataDeletion")}
+            </Link>
           </nav>
         </div>
       </div>

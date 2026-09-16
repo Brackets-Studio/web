@@ -625,7 +625,8 @@
     "rights": "Tutti i diritti riservati.",
     "legal": {
       "privacy": "Privacy",
-      "cookiePolicy": "Cookie"
+      "cookiePolicy": "Cookie",
+      "dataDeletion": "Cancellazione dati"
     }
   },
   "newsletter": {
@@ -672,6 +673,10 @@
           "body": "Il sito non utilizza cookie di profilazione o analytics di terze parti. Le uniche informazioni salvate nel tuo browser sono la lingua e il tema (chiaro/scuro) scelti, per ricordare le tue preferenze — vedi la nostra cookie policy per il dettaglio."
         },
         {
+          "heading": "Dati pubblici letti da Instagram e Facebook (ricerca commerciale)",
+          "body": "Per il nostro lavoro di ricerca commerciale su attività locali (individuare potenziali clienti per i nostri servizi) utilizziamo le API ufficiali di Meta per leggere dati pubblici di profili Instagram/Facebook business — nome, numero di follower, numero di post, biografia e link in bio di account professionali pubblici. Non raccogliamo dati privati, non richiediamo l'autorizzazione dei singoli profili (i dati letti sono già pubblici) e non trattiamo dati di persone fisiche identificabili al di fuori del contesto commerciale dell'attività. Questi dati sono conservati nel nostro archivio interno di ricerca commerciale finché l'attività resta un potenziale interlocutore, e cancellati su richiesta — vedi la nostra pagina sulla cancellazione dei dati."
+        },
+        {
           "heading": "I tuoi diritti",
           "body": "Puoi richiedere in qualsiasi momento accesso, rettifica, cancellazione o limitazione del trattamento dei tuoi dati, scrivendo a info@bracketstudio.it. Hai inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali."
         }
@@ -702,6 +707,25 @@
         }
       ],
       "outro": "Trattandosi di cookie strettamente necessari al funzionamento del sito, non è richiesto un consenso preventivo. Puoi comunque cancellarli in qualsiasi momento dalle impostazioni del tuo browser."
+    },
+    "dataDeletion": {
+      "title": "Cancellazione dei dati",
+      "updated": "Ultimo aggiornamento: 16 settembre 2026",
+      "intro": "Questa pagina spiega come richiedere la cancellazione dei dati che Bracket Studio ha raccolto su di te o sulla tua attività, inclusi quelli letti tramite le API di Meta (Instagram/Facebook) per la nostra ricerca commerciale.",
+      "sections": [
+        {
+          "heading": "Cosa raccogliamo da Instagram/Facebook",
+          "body": "Solo dati pubblici di profili business (nome, follower, numero di post, bio, link in bio), letti tramite le API ufficiali di Meta per individuare potenziali clienti dei nostri servizi. Non raccogliamo dati privati né contenuti riservati."
+        },
+        {
+          "heading": "Come richiedere la cancellazione",
+          "body": "Scrivi a info@bracketstudio.it indicando il nome dell'attività o il profilo Instagram/Facebook in questione. Cancelliamo il record dal nostro archivio di ricerca commerciale entro 30 giorni e ti confermiamo via email."
+        },
+        {
+          "heading": "Altri dati (modulo di contatto)",
+          "body": "Per la cancellazione dei dati raccolti tramite il modulo di contatto del sito, vedi la nostra informativa sulla privacy — vale la stessa procedura via email."
+        }
+      ]
     }
   },
   "notFound": {
